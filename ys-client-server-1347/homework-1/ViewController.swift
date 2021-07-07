@@ -7,11 +7,25 @@
 
 import UIKit
 
+class Session {
+    
+    static let instance = Session()
+    
+    private init() {}
+    
+    var userId: Int = 0
+    var token: String = ""
+    
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        let session = Session.instance
+        session.userId = 29392
+        session.token = "somesessiontoken"
     }
 }
 
