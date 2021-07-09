@@ -82,6 +82,7 @@
                     <navigationItem key="navigationItem" id="kUo-vE-Plo"/>
                     <connections>
                         <outlet property="wk" destination="W2e-DM-Z2M" id="mN5-vS-y4v"/>
+                        <segue destination="aO7-PX-q4g" kind="show" identifier="goToSecondView" id="d3L-fN-7T0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GcG-8F-2Fq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -91,12 +92,24 @@
         <!--Second View Controller-->
         <scene sceneID="xkB-n8-WEp">
             <objects>
-                <viewController id="aO7-PX-q4g" customClass="SecondViewController" customModule="ys_client_server_1347" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="aO7-PX-q4g" customClass="SecondViewController" customModule="ys_client_server_1347" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M8V-WU-Yph">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Authorized. Check console for output." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0So-Tf-oyk">
+                                <rect key="frame" x="62.5" y="94" width="289" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Ses-Sc-fGq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0So-Tf-oyk" firstAttribute="top" secondItem="Ses-Sc-fGq" secondAttribute="top" constant="50" id="6CN-3s-xAT"/>
+                            <constraint firstItem="0So-Tf-oyk" firstAttribute="centerX" secondItem="M8V-WU-Yph" secondAttribute="centerX" id="o3j-0w-gve"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="t3V-jP-rsz"/>
                 </viewController>
