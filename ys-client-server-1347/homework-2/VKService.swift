@@ -40,6 +40,11 @@ class VKService {
         
         VKURLComponents.path = path + "/friends.get"
         VKURLComponents.queryItems?.append(URLQueryItem(name: "fields", value: "nickname, city, country, sex"))
+
+//        print(".............................")
+//        print(VKURLComponents.debugDescription)
+//        print(".............................")
+        
         perform(VKURLComponents, completion)
     }
     
