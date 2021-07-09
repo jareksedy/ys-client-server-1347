@@ -11,6 +11,7 @@
         <!--Navigation Controller-->
         <scene sceneID="d6d-c4-3fY">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bX0-Rj-cd8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="0lV-wO-4MZ" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SDY-hv-vUV">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -20,13 +21,13 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NRJ-zi-qvG"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bX0-Rj-cd8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-680" y="94"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ys_client_server_1347" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -49,7 +50,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="CDZ-gR-BI7"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="88" y="94"/>
         </scene>
@@ -120,6 +120,7 @@
         <!--Another View Controller-->
         <scene sceneID="bSQ-yb-obZ">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qOb-o1-A4Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="u1r-ST-QWx" customClass="AnotherViewController" customModule="ys_client_server_1347" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hnY-C5-sCE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -153,7 +154,6 @@
                         <outlet property="userIdLabel" destination="wd8-AR-fBP" id="QVT-Yt-hrD"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qOb-o1-A4Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="849" y="94"/>
         </scene>
