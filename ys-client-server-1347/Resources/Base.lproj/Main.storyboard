@@ -97,6 +97,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="kUo-vE-Plo"/>
                     <connections>
+                        <outlet property="wk" destination="W2e-DM-Z2M" id="mN5-vS-y4v"/>
                         <segue destination="aO7-PX-q4g" kind="show" identifier="goForth" id="84B-B2-Fk1"/>
                     </connections>
                 </viewController>

@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import WebKit
 
 class FirstViewController: UIViewController {
-
+    
+    @IBOutlet weak var wk: WKWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
