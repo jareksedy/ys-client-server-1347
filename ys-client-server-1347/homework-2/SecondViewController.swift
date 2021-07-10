@@ -45,7 +45,6 @@ class SecondViewController: UIViewController {
     }
     
     func stringify(_ json: Any?) -> String? {
-        
         guard let json = json else {
             return nil
         }
