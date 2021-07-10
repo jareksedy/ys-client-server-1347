@@ -24,7 +24,7 @@ class SecondViewController: UIViewController {
         }
         
         vkService.getFriendsList() { json in
-            print("=== Список друзей ===")
+            print("=== Список моих друзей ===")
             print(self.stringify(json ?? self.errorMessage))
         }
 
