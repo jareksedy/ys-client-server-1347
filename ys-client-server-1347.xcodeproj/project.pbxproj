@@ -81,12 +81,20 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		CAABB45A26995D8F004944AE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CAD3ABE3269892E20020BF1F /* Session.swift */,
+				CAD3ABE52698BB450020BF1F /* VKService.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		CAD3ABDE269891040020BF1F /* homework-2 */ = {
 			isa = PBXGroup;
 			children = (
+				CAABB45A26995D8F004944AE /* Models */,
 				CAD3ABDF269892090020BF1F /* FirstViewController.swift */,
-				CAD3ABE3269892E20020BF1F /* Session.swift */,
-				CAD3ABE52698BB450020BF1F /* VKService.swift */,
 				CAD3ABE1269892250020BF1F /* SecondViewController.swift */,
 			);
 			path = "homework-2";
