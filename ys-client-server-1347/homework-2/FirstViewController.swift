@@ -37,7 +37,7 @@ class FirstViewController: UIViewController {
             URLQueryItem(name: "revoke", value: "1"),
             URLQueryItem(name: "v", value: "5.68")
         ]
-
+        
         let request = URLRequest(url: urlComponents.url!)
         
         wk.load(request)
@@ -61,7 +61,7 @@ extension FirstViewController: WKNavigationDelegate {
                 let value = param[1]
                 dict[key] = value
                 return dict
-        }
+            }
         
         guard let token = params["access_token"],
               let userId = params["user_id"] else {
@@ -74,7 +74,9 @@ extension FirstViewController: WKNavigationDelegate {
         session.userId = Int(userId)!
         session.token = token
         
-        performSegue(withIdentifier: "goToSecondView", sender: self)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let next = storyBoard.instantiateViewController(withIdentifier: "SecondViewController")
+        self.present(next, animated: true, completion: nil)
         
         decisionHandler(.cancel)
     }
