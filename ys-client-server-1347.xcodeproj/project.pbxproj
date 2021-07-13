@@ -13,6 +13,10 @@
 		CA6A8FE52695F77100009ABC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA6A8FE42695F77100009ABC /* Assets.xcassets */; };
 		CA6A8FE82695F77100009ABC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA6A8FE62695F77100009ABC /* LaunchScreen.storyboard */; };
 		CAC13DE4269DED8A00C79A7D /* GroupTableViewCellNoDesc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC13DE3269DED8A00C79A7D /* GroupTableViewCellNoDesc.swift */; };
+		CAC13DE6269DFB9900C79A7D /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC13DE5269DFB9900C79A7D /* PhotoCollectionViewController.swift */; };
+		CAC13DE9269E00EC00C79A7D /* PhotoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC13DE8269E00EC00C79A7D /* PhotoAPI.swift */; };
+		CAC13DEB269E041200C79A7D /* DynamicJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC13DEA269E041200C79A7D /* DynamicJSON.swift */; };
+		CAC13DEE269E05CA00C79A7D /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC13DED269E05CA00C79A7D /* Photo.swift */; };
 		CACCC30F269D7ED10024C5BF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CACCC30E269D7ED10024C5BF /* Alamofire */; };
 		CACCC311269D82510024C5BF /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACCC310269D82510024C5BF /* RoundedImageView.swift */; };
 		CACCC315269D87060024C5BF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACCC314269D87060024C5BF /* User.swift */; };
@@ -36,6 +40,10 @@
 		CA6A8FE72695F77100009ABC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA6A8FE92695F77100009ABC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAC13DE3269DED8A00C79A7D /* GroupTableViewCellNoDesc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCellNoDesc.swift; sourceTree = "<group>"; };
+		CAC13DE5269DFB9900C79A7D /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
+		CAC13DE8269E00EC00C79A7D /* PhotoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAPI.swift; sourceTree = "<group>"; };
+		CAC13DEA269E041200C79A7D /* DynamicJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicJSON.swift; sourceTree = "<group>"; };
+		CAC13DED269E05CA00C79A7D /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		CACCC310269D82510024C5BF /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		CACCC314269D87060024C5BF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CACCC316269D88010024C5BF /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
@@ -64,6 +72,7 @@
 		CA2738F7269D44BE00921FA9 /* homework-3 */ = {
 			isa = PBXGroup;
 			children = (
+				CAC13DEC269E043F00C79A7D /* DynamicJSON */,
 				CACCC313269D84C20024C5BF /* Models */,
 				CAABB45A26995D8F004944AE /* Services */,
 				CA2738F8269D46C700921FA9 /* Controllers */,
@@ -74,10 +83,11 @@
 		CA2738F8269D46C700921FA9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CAC13DE1269DECA000C79A7D /* User */,
+				CAC13DE7269DFBA100C79A7D /* Photos */,
+				CAC13DE2269DECAA00C79A7D /* Groups */,
 				CACCC312269D83A10024C5BF /* CustomUIControllers */,
 				CAD3ABDF269892090020BF1F /* FirstViewController.swift */,
-				CAC13DE2269DECAA00C79A7D /* Groups */,
-				CAC13DE1269DECA000C79A7D /* User */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -125,6 +135,7 @@
 			children = (
 				CACCC316269D88010024C5BF /* UserAPI.swift */,
 				CACCC323269DCAE00024C5BF /* GroupAPI.swift */,
+				CAC13DE8269E00EC00C79A7D /* PhotoAPI.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -147,6 +158,22 @@
 			path = Groups;
 			sourceTree = "<group>";
 		};
+		CAC13DE7269DFBA100C79A7D /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				CAC13DE5269DFB9900C79A7D /* PhotoCollectionViewController.swift */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		CAC13DEC269E043F00C79A7D /* DynamicJSON */ = {
+			isa = PBXGroup;
+			children = (
+				CAC13DEA269E041200C79A7D /* DynamicJSON.swift */,
+			);
+			path = DynamicJSON;
+			sourceTree = "<group>";
+		};
 		CACCC312269D83A10024C5BF /* CustomUIControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +188,7 @@
 				CAD3ABE3269892E20020BF1F /* Session.swift */,
 				CACCC314269D87060024C5BF /* User.swift */,
 				CACCC31D269DBCDE0024C5BF /* Group.swift */,
+				CAC13DED269E05CA00C79A7D /* Photo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -251,7 +279,11 @@
 				CAD3ABE0269892090020BF1F /* FirstViewController.swift in Sources */,
 				CAC13DE4269DED8A00C79A7D /* GroupTableViewCellNoDesc.swift in Sources */,
 				CACCC315269D87060024C5BF /* User.swift in Sources */,
+				CAC13DE9269E00EC00C79A7D /* PhotoAPI.swift in Sources */,
 				CA6A8FDC2695F76C00009ABC /* AppDelegate.swift in Sources */,
+				CAC13DEE269E05CA00C79A7D /* Photo.swift in Sources */,
+				CAC13DE6269DFB9900C79A7D /* PhotoCollectionViewController.swift in Sources */,
+				CAC13DEB269E041200C79A7D /* DynamicJSON.swift in Sources */,
 				CACCC324269DCAE00024C5BF /* GroupAPI.swift in Sources */,
 				CACCC319269D8FFF0024C5BF /* UserInfoViewController.swift in Sources */,
 				CA6A8FDE2695F76C00009ABC /* SceneDelegate.swift in Sources */,

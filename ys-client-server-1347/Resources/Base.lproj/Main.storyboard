@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -45,20 +46,50 @@
             <point key="canvasLocation" x="87" y="788"/>
         </scene>
         <!--Фото-->
-        <scene sceneID="aX7-cX-kwq">
+        <scene sceneID="tl9-sZ-Nc7">
             <objects>
-                <viewController id="DwH-yB-3Jz" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Cww-Vc-WWM">
+                <collectionViewController id="iGM-ad-LIN" customClass="PhotoCollectionViewController" customModule="ys_client_server_1347" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="4sA-nG-zH4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="wnJ-K7-LOl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Фото" image="photo" catalog="system" selectedImage="photo.fill" id="BAX-RR-2XD"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nxS-IL-4B6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yVv-7f-VHN">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="rRX-wR-Q5f">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ycS-Eo-DFA">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7r2-6N-hxA">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="7r2-6N-hxA" firstAttribute="top" secondItem="ycS-Eo-DFA" secondAttribute="top" id="DAw-kw-u8b"/>
+                                        <constraint firstAttribute="trailing" secondItem="7r2-6N-hxA" secondAttribute="trailing" id="Guv-TP-fNN"/>
+                                        <constraint firstAttribute="bottom" secondItem="7r2-6N-hxA" secondAttribute="bottom" id="R6t-k2-2Dj"/>
+                                        <constraint firstItem="7r2-6N-hxA" firstAttribute="leading" secondItem="ycS-Eo-DFA" secondAttribute="leading" id="d4N-5L-Z4f"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="iGM-ad-LIN" id="d3U-Ay-Ipy"/>
+                            <outlet property="delegate" destination="iGM-ad-LIN" id="BHt-pt-7se"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Фото" image="photo" catalog="system" selectedImage="photo.fill" id="rYP-vF-r87"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rwk-9I-Mpe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1767" y="568"/>
+            <point key="canvasLocation" x="1767" y="579"/>
         </scene>
         <!--Я-->
         <scene sceneID="QcC-wW-z22">
@@ -134,7 +165,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="YdX-Vq-foD" kind="relationship" relationship="viewControllers" id="45V-FA-MI3"/>
-                        <segue destination="DwH-yB-3Jz" kind="relationship" relationship="viewControllers" id="q8Q-R1-bZ5"/>
+                        <segue destination="iGM-ad-LIN" kind="relationship" relationship="viewControllers" id="1U2-uv-K9z"/>
                         <segue destination="YlS-rE-sBo" kind="relationship" relationship="viewControllers" id="vRp-ZN-iDe"/>
                     </connections>
                 </tabBarController>
