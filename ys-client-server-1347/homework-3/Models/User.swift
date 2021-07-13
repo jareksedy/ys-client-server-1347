@@ -12,6 +12,7 @@ struct User {
     var id: Int
     var firstName: String
     var lastName: String
-    var imageURL: String
-    var city: String?
+    var imageURL: String?
+    var city: String
+    var country: String
 }
