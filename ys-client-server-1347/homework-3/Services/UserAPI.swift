@@ -15,7 +15,7 @@ class UserAPI {
     let baseUrl = "https://api.vk.com/method"
     let method = "/users.get"
     
-    let cliendId = "7899606"
+    let cliendId = "7902471"
     let version = "5.68"
     
     var params: Parameters

@@ -21,6 +21,7 @@
 		CACCC31E269DBCDE0024C5BF /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACCC31D269DBCDE0024C5BF /* Group.swift */; };
 		CACCC320269DC2FB0024C5BF /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACCC31F269DC2FB0024C5BF /* GroupTableViewController.swift */; };
 		CACCC322269DC3E10024C5BF /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACCC321269DC3E10024C5BF /* GroupTableViewCell.swift */; };
+		CACCC324269DCAE00024C5BF /* GroupAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACCC323269DCAE00024C5BF /* GroupAPI.swift */; };
 		CAD3ABE0269892090020BF1F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3ABDF269892090020BF1F /* FirstViewController.swift */; };
 		CAD3ABE4269892E20020BF1F /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3ABE3269892E20020BF1F /* Session.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		CACCC31D269DBCDE0024C5BF /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		CACCC31F269DC2FB0024C5BF /* GroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
 		CACCC321269DC3E10024C5BF /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
+		CACCC323269DCAE00024C5BF /* GroupAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupAPI.swift; sourceTree = "<group>"; };
 		CAD3ABDF269892090020BF1F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		CAD3ABE3269892E20020BF1F /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				CACCC316269D88010024C5BF /* UserAPI.swift */,
+				CACCC323269DCAE00024C5BF /* GroupAPI.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				CAD3ABE0269892090020BF1F /* FirstViewController.swift in Sources */,
 				CACCC315269D87060024C5BF /* User.swift in Sources */,
 				CA6A8FDC2695F76C00009ABC /* AppDelegate.swift in Sources */,
+				CACCC324269DCAE00024C5BF /* GroupAPI.swift in Sources */,
 				CACCC319269D8FFF0024C5BF /* UserInfoViewController.swift in Sources */,
 				CA6A8FDE2695F76C00009ABC /* SceneDelegate.swift in Sources */,
 				CACCC317269D88010024C5BF /* UserAPI.swift in Sources */,

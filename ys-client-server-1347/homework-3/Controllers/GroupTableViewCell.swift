@@ -22,10 +22,14 @@ class GroupTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configure(_ group: Group) {
-        groupName.text = group.Name
-        groupDescription.text = group.description
-        groupMemebersCount.text = "\(group.membersCount) подписчиков"
+    func configure(_ groupItem: GroupItem) {
+        
+        groupName.text = groupItem.name
+        
+        if let description = groupItem.groupDescription {
+            groupDescription.text = description
+        }
+        
+        groupMemebersCount.text =  "\(100500) подписчика!"
     }
-
 }

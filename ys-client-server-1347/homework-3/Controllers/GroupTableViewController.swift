@@ -9,27 +9,30 @@ import UIKit
 
 class GroupTableViewController: UITableViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    var groupItems: [GroupItem] = []
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        GroupAPI(Session.instance).get{ groups in
+            
+            guard let groups = groups else { return }
+            self.groupItems = groups.response.items
+            
+        }
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return groupItems.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell") as? GroupTableViewCell else { return UITableViewCell() }
         
-        let tempGroup = Group(id: 0,
-                              Name: "Факинг Щит!",
-                              imageURL: "https://fuckingshit.com/image.jpg",
-                              description: "Это группа факинга щита!",
-                              membersCount: 2398)
-        
-        cell.configure(tempGroup)
+        cell.configure(groupItems[indexPath.row])
 
         return cell
     }

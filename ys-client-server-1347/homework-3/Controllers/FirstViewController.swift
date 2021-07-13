@@ -29,7 +29,7 @@ class FirstViewController: UIViewController {
         urlComponents.host = "oauth.vk.com"
         urlComponents.path = "/authorize"
         urlComponents.queryItems = [
-            URLQueryItem(name: "client_id", value: "7899606"),
+            URLQueryItem(name: "client_id", value: "7902471"),
             URLQueryItem(name: "display", value: "mobile"),
             URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
             URLQueryItem(name: "scope", value: "262150"),
@@ -39,6 +39,8 @@ class FirstViewController: UIViewController {
         ]
         
         let request = URLRequest(url: urlComponents.url!)
+        
+        print(request.description)
         
         wk.load(request)
     }
