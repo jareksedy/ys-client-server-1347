@@ -132,10 +132,10 @@
             </objects>
             <point key="canvasLocation" x="1766.6666666666667" y="-131.25"/>
         </scene>
-        <!--Main Tab View Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="tYq-Cw-owN">
             <objects>
-                <tabBarController storyboardIdentifier="MainTabView" modalPresentationStyle="fullScreen" id="Nx7-yt-Yth" customClass="MainTabViewController" customModule="ys_client_server_1347" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabView" modalPresentationStyle="fullScreen" id="Nx7-yt-Yth" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="1Gm-Ee-b5r"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zgH-2R-wKQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA2738FA269D474C00921FA9 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2738F9269D474C00921FA9 /* MainTabViewController.swift */; };
 		CA6A8FDC2695F76C00009ABC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6A8FDB2695F76C00009ABC /* AppDelegate.swift */; };
 		CA6A8FDE2695F76C00009ABC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6A8FDD2695F76C00009ABC /* SceneDelegate.swift */; };
 		CA6A8FE32695F76C00009ABC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA6A8FE12695F76C00009ABC /* Main.storyboard */; };
@@ -22,7 +21,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CA2738F9269D474C00921FA9 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		CA6A8FD82695F76C00009ABC /* ys-client-server-1347.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ys-client-server-1347.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA6A8FDB2695F76C00009ABC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA6A8FDD2695F76C00009ABC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,9 +59,8 @@
 		CA2738F8269D46C700921FA9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CACCC312269D83A10024C5BF /* CustomUIControllers */,
 				CAD3ABDF269892090020BF1F /* FirstViewController.swift */,
-				CACCC310269D82510024C5BF /* RoundedImageView.swift */,
-				CA2738F9269D474C00921FA9 /* MainTabViewController.swift */,
 				CAD3ABE1269892250020BF1F /* SecondViewController.swift */,
 			);
 			path = Controllers;
@@ -114,6 +111,14 @@
 				CAD3ABE52698BB450020BF1F /* VKService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		CACCC312269D83A10024C5BF /* CustomUIControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CACCC310269D82510024C5BF /* RoundedImageView.swift */,
+			);
+			path = CustomUIControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,7 +203,6 @@
 				CAD3ABE0269892090020BF1F /* FirstViewController.swift in Sources */,
 				CAD3ABE62698BB450020BF1F /* VKService.swift in Sources */,
 				CA6A8FDC2695F76C00009ABC /* AppDelegate.swift in Sources */,
-				CA2738FA269D474C00921FA9 /* MainTabViewController.swift in Sources */,
 				CA6A8FDE2695F76C00009ABC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
