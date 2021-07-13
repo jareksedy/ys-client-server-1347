@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class UserInfoViewController: UIViewController {
     
@@ -14,13 +16,21 @@ class UserInfoViewController: UIViewController {
     @IBOutlet weak var pinIcon: UIImageView!
     @IBOutlet weak var userLocation: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        UserAPI(Session.instance).get{ user in
-            print(user?.firstName ?? "none")
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        userImage.backgroundColor = UIColor.systemPink
+        UserAPI(Session.instance).get{ user in
+            
+            guard let user = user else { return }
+            self.userName.text = "\(user.firstName) \(user.lastName)"
+            self.userLocation.text = "\(user.city), \(user.country)."
+            
+            if let imageURL = user.imageURL {
+                AF.request(imageURL, method: .get).responseImage { response in
+                    guard let image = response.value else { return }
+                    self.userImage.image = image
+                }
+            }
+        }
     }
 }
