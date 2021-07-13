@@ -50,6 +50,7 @@
 		CA2738F7269D44BE00921FA9 /* homework-3 */ = {
 			isa = PBXGroup;
 			children = (
+				CACCC313269D84C20024C5BF /* Classes */,
 				CAABB45A26995D8F004944AE /* Services */,
 				CA2738F8269D46C700921FA9 /* Controllers */,
 			);
@@ -107,7 +108,6 @@
 		CAABB45A26995D8F004944AE /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				CAD3ABE3269892E20020BF1F /* Session.swift */,
 				CAD3ABE52698BB450020BF1F /* VKService.swift */,
 			);
 			path = Services;
@@ -119,6 +119,14 @@
 				CACCC310269D82510024C5BF /* RoundedImageView.swift */,
 			);
 			path = CustomUIControllers;
+			sourceTree = "<group>";
+		};
+		CACCC313269D84C20024C5BF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CAD3ABE3269892E20020BF1F /* Session.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
