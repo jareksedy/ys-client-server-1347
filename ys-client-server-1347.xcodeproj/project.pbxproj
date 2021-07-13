@@ -17,6 +17,7 @@
 		CAC13DE9269E00EC00C79A7D /* PhotoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC13DE8269E00EC00C79A7D /* PhotoAPI.swift */; };
 		CAC13DEB269E041200C79A7D /* DynamicJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC13DEA269E041200C79A7D /* DynamicJSON.swift */; };
 		CAC13DEE269E05CA00C79A7D /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC13DED269E05CA00C79A7D /* Photo.swift */; };
+		CAC13DF0269E0B9B00C79A7D /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC13DEF269E0B9B00C79A7D /* PhotoCollectionViewCell.swift */; };
 		CACCC30F269D7ED10024C5BF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CACCC30E269D7ED10024C5BF /* Alamofire */; };
 		CACCC311269D82510024C5BF /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACCC310269D82510024C5BF /* RoundedImageView.swift */; };
 		CACCC315269D87060024C5BF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACCC314269D87060024C5BF /* User.swift */; };
@@ -44,6 +45,7 @@
 		CAC13DE8269E00EC00C79A7D /* PhotoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAPI.swift; sourceTree = "<group>"; };
 		CAC13DEA269E041200C79A7D /* DynamicJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicJSON.swift; sourceTree = "<group>"; };
 		CAC13DED269E05CA00C79A7D /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		CAC13DEF269E0B9B00C79A7D /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		CACCC310269D82510024C5BF /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		CACCC314269D87060024C5BF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CACCC316269D88010024C5BF /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				CAC13DE5269DFB9900C79A7D /* PhotoCollectionViewController.swift */,
+				CAC13DEF269E0B9B00C79A7D /* PhotoCollectionViewCell.swift */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				CACCC311269D82510024C5BF /* RoundedImageView.swift in Sources */,
 				CAD3ABE4269892E20020BF1F /* Session.swift in Sources */,
 				CACCC322269DC3E10024C5BF /* GroupTableViewCell.swift in Sources */,
+				CAC13DF0269E0B9B00C79A7D /* PhotoCollectionViewCell.swift in Sources */,
 				CAD3ABE0269892090020BF1F /* FirstViewController.swift in Sources */,
 				CAC13DE4269DED8A00C79A7D /* GroupTableViewCellNoDesc.swift in Sources */,
 				CACCC315269D87060024C5BF /* User.swift in Sources */,
