@@ -9,10 +9,10 @@ import Foundation
 
 struct User {
     
-    var id: Int
-    var firstName: String
-    var lastName: String
-    var imageURL: String?
-    var country: String
-    var city: String
+    let id: Int
+    let firstName: String
+    let lastName: String
+    let imageURL: String?
+    let country: String
+    let city: String
 }

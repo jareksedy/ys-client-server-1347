@@ -23,11 +23,13 @@ struct GroupItem: Codable {
     let id: Int
     let name: String
     let groupDescription: String?
-    let photo100: String
+    let imageURL: String
+    let membersCount: Int
 
     enum CodingKeys: String, CodingKey {
         case id, name
         case groupDescription = "description"
-        case photo100 = "photo_100"
+        case imageURL = "photo_100"
+        case membersCount = "members_count"
     }
 }

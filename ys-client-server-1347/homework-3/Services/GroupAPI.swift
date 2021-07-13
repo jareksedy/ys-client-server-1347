@@ -28,7 +28,7 @@ class GroupAPI {
             "access_token": session.token,
             "v": self.version,
             "extended": "1",
-            "fields": "description, members_count",
+            "fields": "description,members_count",
         ]
         
     }
@@ -44,9 +44,7 @@ class GroupAPI {
             do {
                 var groups: Groups
                 groups = try JSONDecoder().decode(Groups.self, from: data)
-                
                 completion(groups)
-                
             } catch {
                 print(error)
             }

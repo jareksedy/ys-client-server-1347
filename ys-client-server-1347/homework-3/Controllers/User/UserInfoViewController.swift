@@ -16,8 +16,8 @@ class UserInfoViewController: UIViewController {
     @IBOutlet weak var pinIcon: UIImageView!
     @IBOutlet weak var userLocation: UILabel!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         UserAPI(Session.instance).get{ user in
             

@@ -34,13 +34,13 @@ class FirstViewController: UIViewController {
             URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
             URLQueryItem(name: "scope", value: "262150"),
             URLQueryItem(name: "response_type", value: "token"),
-            URLQueryItem(name: "revoke", value: "1"),
+            //URLQueryItem(name: "revoke", value: "1"),
             URLQueryItem(name: "v", value: "5.68")
         ]
         
         let request = URLRequest(url: urlComponents.url!)
         
-        print(request.description)
+        //print(request.description)
         
         wk.load(request)
     }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class GroupTableViewCell: UITableViewCell {
     
@@ -17,7 +18,7 @@ class GroupTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -30,6 +31,24 @@ class GroupTableViewCell: UITableViewCell {
             groupDescription.text = description
         }
         
-        groupMemebersCount.text =  "\(100500) подписчика!"
+        groupMemebersCount.text =  "\(groupItem.membersCount.formatted) подписчиков"
+        
+        AF.request(groupItem.imageURL, method: .get).responseImage { response in
+            guard let image = response.value else { return }
+            self.groupImage.image = image
+        }
+    }
+}
+
+extension Int {
+    var formatted: String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 2
+        formatter.locale = Locale(identifier: "RU")
+        
+        let number = NSNumber(value: self)
+        let formattedValue = formatter.string(from: number)!
+        return "\(formattedValue)"
     }
 }

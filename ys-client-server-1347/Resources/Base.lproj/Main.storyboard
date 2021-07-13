@@ -208,6 +208,53 @@
                                     <outlet property="groupName" destination="LQ8-Sr-47Y" id="VxD-zk-lhj"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupCellNoDesc" rowHeight="120" id="gzO-mK-b8s" customClass="GroupTableViewCellNoDesc" customModule="ys_client_server_1347" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="144.5" width="414" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gzO-mK-b8s" id="iNe-J9-bL2">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fs3-gg-kXu" customClass="RoundedImageView" customModule="ys_client_server_1347" customModuleProvider="target">
+                                            <rect key="frame" x="10" y="10" width="100" height="100"/>
+                                            <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="IPy-YV-oMK"/>
+                                                <constraint firstAttribute="height" secondItem="Fs3-gg-kXu" secondAttribute="width" id="gjC-0M-XKR"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название сообщества" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rnq-2Y-DQs">
+                                            <rect key="frame" x="120" y="36.5" width="264" height="17"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество подписчиков" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fln-mU-Nm6">
+                                            <rect key="frame" x="120" y="68" width="264" height="14.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Fln-mU-Nm6" secondAttribute="trailing" constant="10" id="488-op-cZu"/>
+                                        <constraint firstAttribute="bottom" secondItem="Fs3-gg-kXu" secondAttribute="bottom" priority="999" constant="20" id="5r1-NV-ZkK"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="rnq-2Y-DQs" secondAttribute="trailing" constant="10" id="AH3-U5-y1V"/>
+                                        <constraint firstItem="Fln-mU-Nm6" firstAttribute="centerY" secondItem="iNe-J9-bL2" secondAttribute="centerY" constant="15" id="UNA-QO-q3R"/>
+                                        <constraint firstItem="rnq-2Y-DQs" firstAttribute="leading" secondItem="Fs3-gg-kXu" secondAttribute="trailing" constant="10" id="ctB-Lt-JVK"/>
+                                        <constraint firstItem="Fln-mU-Nm6" firstAttribute="leading" secondItem="Fs3-gg-kXu" secondAttribute="trailing" constant="10" id="gZ4-MD-W0z"/>
+                                        <constraint firstItem="Fs3-gg-kXu" firstAttribute="leading" secondItem="iNe-J9-bL2" secondAttribute="leading" constant="10" id="hzm-6E-Jex"/>
+                                        <constraint firstItem="Fs3-gg-kXu" firstAttribute="top" secondItem="iNe-J9-bL2" secondAttribute="top" constant="10" id="mEY-AS-qDt"/>
+                                        <constraint firstItem="rnq-2Y-DQs" firstAttribute="centerY" secondItem="iNe-J9-bL2" secondAttribute="centerY" constant="-15" id="oiE-p7-MlT"/>
+                                        <constraint firstAttribute="bottom" secondItem="Fs3-gg-kXu" secondAttribute="bottom" constant="10" id="pYA-Jr-Fa4"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="groupImage" destination="Fs3-gg-kXu" id="2u6-Ne-Sa1"/>
+                                    <outlet property="groupName" destination="rnq-2Y-DQs" id="fTK-tp-GvX"/>
+                                    <outlet property="membersCount" destination="Fln-mU-Nm6" id="Vxs-HW-7ab"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="YlS-rE-sBo" id="sob-z3-R84"/>
