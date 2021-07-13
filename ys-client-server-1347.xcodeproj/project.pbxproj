@@ -19,9 +19,7 @@
 		CACCC319269D8FFF0024C5BF /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACCC318269D8FFF0024C5BF /* UserInfoViewController.swift */; };
 		CACCC31C269DAABA0024C5BF /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = CACCC31B269DAABA0024C5BF /* AlamofireImage */; };
 		CAD3ABE0269892090020BF1F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3ABDF269892090020BF1F /* FirstViewController.swift */; };
-		CAD3ABE2269892250020BF1F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3ABE1269892250020BF1F /* SecondViewController.swift */; };
 		CAD3ABE4269892E20020BF1F /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3ABE3269892E20020BF1F /* Session.swift */; };
-		CAD3ABE62698BB450020BF1F /* VKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3ABE52698BB450020BF1F /* VKService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,9 +35,7 @@
 		CACCC316269D88010024C5BF /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
 		CACCC318269D8FFF0024C5BF /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		CAD3ABDF269892090020BF1F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		CAD3ABE1269892250020BF1F /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		CAD3ABE3269892E20020BF1F /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		CAD3ABE52698BB450020BF1F /* VKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +66,6 @@
 			children = (
 				CACCC312269D83A10024C5BF /* CustomUIControllers */,
 				CAD3ABDF269892090020BF1F /* FirstViewController.swift */,
-				CAD3ABE1269892250020BF1F /* SecondViewController.swift */,
 				CACCC318269D8FFF0024C5BF /* UserInfoViewController.swift */,
 			);
 			path = Controllers;
@@ -117,7 +112,6 @@
 		CAABB45A26995D8F004944AE /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				CAD3ABE52698BB450020BF1F /* VKService.swift */,
 				CACCC316269D88010024C5BF /* UserAPI.swift */,
 			);
 			path = Services;
@@ -220,10 +214,8 @@
 			files = (
 				CACCC311269D82510024C5BF /* RoundedImageView.swift in Sources */,
 				CAD3ABE4269892E20020BF1F /* Session.swift in Sources */,
-				CAD3ABE2269892250020BF1F /* SecondViewController.swift in Sources */,
 				CAD3ABE0269892090020BF1F /* FirstViewController.swift in Sources */,
 				CACCC315269D87060024C5BF /* User.swift in Sources */,
-				CAD3ABE62698BB450020BF1F /* VKService.swift in Sources */,
 				CA6A8FDC2695F76C00009ABC /* AppDelegate.swift in Sources */,
 				CACCC319269D8FFF0024C5BF /* UserInfoViewController.swift in Sources */,
 				CA6A8FDE2695F76C00009ABC /* SceneDelegate.swift in Sources */,
