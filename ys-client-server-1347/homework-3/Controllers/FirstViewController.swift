@@ -74,9 +74,7 @@ extension FirstViewController: WKNavigationDelegate {
         session.userId = Int(userId)!
         session.token = token
         
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let next = storyBoard.instantiateViewController(withIdentifier: "SecondViewController")
-        self.present(next, animated: true, completion: nil)
+        performSegue(withIdentifier: "goWest", sender: self)
         
         decisionHandler(.cancel)
     }
