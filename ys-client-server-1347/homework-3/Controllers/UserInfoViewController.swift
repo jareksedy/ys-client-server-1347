@@ -14,11 +14,13 @@ class UserInfoViewController: UIViewController {
     @IBOutlet weak var pinIcon: UIImageView!
     @IBOutlet weak var userLocation: UILabel!
     
-    let userData: User? = UserAPI(Session.instance).get()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        UserAPI(Session.instance).get{ user in
+            print(user?.firstName ?? "none")
+        }
+        
         userImage.backgroundColor = UIColor.systemPink
     }
 }
