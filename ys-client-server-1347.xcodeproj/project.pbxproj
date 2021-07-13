@@ -18,6 +18,9 @@
 		CACCC317269D88010024C5BF /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACCC316269D88010024C5BF /* UserAPI.swift */; };
 		CACCC319269D8FFF0024C5BF /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACCC318269D8FFF0024C5BF /* UserInfoViewController.swift */; };
 		CACCC31C269DAABA0024C5BF /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = CACCC31B269DAABA0024C5BF /* AlamofireImage */; };
+		CACCC31E269DBCDE0024C5BF /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACCC31D269DBCDE0024C5BF /* Group.swift */; };
+		CACCC320269DC2FB0024C5BF /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACCC31F269DC2FB0024C5BF /* GroupTableViewController.swift */; };
+		CACCC322269DC3E10024C5BF /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACCC321269DC3E10024C5BF /* GroupTableViewCell.swift */; };
 		CAD3ABE0269892090020BF1F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3ABDF269892090020BF1F /* FirstViewController.swift */; };
 		CAD3ABE4269892E20020BF1F /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3ABE3269892E20020BF1F /* Session.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +37,9 @@
 		CACCC314269D87060024C5BF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CACCC316269D88010024C5BF /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
 		CACCC318269D8FFF0024C5BF /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		CACCC31D269DBCDE0024C5BF /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		CACCC31F269DC2FB0024C5BF /* GroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
+		CACCC321269DC3E10024C5BF /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		CAD3ABDF269892090020BF1F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		CAD3ABE3269892E20020BF1F /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +72,8 @@
 			children = (
 				CACCC312269D83A10024C5BF /* CustomUIControllers */,
 				CAD3ABDF269892090020BF1F /* FirstViewController.swift */,
+				CACCC31F269DC2FB0024C5BF /* GroupTableViewController.swift */,
+				CACCC321269DC3E10024C5BF /* GroupTableViewCell.swift */,
 				CACCC318269D8FFF0024C5BF /* UserInfoViewController.swift */,
 			);
 			path = Controllers;
@@ -130,6 +138,7 @@
 			children = (
 				CAD3ABE3269892E20020BF1F /* Session.swift */,
 				CACCC314269D87060024C5BF /* User.swift */,
+				CACCC31D269DBCDE0024C5BF /* Group.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -212,8 +221,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CACCC31E269DBCDE0024C5BF /* Group.swift in Sources */,
+				CACCC320269DC2FB0024C5BF /* GroupTableViewController.swift in Sources */,
 				CACCC311269D82510024C5BF /* RoundedImageView.swift in Sources */,
 				CAD3ABE4269892E20020BF1F /* Session.swift in Sources */,
+				CACCC322269DC3E10024C5BF /* GroupTableViewCell.swift in Sources */,
 				CAD3ABE0269892090020BF1F /* FirstViewController.swift in Sources */,
 				CACCC315269D87060024C5BF /* User.swift in Sources */,
 				CA6A8FDC2695F76C00009ABC /* AppDelegate.swift in Sources */,
