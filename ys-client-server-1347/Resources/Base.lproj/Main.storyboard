@@ -60,22 +60,6 @@
             </objects>
             <point key="canvasLocation" x="1767" y="568"/>
         </scene>
-        <!--Группы-->
-        <scene sceneID="8tf-N2-4N6">
-            <objects>
-                <viewController id="Bow-jN-CTy" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FiH-do-N6P">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="jil-Zk-Kdy"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Группы" image="person.2.circle" catalog="system" selectedImage="person.2.circle.fill" id="1qj-rJ-nX9"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Koa-3f-GvI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1767" y="1266"/>
-        </scene>
         <!--Я-->
         <scene sceneID="QcC-wW-z22">
             <objects>
@@ -151,12 +135,41 @@
                     <connections>
                         <segue destination="YdX-Vq-foD" kind="relationship" relationship="viewControllers" id="45V-FA-MI3"/>
                         <segue destination="DwH-yB-3Jz" kind="relationship" relationship="viewControllers" id="q8Q-R1-bZ5"/>
-                        <segue destination="Bow-jN-CTy" kind="relationship" relationship="viewControllers" id="048-hF-03U"/>
+                        <segue destination="YlS-rE-sBo" kind="relationship" relationship="viewControllers" id="vRp-ZN-iDe"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oJk-6s-AVB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="874" y="788"/>
+        </scene>
+        <!--Группы-->
+        <scene sceneID="JG8-51-7X1">
+            <objects>
+                <tableViewController id="YlS-rE-sBo" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eMv-BY-fm5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseGroupCell" id="4Vt-7R-bnX">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Vt-7R-bnX" id="CtZ-dg-xZ0">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="YlS-rE-sBo" id="sob-z3-R84"/>
+                            <outlet property="delegate" destination="YlS-rE-sBo" id="Phd-m2-LEc"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Группы" image="person.2.circle" catalog="system" selectedImage="person.2.circle.fill" id="Fa3-hm-Vur"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dGy-qB-ycV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1767" y="1268"/>
         </scene>
     </scenes>
     <resources>
