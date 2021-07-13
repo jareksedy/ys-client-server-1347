@@ -83,14 +83,54 @@
                     <view key="view" contentMode="scaleToFill" id="dZn-Ql-vJi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gVw-F0-wHR" customClass="RoundedImageView" customModule="ys_client_server_1347" customModuleProvider="target">
+                                <rect key="frame" x="87" y="20" width="240" height="240"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Tx1-PV-WoS"/>
+                                    <constraint firstAttribute="width" secondItem="gVw-F0-wHR" secondAttribute="height" id="zc7-Vc-gqX"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя Фамилия" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncR-WQ-rbJ">
+                                <rect key="frame" x="108" y="280" width="198" height="37"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="U90-G6-fcq">
+                                <rect key="frame" x="194.5" y="337.5" width="25" height="24"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="quO-oM-lSY"/>
+                                    <constraint firstAttribute="width" secondItem="U90-G6-fcq" secondAttribute="height" id="swa-N1-Vt6"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fwl-HN-pTW">
+                                <rect key="frame" x="190" y="372" width="34" height="23"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="9Qs-nT-8gy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ncR-WQ-rbJ" firstAttribute="top" secondItem="gVw-F0-wHR" secondAttribute="bottom" constant="20" id="Chz-BK-53f"/>
+                            <constraint firstItem="ncR-WQ-rbJ" firstAttribute="centerX" secondItem="dZn-Ql-vJi" secondAttribute="centerX" id="Gdx-ys-Is5"/>
+                            <constraint firstItem="U90-G6-fcq" firstAttribute="top" secondItem="ncR-WQ-rbJ" secondAttribute="bottom" constant="20" id="hlw-8H-BCU"/>
+                            <constraint firstItem="Fwl-HN-pTW" firstAttribute="top" secondItem="U90-G6-fcq" secondAttribute="bottom" constant="10" id="nLU-Kz-Opx"/>
+                            <constraint firstItem="gVw-F0-wHR" firstAttribute="centerX" secondItem="dZn-Ql-vJi" secondAttribute="centerX" id="ngQ-ob-qhq"/>
+                            <constraint firstItem="Fwl-HN-pTW" firstAttribute="centerX" secondItem="dZn-Ql-vJi" secondAttribute="centerX" id="p5P-w2-5vh"/>
+                            <constraint firstItem="gVw-F0-wHR" firstAttribute="top" secondItem="9Qs-nT-8gy" secondAttribute="top" constant="20" id="wmj-81-vtL"/>
+                            <constraint firstItem="U90-G6-fcq" firstAttribute="centerX" secondItem="dZn-Ql-vJi" secondAttribute="centerX" id="yOb-SD-Lxv"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Я" image="person.circle" catalog="system" selectedImage="person.circle.fill" id="mfU-oB-Je0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9qd-hG-aHY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1767" y="-131"/>
+            <point key="canvasLocation" x="1766.6666666666667" y="-131.25"/>
         </scene>
         <!--Main Tab View Controller-->
         <scene sceneID="tYq-Cw-owN">
@@ -114,6 +154,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="mappin.circle" catalog="system" width="128" height="121"/>
         <image name="person.2.circle" catalog="system" width="128" height="121"/>
         <image name="person.2.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
@@ -122,6 +163,9 @@
         <image name="photo.fill" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
