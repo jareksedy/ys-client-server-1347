@@ -10,6 +10,8 @@ import WebKit
 
 class FirstViewController: UIViewController {
     
+    let session = Session.instance
+    
     @IBOutlet weak var wk: WKWebView! {
         didSet{
             wk.navigationDelegate = self
@@ -29,13 +31,13 @@ class FirstViewController: UIViewController {
         urlComponents.host = "oauth.vk.com"
         urlComponents.path = "/authorize"
         urlComponents.queryItems = [
-            URLQueryItem(name: "client_id", value: "7902471"),
+            URLQueryItem(name: "client_id", value: session.cliendId),
             URLQueryItem(name: "display", value: "mobile"),
             URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
             URLQueryItem(name: "scope", value: "262150"),
             URLQueryItem(name: "response_type", value: "token"),
             //URLQueryItem(name: "revoke", value: "1"),
-            URLQueryItem(name: "v", value: "5.68")
+            URLQueryItem(name: "v", value: session.version)
         ]
         
         let request = URLRequest(url: urlComponents.url!)
@@ -70,8 +72,6 @@ extension FirstViewController: WKNavigationDelegate {
             print("Что-то пошло не так!")
             return
         }
-        
-        let session = Session.instance
         
         session.userId = Int(userId)!
         session.token = token

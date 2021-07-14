@@ -14,7 +14,6 @@ class PhotoCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "PhotoCell")
         
         PhotoAPI(Session.instance).get{ [weak self] photos in
             guard let self = self else { return }

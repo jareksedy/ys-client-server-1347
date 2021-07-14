@@ -15,18 +15,15 @@ class GroupAPI {
     let baseUrl = "https://api.vk.com/method"
     let method = "/groups.get"
     
-    let cliendId = "7902471"
-    let version = "5.68"
-    
     var params: Parameters
     
     init(_ session: Session) {
         
         self.params = [
-            "client_id": self.cliendId,
+            "client_id": session.cliendId,
             "user_id": session.userId,
             "access_token": session.token,
-            "v": self.version,
+            "v": session.version,
             "extended": "1",
             "fields": "description,members_count",
         ]
