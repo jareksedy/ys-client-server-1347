@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
 
 class PhotoCollectionViewController: UICollectionViewController {
     
@@ -29,7 +30,7 @@ class PhotoCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCollectionViewCell
-        
+
         AF.request(photoItems[indexPath.row].photo604!, method: .get).responseImage { response in
             guard let image = response.value else { return }
             cell.photoView.image = image

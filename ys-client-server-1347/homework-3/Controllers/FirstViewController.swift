@@ -76,7 +76,7 @@ extension FirstViewController: WKNavigationDelegate {
         session.userId = Int(userId)!
         session.token = token
         
-        performSegue(withIdentifier: "goWest", sender: self)
+        performSegue(withIdentifier: "toTabs", sender: self)
         
         decisionHandler(.cancel)
     }

@@ -20,11 +20,11 @@ class UserInfoViewController: UIViewController {
         super.viewDidLoad()
         
         UserAPI(Session.instance).get{ user in
-            
+
             guard let user = user else { return }
             self.userName.text = "\(user.firstName) \(user.lastName)"
             self.userLocation.text = "\(user.city), \(user.country)."
-            
+
             if let imageURL = user.imageURL {
                 AF.request(imageURL, method: .get).responseImage { response in
                     guard let image = response.value else { return }
