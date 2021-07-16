@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct User {
+class User: Object {
     
-    let id: Int
-    let firstName: String
-    let lastName: String
-    let imageURL: String?
-    let country: String
-    let city: String
+    @objc dynamic var id: Int = 0
+    @objc dynamic var firstName: String = ""
+    @objc dynamic var lastName: String = ""
+    @objc dynamic var imageURL: String?
+    @objc dynamic var country: String = ""
+    @objc dynamic var city: String = ""
 }
