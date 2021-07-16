@@ -45,12 +45,14 @@ class UserAPI {
                 let city = data["city"] as! [String: Any]
                 let country = data["country"] as! [String: Any]
                 
-                let user = User(id: data["id"] as! Int,
-                                firstName: data["first_name"] as! String,
-                                lastName: data["last_name"] as! String,
-                                imageURL: data["photo_200"] as? String,
-                                country: country["title"] as! String,
-                                city: city["title"] as! String)
+                let user = User()
+                
+                user.id = data["id"] as! Int
+                user.firstName = data["first_name"] as! String
+                user.lastName = data["last_name"] as! String
+                user.imageURL = data["photo_200"] as? String
+                user.country = country["title"] as! String
+                user.city = city["title"] as! String
                 
                 completion(user)
                 
