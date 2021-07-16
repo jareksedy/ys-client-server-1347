@@ -71,7 +71,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CA2738F7269D44BE00921FA9 /* homework-3 */ = {
+		CA2738F7269D44BE00921FA9 /* homework-4 */ = {
 			isa = PBXGroup;
 			children = (
 				CAC13DEC269E043F00C79A7D /* DynamicJSON */,
@@ -79,7 +79,7 @@
 				CAABB45A26995D8F004944AE /* Services */,
 				CA2738F8269D46C700921FA9 /* Controllers */,
 			);
-			path = "homework-3";
+			path = "homework-4";
 			sourceTree = "<group>";
 		};
 		CA2738F8269D46C700921FA9 /* Controllers */ = {
@@ -115,7 +115,7 @@
 			children = (
 				CA6A8FDB2695F76C00009ABC /* AppDelegate.swift */,
 				CA6A8FDD2695F76C00009ABC /* SceneDelegate.swift */,
-				CA2738F7269D44BE00921FA9 /* homework-3 */,
+				CA2738F7269D44BE00921FA9 /* homework-4 */,
 				CA6A8FEF2695F7EB00009ABC /* Resources */,
 			);
 			path = "ys-client-server-1347";
