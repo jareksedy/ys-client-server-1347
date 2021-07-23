@@ -12,13 +12,23 @@ import AlamofireImage
 class PhotoCollectionViewController: UICollectionViewController {
     
     var photoItems: [PhotoItem] = []
+    let photoDB = PhotoDB()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let localPhotos = photoDB.get()
+        
+        if localPhotos.count > 0 {
+            photoItems = localPhotos
+        }
+        
         PhotoAPI(Session.instance).get{ [weak self] photos in
             guard let self = self else { return }
-            self.photoItems = photos!
+            if photos != localPhotos {
+                self.photoItems = photos!
+                self.photoDB.addUpdate(photos!)
+            }
             self.collectionView.reloadData()
         }
     }
