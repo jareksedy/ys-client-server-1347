@@ -33,4 +33,8 @@ class PhotoItem: Object {
         self.photo1280 = photo1280
         self.text = text
     }
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }
