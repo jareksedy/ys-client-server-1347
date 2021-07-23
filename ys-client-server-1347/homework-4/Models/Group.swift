@@ -33,4 +33,8 @@ class GroupItem: Object, Codable {
         case imageURL = "photo_100"
         case membersCount = "members_count"
     }
+
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }
