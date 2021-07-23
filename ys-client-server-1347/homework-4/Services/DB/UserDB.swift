@@ -15,6 +15,7 @@ protocol UserDBProtocol {
 }
 
 class UserDB: UserDBProtocol {
+    
     let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
     lazy var mainRealm = try! Realm(configuration: config)
     
