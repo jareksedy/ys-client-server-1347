@@ -25,6 +25,9 @@ class UserInfoViewController: UIViewController {
             self.userName.text = "\(user.firstName) \(user.lastName)"
             self.userLocation.text = "\(user.city), \(user.country)."
 
+            let userDB = UserDB()
+            userDB.add(user)
+
             if let imageURL = user.imageURL {
                 AF.request(imageURL, method: .get).responseImage { response in
                     guard let image = response.value else { return }

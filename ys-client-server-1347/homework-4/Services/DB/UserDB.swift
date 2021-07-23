@@ -28,7 +28,7 @@ class UserDB: UserDBProtocol {
         
         do {
             mainRealm.beginWrite()
-            mainRealm.add(user)
+            mainRealm.add(user, update: .all)
             try mainRealm.commitWrite()
             
         } catch {

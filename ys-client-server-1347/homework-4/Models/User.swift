@@ -16,4 +16,8 @@ class User: Object {
     @objc dynamic var imageURL: String?
     @objc dynamic var country: String = ""
     @objc dynamic var city: String = ""
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }
