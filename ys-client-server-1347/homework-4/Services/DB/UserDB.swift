@@ -11,7 +11,7 @@ import RealmSwift
 protocol UserDBProtocol {
     
     func get() -> User?
-    func add(_ user: User)
+    func addUpdate(_ user: User)
 }
 
 class UserDB: UserDBProtocol {
@@ -24,7 +24,7 @@ class UserDB: UserDBProtocol {
         return user.count > 0 ? Array(user)[0] : nil
     }
     
-    func add(_ user: User) {
+    func addUpdate(_ user: User) {
         
         do {
             mainRealm.beginWrite()

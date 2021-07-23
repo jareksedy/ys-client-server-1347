@@ -50,7 +50,7 @@ class UserInfoViewController: UIViewController {
     
     private func update(_ user: User) {
         
-        userDB.add(user)
+        userDB.addUpdate(user)
         self.display(user)
     }
 }
