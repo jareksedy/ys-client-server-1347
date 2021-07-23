@@ -10,7 +10,7 @@ import RealmSwift
 
 protocol UserDBProtocol {
     
-    func get() -> User
+    func get() -> User?
     func add(_ user: User)
 }
 
@@ -18,10 +18,10 @@ class UserDB: UserDBProtocol {
     let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
     lazy var mainRealm = try! Realm(configuration: config)
     
-    func get() -> User {
+    func get() -> User? {
         
         let user = mainRealm.objects(User.self)
-        return Array(user)[0]
+        return user.count > 0 ? Array(user)[0] : nil
     }
     
     func add(_ user: User) {
