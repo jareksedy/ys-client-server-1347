@@ -10,7 +10,7 @@ import RealmSwift
 
 protocol GroupDBProtocol {
     
-    func get() -> [GroupItem]
+    func get() -> Results<GroupItem>
     func addUpdate(_ groups: [GroupItem])
 }
 
@@ -19,10 +19,10 @@ class GroupDB: GroupDBProtocol {
     let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
     lazy var mainRealm = try! Realm(configuration: config)
     
-    func get() -> [GroupItem] {
+    func get() -> Results<GroupItem> {
         
         let groups = mainRealm.objects(GroupItem.self)
-        return Array(groups)
+        return groups
     }
     
     func addUpdate(_ groups: [GroupItem]) {
@@ -31,7 +31,6 @@ class GroupDB: GroupDBProtocol {
             mainRealm.beginWrite()
             groups.forEach{ mainRealm.add($0, update: .all) }
             try mainRealm.commitWrite()
-            
         } catch {
             print(error)
         }
