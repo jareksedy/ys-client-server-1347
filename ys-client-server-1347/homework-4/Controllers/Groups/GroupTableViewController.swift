@@ -6,28 +6,39 @@
 //
 
 import UIKit
+import RealmSwift
 
 class GroupTableViewController: UITableViewController {
     
     var groupItems: [GroupItem] = []
     let groupDB = GroupDB()
+    var token: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let localGroups = groupDB.get()
+        let localGroupsResults = groupDB.get()
         
-        if localGroups.count > 0 {
-            groupItems = localGroups
+        token = localGroupsResults.observe { (changes: RealmCollectionChange) in
+            
+            switch changes {
+            
+            case .initial(let results):
+                self.groupItems = Array(results)
+                self.tableView.reloadData()
+                
+            case .update(let results, _, _, _):
+                self.groupItems = Array(results)
+                self.tableView.reloadData()
+                
+            case .error(let error):
+                print("Error: ", error)
+            }
         }
         
         GroupAPI(Session.instance).get{ [weak self] groups in
             guard let self = self else { return }
-            if groups!.response.items != localGroups {
-                self.groupItems = groups!.response.items
                 self.groupDB.addUpdate(groups!.response.items)
-            }
-            self.tableView.reloadData()
         }
     }
     
