@@ -8,28 +8,39 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import RealmSwift
 
 class PhotoCollectionViewController: UICollectionViewController {
     
     var photoItems: [PhotoItem] = []
     let photoDB = PhotoDB()
+    var token: NotificationToken?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let localPhotos = photoDB.get()
+        let localPhotosResults = photoDB.get()
         
-        if localPhotos.count > 0 {
-            photoItems = localPhotos
+        token = localPhotosResults.observe { (changes: RealmCollectionChange) in
+            
+            switch changes {
+            
+            case .initial(let results):
+                self.photoItems = Array(results)
+                self.collectionView.reloadData()
+                
+            case .update(let results, _, _, _):
+                self.photoItems = Array(results)
+                self.collectionView.reloadData()
+                
+            case .error(let error):
+                print("Error: ", error)
+            }
         }
         
         PhotoAPI(Session.instance).get{ [weak self] photos in
             guard let self = self else { return }
-            if photos != localPhotos {
-                self.photoItems = photos!
                 self.photoDB.addUpdate(photos!)
-            }
-            self.collectionView.reloadData()
         }
     }
 

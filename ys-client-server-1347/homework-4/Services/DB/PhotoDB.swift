@@ -10,7 +10,7 @@ import RealmSwift
 
 protocol PhotoDBProtocol {
     
-    func get() -> [PhotoItem]
+    func get() -> Results<PhotoItem>
     func addUpdate(_ photos: [PhotoItem])
 }
 
@@ -19,10 +19,10 @@ class PhotoDB: PhotoDBProtocol {
     let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
     lazy var mainRealm = try! Realm(configuration: config)
     
-    func get() -> [PhotoItem] {
+    func get() -> Results<PhotoItem> {
         
         let photos = mainRealm.objects(PhotoItem.self)
-        return Array(photos)
+        return photos
     }
     
     func addUpdate(_ photos: [PhotoItem]) {
