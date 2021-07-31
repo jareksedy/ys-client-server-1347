@@ -11,6 +11,7 @@
 		CA23398426B4FC4000A23F01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA23398326B4FC4000A23F01 /* GoogleService-Info.plist */; };
 		CA23398726B4FFB500A23F01 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CA23398626B4FFB500A23F01 /* FirebaseDatabase */; };
 		CA23398926B50A0900A23F01 /* UserFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA23398826B50A0900A23F01 /* UserFB.swift */; };
+		CA23398C26B52C5200A23F01 /* GroupFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA23398B26B52C5200A23F01 /* GroupFB.swift */; };
 		CA6A8FDC2695F76C00009ABC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6A8FDB2695F76C00009ABC /* AppDelegate.swift */; };
 		CA6A8FDE2695F76C00009ABC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6A8FDD2695F76C00009ABC /* SceneDelegate.swift */; };
 		CA6A8FE32695F76C00009ABC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA6A8FE12695F76C00009ABC /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		CA23398326B4FC4000A23F01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CA23398826B50A0900A23F01 /* UserFB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFB.swift; sourceTree = "<group>"; };
+		CA23398B26B52C5200A23F01 /* GroupFB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupFB.swift; sourceTree = "<group>"; };
 		CA6A8FD82695F76C00009ABC /* ys-client-server-1347.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ys-client-server-1347.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA6A8FDB2695F76C00009ABC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA6A8FDD2695F76C00009ABC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				CA23398826B50A0900A23F01 /* UserFB.swift */,
+				CA23398B26B52C5200A23F01 /* GroupFB.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				CA8E2B6726AB3B7B0063E38D /* PhotoDB.swift in Sources */,
 				CA8E2B6926AB41DE0063E38D /* GroupDB.swift in Sources */,
 				CACCC315269D87060024C5BF /* User.swift in Sources */,
+				CA23398C26B52C5200A23F01 /* GroupFB.swift in Sources */,
 				CAC13DE9269E00EC00C79A7D /* PhotoAPI.swift in Sources */,
 				CA6A8FDC2695F76C00009ABC /* AppDelegate.swift in Sources */,
 				CA8E2B6226AB0F990063E38D /* UserDB.swift in Sources */,

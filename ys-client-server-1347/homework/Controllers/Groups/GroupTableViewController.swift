@@ -7,11 +7,13 @@
 
 import UIKit
 import RealmSwift
+import Firebase
 
 class GroupTableViewController: UITableViewController {
     
     var groupItems: [GroupItem] = []
     let groupDB = GroupDB()
+    let ref = Database.database().reference(withPath: "groups")
     var token: NotificationToken?
     
     override func viewDidLoad() {
@@ -39,6 +41,17 @@ class GroupTableViewController: UITableViewController {
         GroupAPI(Session.instance).get{ [weak self] groups in
             guard let self = self else { return }
                 self.groupDB.addUpdate(groups!.response.items)
+                groups!.response.items.forEach { self.addUpdateRemote($0) }
+            
+            let alert = UIAlertController(title: "Успех!",
+                                          message: "Группы пользователя успешно добавлены в Firebase.",
+                                          preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "Ну дык!",
+                                          style: UIAlertAction.Style.default,
+                                          handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
@@ -67,5 +80,16 @@ class GroupTableViewController: UITableViewController {
             return cell
             
         }
+    }
+    
+    private func addUpdateRemote(_ group: GroupItem) {
+        let remoteGroup = GroupFB(id: group.id,
+                                  name: group.name,
+                                  groupDescription: group.groupDescription ?? "",
+                                  imageURL: group.imageURL,
+                                  membersCount: group.membersCount)
+        
+        let groupRef = ref.child(String(group.id))
+        groupRef.setValue(remoteGroup.toAnyObject())
     }
 }

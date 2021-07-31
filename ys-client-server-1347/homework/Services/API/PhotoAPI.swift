@@ -47,7 +47,7 @@ class PhotoAPI {
                           photo130: $0.photo_130.string!,
                           photo604: $0.photo_604.string!,
                           photo807: $0.photo_807.string!,
-                          photo1280: $0.photo_1280.string!,
+                          photo1280: $0.photo_1280.string,
                           text: $0.text.string!)
             }
             
