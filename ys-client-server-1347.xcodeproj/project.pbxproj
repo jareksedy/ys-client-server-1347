@@ -10,6 +10,7 @@
 		CA1E7CA726A1F7AE0039FC8D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CA1E7CA626A1F7AE0039FC8D /* RealmSwift */; };
 		CA23398426B4FC4000A23F01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA23398326B4FC4000A23F01 /* GoogleService-Info.plist */; };
 		CA23398726B4FFB500A23F01 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CA23398626B4FFB500A23F01 /* FirebaseDatabase */; };
+		CA23398926B50A0900A23F01 /* UserFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA23398826B50A0900A23F01 /* UserFB.swift */; };
 		CA6A8FDC2695F76C00009ABC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6A8FDB2695F76C00009ABC /* AppDelegate.swift */; };
 		CA6A8FDE2695F76C00009ABC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6A8FDD2695F76C00009ABC /* SceneDelegate.swift */; };
 		CA6A8FE32695F76C00009ABC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA6A8FE12695F76C00009ABC /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		CA23398326B4FC4000A23F01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CA23398826B50A0900A23F01 /* UserFB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFB.swift; sourceTree = "<group>"; };
 		CA6A8FD82695F76C00009ABC /* ys-client-server-1347.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ys-client-server-1347.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA6A8FDB2695F76C00009ABC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA6A8FDD2695F76C00009ABC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA23398A26B50A1400A23F01 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				CA23398826B50A0900A23F01 /* UserFB.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
 		CA2738F7269D44BE00921FA9 /* homework */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +230,7 @@
 		CACCC313269D84C20024C5BF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CA23398A26B50A1400A23F01 /* Remote */,
 				CAD3ABE3269892E20020BF1F /* Session.swift */,
 				CACCC314269D87060024C5BF /* User.swift */,
 				CACCC31D269DBCDE0024C5BF /* Group.swift */,
@@ -319,6 +330,7 @@
 				CAC13DF0269E0B9B00C79A7D /* PhotoCollectionViewCell.swift in Sources */,
 				CAD3ABE0269892090020BF1F /* FirstViewController.swift in Sources */,
 				CAC13DE4269DED8A00C79A7D /* GroupTableViewCellNoDesc.swift in Sources */,
+				CA23398926B50A0900A23F01 /* UserFB.swift in Sources */,
 				CA8E2B6726AB3B7B0063E38D /* PhotoDB.swift in Sources */,
 				CA8E2B6926AB41DE0063E38D /* GroupDB.swift in Sources */,
 				CACCC315269D87060024C5BF /* User.swift in Sources */,

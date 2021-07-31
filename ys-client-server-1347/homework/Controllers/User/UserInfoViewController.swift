@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import Firebase
 
 class UserInfoViewController: UIViewController {
     
@@ -17,6 +18,8 @@ class UserInfoViewController: UIViewController {
     @IBOutlet weak var userLocation: UILabel!
     
     let userDB = UserDB()
+    
+    let ref = Database.database().reference(withPath: "users")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,7 @@ class UserInfoViewController: UIViewController {
             guard let user = user else { return }
             if user != localUser {
                 self.update(user)
+                self.addUpdateRemote(user)
             }
         }
     }
@@ -52,5 +56,28 @@ class UserInfoViewController: UIViewController {
         
         userDB.addUpdate(user)
         self.display(user)
+    }
+    
+    private func addUpdateRemote(_ user: User) {
+        
+        let remoteUser = UserFB(id: user.id,
+                                firstName: user.firstName,
+                                lastName: user.lastName,
+                                city: user.city,
+                                country: user.country,
+                                imageURL: user.imageURL ?? "")
+        
+        let userRef = ref.child(user.firstName)
+        userRef.setValue(remoteUser.toAnyObject())
+        
+        let alert = UIAlertController(title: "Успех!",
+                                      message: "Пользователь \(user.firstName) \(user.lastName) успешно добавлен в Firebase.",
+                                      preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "Ну дык!",
+                                      style: UIAlertAction.Style.default,
+                                      handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }
