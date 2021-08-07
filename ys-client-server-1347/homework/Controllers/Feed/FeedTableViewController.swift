@@ -17,13 +17,19 @@ class FeedTableViewController: UITableViewController {
         FeedAPI(Session.instance).get{ [weak self] feed in
             guard let self = self else { return }
             self.feedItems = feed!.response.items
+            self.tableView.reloadData()
         }
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return feedItems.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! FeedTableViewCell
+        cell.textLabel?.text = feedItems[indexPath.row].text
+        return cell
     }
 }

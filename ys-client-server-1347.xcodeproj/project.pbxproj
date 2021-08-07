@@ -20,6 +20,7 @@
 		CA6A8FE32695F76C00009ABC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA6A8FE12695F76C00009ABC /* Main.storyboard */; };
 		CA6A8FE52695F77100009ABC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA6A8FE42695F77100009ABC /* Assets.xcassets */; };
 		CA6A8FE82695F77100009ABC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA6A8FE62695F77100009ABC /* LaunchScreen.storyboard */; };
+		CA7A668126BEF17800B5E19C /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A668026BEF17800B5E19C /* FeedTableViewCell.swift */; };
 		CA8E2B6226AB0F990063E38D /* UserDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8E2B6126AB0F990063E38D /* UserDB.swift */; };
 		CA8E2B6726AB3B7B0063E38D /* PhotoDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8E2B6626AB3B7B0063E38D /* PhotoDB.swift */; };
 		CA8E2B6926AB41DE0063E38D /* GroupDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8E2B6826AB41DE0063E38D /* GroupDB.swift */; };
@@ -57,6 +58,7 @@
 		CA6A8FE42695F77100009ABC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA6A8FE72695F77100009ABC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA6A8FE92695F77100009ABC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA7A668026BEF17800B5E19C /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		CA8E2B6126AB0F990063E38D /* UserDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDB.swift; sourceTree = "<group>"; };
 		CA8E2B6626AB3B7B0063E38D /* PhotoDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDB.swift; sourceTree = "<group>"; };
 		CA8E2B6826AB41DE0063E38D /* GroupDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDB.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				CA437F2126BE853700406575 /* FeedTableViewController.swift */,
+				CA7A668026BEF17800B5E19C /* FeedTableViewCell.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				CA8E2B6926AB41DE0063E38D /* GroupDB.swift in Sources */,
 				CACCC315269D87060024C5BF /* User.swift in Sources */,
 				CA23398C26B52C5200A23F01 /* GroupFB.swift in Sources */,
+				CA7A668126BEF17800B5E19C /* FeedTableViewCell.swift in Sources */,
 				CAC13DE9269E00EC00C79A7D /* PhotoAPI.swift in Sources */,
 				CA6A8FDC2695F76C00009ABC /* AppDelegate.swift in Sources */,
 				CA8E2B6226AB0F990063E38D /* UserDB.swift in Sources */,

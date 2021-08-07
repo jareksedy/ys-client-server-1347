@@ -58,7 +58,7 @@ struct Item: Codable {
     let sourceID, date: Int
     let canDoubtCategory, canSetCategory: Bool?
     let postType, text: String
-    let markedAsAds: Int
+    let markedAsAds: Int?
     let attachments: [Attachment]
     let postSource: PostSource
     let comments: Comments
@@ -100,7 +100,7 @@ struct Photo: Codable {
     let photo807: String?
     let postID: Int?
     let text: String
-    let userID, width: Int
+    let userID, width: Int?
 
     enum CodingKeys: String, CodingKey {
         case albumID = "album_id"
