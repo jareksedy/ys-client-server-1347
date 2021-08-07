@@ -34,7 +34,7 @@ class FirstViewController: UIViewController {
             URLQueryItem(name: "client_id", value: session.cliendId),
             URLQueryItem(name: "display", value: "mobile"),
             URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
-            URLQueryItem(name: "scope", value: "262150"),
+            URLQueryItem(name: "scope", value: "270342"),
             URLQueryItem(name: "response_type", value: "token"),
             URLQueryItem(name: "revoke", value: "1"),
             URLQueryItem(name: "v", value: session.version)

@@ -12,6 +12,9 @@
 		CA23398726B4FFB500A23F01 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CA23398626B4FFB500A23F01 /* FirebaseDatabase */; };
 		CA23398926B50A0900A23F01 /* UserFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA23398826B50A0900A23F01 /* UserFB.swift */; };
 		CA23398C26B52C5200A23F01 /* GroupFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA23398B26B52C5200A23F01 /* GroupFB.swift */; };
+		CA437F2026BE84F300406575 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA437F1F26BE84F300406575 /* Feed.swift */; };
+		CA437F2226BE853700406575 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA437F2126BE853700406575 /* FeedTableViewController.swift */; };
+		CA437F2526BE859800406575 /* FeedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA437F2426BE859800406575 /* FeedAPI.swift */; };
 		CA6A8FDC2695F76C00009ABC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6A8FDB2695F76C00009ABC /* AppDelegate.swift */; };
 		CA6A8FDE2695F76C00009ABC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6A8FDD2695F76C00009ABC /* SceneDelegate.swift */; };
 		CA6A8FE32695F76C00009ABC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA6A8FE12695F76C00009ABC /* Main.storyboard */; };
@@ -44,6 +47,9 @@
 		CA23398326B4FC4000A23F01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CA23398826B50A0900A23F01 /* UserFB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFB.swift; sourceTree = "<group>"; };
 		CA23398B26B52C5200A23F01 /* GroupFB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupFB.swift; sourceTree = "<group>"; };
+		CA437F1F26BE84F300406575 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		CA437F2126BE853700406575 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
+		CA437F2426BE859800406575 /* FeedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAPI.swift; sourceTree = "<group>"; };
 		CA6A8FD82695F76C00009ABC /* ys-client-server-1347.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ys-client-server-1347.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA6A8FDB2695F76C00009ABC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA6A8FDD2695F76C00009ABC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,8 +121,17 @@
 				CAC13DE2269DECAA00C79A7D /* Groups */,
 				CACCC312269D83A10024C5BF /* CustomUIControllers */,
 				CAD3ABDF269892090020BF1F /* FirstViewController.swift */,
+				CA437F2326BE853C00406575 /* Feed */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CA437F2326BE853C00406575 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				CA437F2126BE853700406575 /* FeedTableViewController.swift */,
+			);
+			path = Feed;
 			sourceTree = "<group>";
 		};
 		CA6A8FCF2695F76C00009ABC = {
@@ -163,6 +178,7 @@
 			children = (
 				CACCC316269D88010024C5BF /* UserAPI.swift */,
 				CACCC323269DCAE00024C5BF /* GroupAPI.swift */,
+				CA437F2426BE859800406575 /* FeedAPI.swift */,
 				CAC13DE8269E00EC00C79A7D /* PhotoAPI.swift */,
 			);
 			path = API;
@@ -237,6 +253,7 @@
 				CAD3ABE3269892E20020BF1F /* Session.swift */,
 				CACCC314269D87060024C5BF /* User.swift */,
 				CACCC31D269DBCDE0024C5BF /* Group.swift */,
+				CA437F1F26BE84F300406575 /* Feed.swift */,
 				CAC13DED269E05CA00C79A7D /* Photo.swift */,
 			);
 			path = Models;
@@ -325,7 +342,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA437F2526BE859800406575 /* FeedAPI.swift in Sources */,
 				CACCC31E269DBCDE0024C5BF /* Group.swift in Sources */,
+				CA437F2026BE84F300406575 /* Feed.swift in Sources */,
+				CA437F2226BE853700406575 /* FeedTableViewController.swift in Sources */,
 				CACCC320269DC2FB0024C5BF /* GroupTableViewController.swift in Sources */,
 				CACCC311269D82510024C5BF /* RoundedImageView.swift in Sources */,
 				CAD3ABE4269892E20020BF1F /* Session.swift in Sources */,
