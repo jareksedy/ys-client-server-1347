@@ -36,7 +36,7 @@ struct Group: Codable {
     let name, screenName: String
     let isClosed: Int
     let type: String
-    let isAdmin, isMember, isAdvertiser: Int
+    let isAdmin, isMember, isAdvertiser: Int?
     let photo50, photo100, photo200: String
 
     enum CodingKeys: String, CodingKey {
@@ -56,7 +56,7 @@ struct Group: Codable {
 // MARK: - Item
 struct Item: Codable {
     let sourceID, date: Int
-    let canDoubtCategory, canSetCategory: Bool
+    let canDoubtCategory, canSetCategory: Bool?
     let postType, text: String
     let markedAsAds: Int
     let attachments: [Attachment]
@@ -65,7 +65,7 @@ struct Item: Codable {
     let likes: Likes
     let reposts: Reposts
     let views: Views
-    let postID: Int
+    let postID: Int?
     let type: String
 
     enum CodingKeys: String, CodingKey {
@@ -87,7 +87,7 @@ struct Item: Codable {
 // MARK: - Attachment
 struct Attachment: Codable {
     let type: String
-    let photo: Photo
+    let photo: Photo?
 }
 
 // MARK: - Photo
@@ -96,9 +96,9 @@ struct Photo: Codable {
     let hasTags: Bool
     let accessKey: String
     let height: Int
-    let photo1280, photo130, photo604, photo75: String
-    let photo807: String
-    let postID: Int
+    let photo1280, photo130, photo604, photo75: String?
+    let photo807: String?
+    let postID: Int?
     let text: String
     let userID, width: Int
 
@@ -169,7 +169,7 @@ struct Profile: Codable {
     let id: Int
     let lastName: String
     let sex: Int
-    let screenName: String
+    let screenName: String?
     let photo50, photo100: String
     let onlineInfo: OnlineInfo
     let online: Int
