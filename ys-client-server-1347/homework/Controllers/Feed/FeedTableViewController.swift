@@ -8,12 +8,15 @@
 import UIKit
 
 class FeedTableViewController: UITableViewController {
+    
+    var feedItems: [Item] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        FeedAPI(Session.instance).get{ [weak self] groups in
+        FeedAPI(Session.instance).get{ [weak self] feed in
             guard let self = self else { return }
+            self.feedItems = feed!.response.items
         }
     }
 

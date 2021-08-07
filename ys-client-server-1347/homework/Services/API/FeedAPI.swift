@@ -25,22 +25,25 @@ class FeedAPI {
             "access_token": session.token,
             "v": session.version,
             "filters": "post",
+            //"count": "2",
         ]
         
     }
     
-    func get(_ completion: @escaping (Groups?) -> ()) {
+    func get(_ completion: @escaping (Feed?) -> ()) {
         
         let url = baseUrl + method
         
         AF.request(url, method: .get, parameters: params).responseData { response in
             
+            //print(response.request)
+            
             guard let data = response.data else { return }
             
             do {
-                var groups: Groups
-                groups = try JSONDecoder().decode(Groups.self, from: data)
-                completion(groups)
+                var feed: Feed
+                feed = try JSONDecoder().decode(Feed.self, from: data)
+                completion(feed)
             } catch {
                 print(error)
             }
