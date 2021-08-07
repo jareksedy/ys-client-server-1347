@@ -34,7 +34,7 @@ class UserInfoViewController: UIViewController {
             guard let user = user else { return }
             if user != localUser {
                 self.update(user)
-                self.addUpdateRemote(user)
+                //self.addUpdateRemote(user)
             }
         }
     }

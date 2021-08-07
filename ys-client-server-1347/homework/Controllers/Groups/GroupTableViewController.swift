@@ -41,17 +41,17 @@ class GroupTableViewController: UITableViewController {
         GroupAPI(Session.instance).get{ [weak self] groups in
             guard let self = self else { return }
                 self.groupDB.addUpdate(groups!.response.items)
-                groups!.response.items.forEach { self.addUpdateRemote($0) }
-            
-            let alert = UIAlertController(title: "Успех!",
-                                          message: "Группы пользователя успешно добавлены в Firebase.",
-                                          preferredStyle: UIAlertController.Style.alert)
-            
-            alert.addAction(UIAlertAction(title: "Ну дык!",
-                                          style: UIAlertAction.Style.default,
-                                          handler: nil))
-            
-            self.present(alert, animated: true, completion: nil)
+//                groups!.response.items.forEach { self.addUpdateRemote($0) }
+//
+//            let alert = UIAlertController(title: "Успех!",
+//                                          message: "Группы пользователя успешно добавлены в Firebase.",
+//                                          preferredStyle: UIAlertController.Style.alert)
+//
+//            alert.addAction(UIAlertAction(title: "Ну дык!",
+//                                          style: UIAlertAction.Style.default,
+//                                          handler: nil))
+//
+//            self.present(alert, animated: true, completion: nil)
         }
     }
     
