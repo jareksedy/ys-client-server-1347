@@ -14,6 +14,7 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var postDate: UILabel!
     @IBOutlet weak var postText: UILabel!
     @IBOutlet weak var postPhoto: UIImageView!
+    @IBOutlet weak var likesViewsReposts: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -47,14 +48,22 @@ class FeedTableViewCell: UITableViewCell {
         
         postDate.text = item.date.getDateStringFromUTC()
         postText.text = item.text
+        likesViewsReposts.text = "♡ \(item.likes.count), ➦ \(item.reposts.count), 👀 \(item.views.count)"
         
         if item.attachments != nil {
             if let firstAttachment = item.attachments?[0] {
                 
                 switch firstAttachment.type {
                 
+                case "video":
+                    
+                    postPhoto.image = UIImage(named: "defaultimage")
+                
                 case "link":
-                    if let photo604 = firstAttachment.photo?.photo604 {
+                    
+                    //postText.text! += "\n[--link--]"
+                    
+                    if let photo604 = firstAttachment.link?.photo?.photo604 {
                         AF.request(photo604, method: .get).responseImage { response in
                             guard let image = response.value else { return }
                             self.postPhoto.image = image
@@ -62,14 +71,18 @@ class FeedTableViewCell: UITableViewCell {
                     }
                     
                 case "photo":
-                    if let photo807 = firstAttachment.photo?.photo807 {
-                        AF.request(photo807, method: .get).responseImage { response in
+                    
+                    //postText.text! += "\n[--photo--]"
+                    
+                    if let photo604 = firstAttachment.photo?.photo604 {
+                        AF.request(photo604, method: .get).responseImage { response in
                             guard let image = response.value else { return }
                             self.postPhoto.image = image
                         }
                     }
                     
                 default:
+                    
                     postPhoto.image = UIImage(named: "defaultimage")
                 }
             }

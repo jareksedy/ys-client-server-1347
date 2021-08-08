@@ -58,7 +58,7 @@ struct Item: Codable {
     let sourceID: Int
     let date: TimeInterval
     let canDoubtCategory, canSetCategory: Bool?
-    let postType, text: String
+    let postType, text: String?
     let markedAsAds: Int?
     let attachments: [Attachment]?
     let postSource: PostSource
@@ -89,13 +89,20 @@ struct Item: Codable {
 struct Attachment: Codable {
     let type: String
     let photo: Photo?
+    let link: Link?
+}
+
+// MARK: - Link
+struct Link: Codable {
+    let url: String
+    let photo: Photo?
 }
 
 // MARK: - Photo
 struct Photo: Codable {
     let albumID, date, id, ownerID: Int
     let hasTags: Bool
-    let accessKey: String
+    let accessKey: String?
     let height: Int
     let photo1280, photo130, photo604, photo75: String?
     let photo807: String?
