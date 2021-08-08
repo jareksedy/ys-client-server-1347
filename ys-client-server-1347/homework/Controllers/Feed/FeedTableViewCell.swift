@@ -12,6 +12,7 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var postUserGroupImage: RoundedImageView!
     @IBOutlet weak var postUserGroupName: UILabel!
     @IBOutlet weak var postDate: UILabel!
+    @IBOutlet weak var postText: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,6 +45,7 @@ class FeedTableViewCell: UITableViewCell {
         }
         
         postDate.text = item.date.getDateStringFromUTC()
+        postText.text = item.text
     }
 }
 
