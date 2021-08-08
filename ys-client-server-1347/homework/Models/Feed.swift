@@ -55,7 +55,8 @@ struct Group: Codable {
 
 // MARK: - Item
 struct Item: Codable {
-    let sourceID, date: Int
+    let sourceID: Int
+    let date: TimeInterval
     let canDoubtCategory, canSetCategory: Bool?
     let postType, text: String
     let markedAsAds: Int?

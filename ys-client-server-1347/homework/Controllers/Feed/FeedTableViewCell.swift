@@ -43,6 +43,19 @@ class FeedTableViewCell: UITableViewCell {
             }
         }
         
-        postDate.text = String(item.date)
+        postDate.text = item.date.getDateStringFromUTC()
+    }
+}
+
+extension Double {
+    func getDateStringFromUTC() -> String {
+        let date = Date(timeIntervalSince1970: self)
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ru_RU")
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+
+        return dateFormatter.string(from: date)
     }
 }
