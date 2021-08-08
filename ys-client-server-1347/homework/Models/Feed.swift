@@ -60,7 +60,7 @@ struct Item: Codable {
     let canDoubtCategory, canSetCategory: Bool?
     let postType, text: String
     let markedAsAds: Int?
-    let attachments: [Attachment]
+    let attachments: [Attachment]?
     let postSource: PostSource
     let comments: Comments
     let likes: Likes

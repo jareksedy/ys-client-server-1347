@@ -13,11 +13,12 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var postUserGroupName: UILabel!
     @IBOutlet weak var postDate: UILabel!
     @IBOutlet weak var postText: UILabel!
+    @IBOutlet weak var postPhoto: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -31,7 +32,7 @@ class FeedTableViewCell: UITableViewCell {
                 guard let image = response.value else { return }
                 self.postUserGroupImage.image = image
             }
-
+            
         } else {
             if let profile = profile {
                 
@@ -46,18 +47,46 @@ class FeedTableViewCell: UITableViewCell {
         
         postDate.text = item.date.getDateStringFromUTC()
         postText.text = item.text
+        
+        if item.attachments != nil {
+            if let firstAttachment = item.attachments?[0] {
+                
+                switch firstAttachment.type {
+                
+                case "link":
+                    if let photo604 = firstAttachment.photo?.photo604 {
+                        AF.request(photo604, method: .get).responseImage { response in
+                            guard let image = response.value else { return }
+                            self.postPhoto.image = image
+                        }
+                    }
+                    
+                case "photo":
+                    if let photo807 = firstAttachment.photo?.photo807 {
+                        AF.request(photo807, method: .get).responseImage { response in
+                            guard let image = response.value else { return }
+                            self.postPhoto.image = image
+                        }
+                    }
+                    
+                default:
+                    postPhoto.image = UIImage(named: "defaultimage")
+                }
+            }
+        }
+        
     }
 }
 
 extension Double {
     func getDateStringFromUTC() -> String {
         let date = Date(timeIntervalSince1970: self)
-
+        
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ru_RU")
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .short
-
+        
         return dateFormatter.string(from: date)
     }
 }
