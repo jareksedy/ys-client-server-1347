@@ -32,7 +32,15 @@ class FeedTableViewCell: UITableViewCell {
             }
 
         } else {
-            postUserGroupName.text = "\(profile?.firstName ?? "") \(profile?.lastName ?? "")"
+            if let profile = profile {
+                
+                postUserGroupName.text = "\(profile.firstName) \(profile.lastName)"
+                
+                AF.request(profile.photo100, method: .get).responseImage { response in
+                    guard let image = response.value else { return }
+                    self.postUserGroupImage.image = image
+                }
+            }
         }
         
         postDate.text = String(item.date)
