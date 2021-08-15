@@ -26,18 +26,22 @@ class FeedTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return feedItems.count
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return feedItems.count
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedItemInfoCell", for: indexPath) as! FeedItemInfoTableViewCell
         
-        let currentFeedItem = feedItems[indexPath.row]
+        let currentFeedItem = feedItems[indexPath.section]
         
-        switch feedItems[indexPath.row].sourceID.signum() {
+        switch feedItems[indexPath.section].sourceID.signum() {
         
         case 1: // Пост пользователя
             let currentFeedItemProfile = feedProfiles.filter{ $0.id == currentFeedItem.sourceID }[0]
@@ -51,6 +55,10 @@ class FeedTableViewController: UITableViewController {
         }
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return feedItems[section].date.getDateStringFromUTC()
     }
 }
 
