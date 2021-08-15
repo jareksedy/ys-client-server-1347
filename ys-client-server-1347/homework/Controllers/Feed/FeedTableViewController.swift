@@ -37,7 +37,7 @@ class FeedTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "feedItemInfoCell", for: indexPath) as! FeedItemInfoTableViewCell
+        let infoCell = tableView.dequeueReusableCell(withIdentifier: "feedItemInfoCell", for: indexPath) as! FeedItemInfoTableViewCell
         
         let currentFeedItem = feedItems[indexPath.section]
         
@@ -45,16 +45,16 @@ class FeedTableViewController: UITableViewController {
         
         case 1: // Пост пользователя
             let currentFeedItemProfile = feedProfiles.filter{ $0.id == currentFeedItem.sourceID }[0]
-            cell.configure(profile: currentFeedItemProfile, postDate: currentFeedItem.date)
+            infoCell.configure(profile: currentFeedItemProfile, postDate: currentFeedItem.date)
             
         case -1: // Пост группы
             let currentFeedItemGroup = feedGroups.filter{ $0.id == abs(currentFeedItem.sourceID) }[0]
-            cell.configure(group: currentFeedItemGroup, postDate: currentFeedItem.date)
+            infoCell.configure(group: currentFeedItemGroup, postDate: currentFeedItem.date)
             
         default: break
         }
         
-        return cell
+        return infoCell
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

@@ -362,13 +362,30 @@
                                     <outlet property="feedItemUserGroupName" destination="jtb-eH-Fx1" id="ON0-ge-NBm"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedItemTextCell" id="8ph-aJ-zAb">
-                                <rect key="frame" x="0.0" y="144.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedItemTextCell" id="8ph-aJ-zAb" customClass="FeedItemTextTableViewCell" customModule="ys_client_server_1347" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="144.5" width="414" height="53"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8ph-aJ-zAb" id="7BU-uP-6CX">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="53"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Текст публикации." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIi-Tk-OYa">
+                                            <rect key="frame" x="20" y="16" width="374" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="RIi-Tk-OYa" secondAttribute="trailing" id="CGt-PM-jWf"/>
+                                        <constraint firstItem="RIi-Tk-OYa" firstAttribute="leading" secondItem="7BU-uP-6CX" secondAttribute="leadingMargin" id="ETr-ht-sTq"/>
+                                        <constraint firstItem="RIi-Tk-OYa" firstAttribute="top" secondItem="7BU-uP-6CX" secondAttribute="topMargin" constant="5" id="QIh-2c-zTx"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="RIi-Tk-OYa" secondAttribute="bottom" constant="5" id="pdc-M0-coa"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="feedItemText" destination="RIi-Tk-OYa" id="C98-KL-w6z"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
