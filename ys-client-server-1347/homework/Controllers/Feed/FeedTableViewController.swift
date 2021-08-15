@@ -32,33 +32,60 @@ class FeedTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let infoCell = tableView.dequeueReusableCell(withIdentifier: "feedItemInfoCell", for: indexPath) as! FeedItemInfoTableViewCell
+        switch indexPath.row {
+        case 0:
+            return feedInfoCell(indexPath: indexPath)
+            
+        case 1:
+            return feedTextCell(indexPath: indexPath)
+            
+        default:
+            return feedInfoCell(indexPath: indexPath)
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return feedItems[section].date.getDateStringFromUTC()
+    }
+
+    // MARK: - Create & configure cells.
+    
+    // MARK: - Feed item author, date & image.
+    func feedInfoCell(indexPath: IndexPath) -> UITableViewCell {
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "feedItemInfoCell", for: indexPath) as! FeedItemInfoTableViewCell
         let currentFeedItem = feedItems[indexPath.section]
         
         switch feedItems[indexPath.section].sourceID.signum() {
         
         case 1: // Пост пользователя
             let currentFeedItemProfile = feedProfiles.filter{ $0.id == currentFeedItem.sourceID }[0]
-            infoCell.configure(profile: currentFeedItemProfile, postDate: currentFeedItem.date)
+            cell.configure(profile: currentFeedItemProfile, postDate: currentFeedItem.date)
             
         case -1: // Пост группы
             let currentFeedItemGroup = feedGroups.filter{ $0.id == abs(currentFeedItem.sourceID) }[0]
-            infoCell.configure(group: currentFeedItemGroup, postDate: currentFeedItem.date)
+            cell.configure(group: currentFeedItemGroup, postDate: currentFeedItem.date)
             
         default: break
         }
         
-        return infoCell
+        return cell
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return feedItems[section].date.getDateStringFromUTC()
+    // MARK: - Feed item text.
+    func feedTextCell(indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "feedItemTextCell", for: indexPath) as! FeedItemTextTableViewCell
+        let currentFeedItem = feedItems[indexPath.section]
+        cell.configure(text: currentFeedItem.text)
+        
+        return cell
+        
     }
 }
 
