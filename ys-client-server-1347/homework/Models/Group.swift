@@ -9,11 +9,11 @@ import Foundation
 
 // MARK: - Main
 struct Groups: Codable {
-    let response: Response
+    let response: GroupResponse
 }
 
 // MARK: - Response
-struct Response: Codable {
+struct GroupResponse: Codable {
     let count: Int
     let items: [GroupItem]
 }

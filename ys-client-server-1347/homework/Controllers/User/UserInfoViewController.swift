@@ -27,10 +27,10 @@ class UserInfoViewController: UIViewController {
     
     private func display(_ user: User) {
         
-        self.userName.text = "\(user.firstName) \(user.lastName)"
-        self.userLocation.text = "\(user.city), \(user.country)."
+        self.userName.text = "\(user.response[0].firstName) \(user.response[0].lastName)"
+        self.userLocation.text = "\(user.response[0].city.title), \(user.response[0].country.title)."
         
-        if let imageURL = user.imageURL {
+        if let imageURL = user.response[0].photo200 {
             AF.request(imageURL, method: .get).responseImage { response in
                 guard let image = response.value else { return }
                 self.userImage.image = image

@@ -8,8 +8,6 @@
 import Foundation
 import Alamofire
 
-// === СПИСОК ГРУПП (КОДАБЛ) ===
-
 class GroupAPI {
     
     let baseUrl = "https://api.vk.com/method"
