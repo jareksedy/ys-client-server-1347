@@ -6,18 +6,13 @@
 //
 
 import Foundation
-import RealmSwift
 
-class User: Object {
+class User {
     
-    @objc dynamic var id: Int = 0
-    @objc dynamic var firstName: String = ""
-    @objc dynamic var lastName: String = ""
-    @objc dynamic var imageURL: String?
-    @objc dynamic var country: String = ""
-    @objc dynamic var city: String = ""
-    
-    override static func primaryKey() -> String? {
-        return "id"
-    }
+    var id: Int = 0
+    var firstName: String = ""
+    var lastName: String = ""
+    var imageURL: String?
+    var country: String = ""
+    var city: String = ""
 }

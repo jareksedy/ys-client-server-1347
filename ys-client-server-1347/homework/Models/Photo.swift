@@ -6,17 +6,16 @@
 //
 
 import Foundation
-import RealmSwift
 
-class PhotoItem: Object {
+class PhotoItem: Codable {
     
-    @objc dynamic var id: Int = 0
-    @objc dynamic var albumID: Int = 0
-    @objc dynamic var ownerID: Int = 0
-    @objc dynamic var width: Int = 0
-    @objc dynamic var height: Int = 0
-    @objc dynamic var photo75, photo130, photo604, photo807, photo1280: String?
-    @objc dynamic var text: String?
+    var id: Int = 0
+    var albumID: Int = 0
+    var ownerID: Int = 0
+    var width: Int = 0
+    var height: Int = 0
+    var photo75, photo130, photo604, photo807, photo1280: String?
+    var text: String?
     
     convenience required init(id: Int, albumID: Int, ownerID: Int, width: Int, height: Int, photo75: String?, photo130: String?, photo604: String?, photo807: String?, photo1280: String?, text: String?) {
         
@@ -32,9 +31,5 @@ class PhotoItem: Object {
         self.photo807 = photo807
         self.photo1280 = photo1280
         self.text = text
-    }
-    
-    override static func primaryKey() -> String? {
-        return "id"
     }
 }
