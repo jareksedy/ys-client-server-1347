@@ -103,7 +103,7 @@ struct Photo: Codable {
     let albumID, date, id, ownerID: Int
     let hasTags: Bool
     let accessKey: String?
-    let height: Int
+    let height: Int?
     let photo1280, photo130, photo604, photo75: String?
     let photo807: String?
     let postID: Int?
