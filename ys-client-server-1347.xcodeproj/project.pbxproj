@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		CA1E7CA726A1F7AE0039FC8D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CA1E7CA626A1F7AE0039FC8D /* RealmSwift */; };
 		CA23398426B4FC4000A23F01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA23398326B4FC4000A23F01 /* GoogleService-Info.plist */; };
-		CA23398726B4FFB500A23F01 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CA23398626B4FFB500A23F01 /* FirebaseDatabase */; };
-		CA23398926B50A0900A23F01 /* UserFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA23398826B50A0900A23F01 /* UserFB.swift */; };
-		CA23398C26B52C5200A23F01 /* GroupFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA23398B26B52C5200A23F01 /* GroupFB.swift */; };
 		CA437F2026BE84F300406575 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA437F1F26BE84F300406575 /* Feed.swift */; };
 		CA437F2226BE853700406575 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA437F2126BE853700406575 /* FeedTableViewController.swift */; };
 		CA437F2526BE859800406575 /* FeedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA437F2426BE859800406575 /* FeedAPI.swift */; };
@@ -46,8 +43,6 @@
 
 /* Begin PBXFileReference section */
 		CA23398326B4FC4000A23F01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CA23398826B50A0900A23F01 /* UserFB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFB.swift; sourceTree = "<group>"; };
-		CA23398B26B52C5200A23F01 /* GroupFB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupFB.swift; sourceTree = "<group>"; };
 		CA437F1F26BE84F300406575 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		CA437F2126BE853700406575 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		CA437F2426BE859800406575 /* FeedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAPI.swift; sourceTree = "<group>"; };
@@ -87,7 +82,6 @@
 			files = (
 				CA1E7CA726A1F7AE0039FC8D /* RealmSwift in Frameworks */,
 				CACCC30F269D7ED10024C5BF /* Alamofire in Frameworks */,
-				CA23398726B4FFB500A23F01 /* FirebaseDatabase in Frameworks */,
 				CACCC31C269DAABA0024C5BF /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,15 +89,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CA23398A26B50A1400A23F01 /* Remote */ = {
-			isa = PBXGroup;
-			children = (
-				CA23398826B50A0900A23F01 /* UserFB.swift */,
-				CA23398B26B52C5200A23F01 /* GroupFB.swift */,
-			);
-			path = Remote;
-			sourceTree = "<group>";
-		};
 		CA2738F7269D44BE00921FA9 /* homework */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,7 +237,6 @@
 		CACCC313269D84C20024C5BF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CA23398A26B50A1400A23F01 /* Remote */,
 				CAD3ABE3269892E20020BF1F /* Session.swift */,
 				CACCC314269D87060024C5BF /* User.swift */,
 				CACCC31D269DBCDE0024C5BF /* Group.swift */,
@@ -282,7 +266,6 @@
 				CACCC30E269D7ED10024C5BF /* Alamofire */,
 				CACCC31B269DAABA0024C5BF /* AlamofireImage */,
 				CA1E7CA626A1F7AE0039FC8D /* RealmSwift */,
-				CA23398626B4FFB500A23F01 /* FirebaseDatabase */,
 			);
 			productName = "ys-client-server-1347";
 			productReference = CA6A8FD82695F76C00009ABC /* ys-client-server-1347.app */;
@@ -315,7 +298,6 @@
 				CACCC30D269D7ED10024C5BF /* XCRemoteSwiftPackageReference "Alamofire" */,
 				CACCC31A269DAABA0024C5BF /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 				CA1E7CA526A1F7AD0039FC8D /* XCRemoteSwiftPackageReference "realm-cocoa" */,
-				CA23398526B4FFB500A23F01 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = CA6A8FD92695F76C00009ABC /* Products */;
 			projectDirPath = "";
@@ -356,11 +338,9 @@
 				CAC13DF0269E0B9B00C79A7D /* PhotoCollectionViewCell.swift in Sources */,
 				CAD3ABE0269892090020BF1F /* FirstViewController.swift in Sources */,
 				CAC13DE4269DED8A00C79A7D /* GroupTableViewCellNoDesc.swift in Sources */,
-				CA23398926B50A0900A23F01 /* UserFB.swift in Sources */,
 				CA8E2B6726AB3B7B0063E38D /* PhotoDB.swift in Sources */,
 				CA8E2B6926AB41DE0063E38D /* GroupDB.swift in Sources */,
 				CACCC315269D87060024C5BF /* User.swift in Sources */,
-				CA23398C26B52C5200A23F01 /* GroupFB.swift in Sources */,
 				CA7A668126BEF17800B5E19C /* FeedTableViewCell.swift in Sources */,
 				CAC13DE9269E00EC00C79A7D /* PhotoAPI.swift in Sources */,
 				CA6A8FDC2695F76C00009ABC /* AppDelegate.swift in Sources */,
@@ -583,14 +563,6 @@
 				minimumVersion = 10.10.0;
 			};
 		};
-		CA23398526B4FFB500A23F01 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 8.4.0;
-			};
-		};
 		CACCC30D269D7ED10024C5BF /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -614,11 +586,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CA1E7CA526A1F7AD0039FC8D /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
-		};
-		CA23398626B4FFB500A23F01 /* FirebaseDatabase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CA23398526B4FFB500A23F01 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseDatabase;
 		};
 		CACCC30E269D7ED10024C5BF /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;

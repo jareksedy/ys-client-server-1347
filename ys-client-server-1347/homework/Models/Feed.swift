@@ -197,7 +197,7 @@ struct Profile: Codable {
 
 // MARK: - OnlineInfo
 struct OnlineInfo: Codable {
-    let visible, isOnline, isMobile: Bool
+    let visible, isOnline, isMobile: Bool?
 
     enum CodingKeys: String, CodingKey {
         case visible
