@@ -32,8 +32,8 @@ class FeedTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! FeedTableViewCell
-        //cell.textLabel?.text = feedItems[indexPath.row].text
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "feedItemInfoCell", for: indexPath) as! FeedItemInfoTableViewCell
         
         let currentFeedItem = feedItems[indexPath.row]
         
@@ -41,15 +41,28 @@ class FeedTableViewController: UITableViewController {
         
         case 1: // Пост пользователя
             let currentFeedItemProfile = feedProfiles.filter{ $0.id == currentFeedItem.sourceID }[0]
-            cell.configure(item: currentFeedItem, profile: currentFeedItemProfile)
+            cell.configure(profile: currentFeedItemProfile, postDate: currentFeedItem.date)
             
         case -1: // Пост группы
             let currentFeedItemGroup = feedGroups.filter{ $0.id == abs(currentFeedItem.sourceID) }[0]
-            cell.configure(item: currentFeedItem, group: currentFeedItemGroup)
+            cell.configure(group: currentFeedItemGroup, postDate: currentFeedItem.date)
             
         default: break
         }
         
         return cell
+    }
+}
+
+extension Double {
+    func getDateStringFromUTC() -> String {
+        let date = Date(timeIntervalSince1970: self)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ru_RU")
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+        
+        return dateFormatter.string(from: date)
     }
 }

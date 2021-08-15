@@ -19,9 +19,9 @@ class UserInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UserAPI(Session.instance).get{ user in
-            guard let user = user else { return }
-            self.display(user)
+        UserAPI(Session.instance).get{ [weak self] user in
+            guard let self = self else { return }
+            self.display(user!)
         }
     }
     

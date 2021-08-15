@@ -316,11 +316,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="454" id="XAN-LV-9jN" customClass="FeedTableViewCell" customModule="ys_client_server_1347" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="454"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedItemInfoCell" rowHeight="120" id="XAN-LV-9jN" customClass="FeedItemInfoTableViewCell" customModule="ys_client_server_1347" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XAN-LV-9jN" id="cnP-Yx-yER">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="454"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WDj-LK-Agx" customClass="RoundedImageView" customModule="ys_client_server_1347" customModuleProvider="target">
@@ -343,51 +343,23 @@
                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVI-c2-hvv">
-                                            <rect key="frame" x="10" y="120" width="394" height="55"/>
-                                            <string key="text">Текст публикации. Здесь будет размещен текст публикации. Здесь будет размещен текст публикации, разумеется, если он присутствует.</string>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mOS-9q-qIn">
-                                            <rect key="frame" x="10" y="185" width="394" height="232"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Лайки, репосты, просмотры." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgr-dc-61x">
-                                            <rect key="frame" x="10" y="427" width="394" height="17"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <color key="textColor" systemColor="secondaryLabelColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="jtb-eH-Fx1" secondAttribute="trailing" constant="10" id="1yC-OR-vU4"/>
-                                        <constraint firstItem="kgr-dc-61x" firstAttribute="top" secondItem="mOS-9q-qIn" secondAttribute="bottom" constant="10" id="5Xg-jY-d1T"/>
-                                        <constraint firstAttribute="bottom" secondItem="kgr-dc-61x" secondAttribute="bottom" constant="10" id="8hk-bG-fJ0"/>
-                                        <constraint firstAttribute="trailing" secondItem="mOS-9q-qIn" secondAttribute="trailing" constant="10" id="ACl-DD-XXC"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="a9c-GJ-3QP" secondAttribute="trailing" constant="10" id="EMf-Gl-ERJ"/>
-                                        <constraint firstItem="VVI-c2-hvv" firstAttribute="top" secondItem="WDj-LK-Agx" secondAttribute="bottom" constant="10" id="Ig2-GO-sOL"/>
+                                        <constraint firstAttribute="bottom" secondItem="WDj-LK-Agx" secondAttribute="bottom" constant="10" id="JSs-2S-g8D"/>
                                         <constraint firstItem="jtb-eH-Fx1" firstAttribute="top" secondItem="cnP-Yx-yER" secondAttribute="topMargin" constant="10" id="KxC-WE-Fft"/>
-                                        <constraint firstItem="VVI-c2-hvv" firstAttribute="leading" secondItem="cnP-Yx-yER" secondAttribute="leading" constant="10" id="XMc-uY-QlZ"/>
                                         <constraint firstItem="a9c-GJ-3QP" firstAttribute="leading" secondItem="WDj-LK-Agx" secondAttribute="trailing" constant="10" id="Zdn-hs-088"/>
-                                        <constraint firstItem="mOS-9q-qIn" firstAttribute="top" secondItem="VVI-c2-hvv" secondAttribute="bottom" constant="10" id="aPc-33-gVA"/>
                                         <constraint firstItem="a9c-GJ-3QP" firstAttribute="top" secondItem="jtb-eH-Fx1" secondAttribute="bottom" constant="10" id="aYm-Ss-ab6"/>
                                         <constraint firstItem="WDj-LK-Agx" firstAttribute="leading" secondItem="cnP-Yx-yER" secondAttribute="leading" constant="10" id="aZm-wy-6Md"/>
-                                        <constraint firstItem="kgr-dc-61x" firstAttribute="leading" secondItem="cnP-Yx-yER" secondAttribute="leading" constant="10" id="b0c-Hf-i0k"/>
-                                        <constraint firstAttribute="trailing" secondItem="kgr-dc-61x" secondAttribute="trailing" constant="10" id="jQh-Jn-Mxe"/>
                                         <constraint firstItem="WDj-LK-Agx" firstAttribute="top" secondItem="cnP-Yx-yER" secondAttribute="top" constant="10" id="jVc-nW-vjD"/>
-                                        <constraint firstItem="mOS-9q-qIn" firstAttribute="leading" secondItem="cnP-Yx-yER" secondAttribute="leading" constant="10" id="oXN-b0-IkQ"/>
                                         <constraint firstItem="jtb-eH-Fx1" firstAttribute="leading" secondItem="WDj-LK-Agx" secondAttribute="trailing" constant="10" id="s1Q-r7-3E4"/>
-                                        <constraint firstAttribute="trailing" secondItem="VVI-c2-hvv" secondAttribute="trailing" constant="10" id="yIp-tT-1hG"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="likesViewsReposts" destination="kgr-dc-61x" id="MTF-6S-s3m"/>
-                                    <outlet property="postDate" destination="a9c-GJ-3QP" id="AOV-uc-Ix6"/>
-                                    <outlet property="postPhoto" destination="mOS-9q-qIn" id="N0Z-PL-o5m"/>
-                                    <outlet property="postText" destination="VVI-c2-hvv" id="cbK-1m-kt5"/>
-                                    <outlet property="postUserGroupImage" destination="WDj-LK-Agx" id="1dc-hl-Tkk"/>
-                                    <outlet property="postUserGroupName" destination="jtb-eH-Fx1" id="p7I-yi-GMO"/>
+                                    <outlet property="feedItemPostDate" destination="a9c-GJ-3QP" id="Ssj-u6-xPh"/>
+                                    <outlet property="feedItemUserGroupImage" destination="WDj-LK-Agx" id="QcZ-rV-1Ic"/>
+                                    <outlet property="feedItemUserGroupName" destination="jtb-eH-Fx1" id="ON0-ge-NBm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
