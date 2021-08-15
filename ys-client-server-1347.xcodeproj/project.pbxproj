@@ -20,7 +20,6 @@
 		CAC13DE4269DED8A00C79A7D /* GroupTableViewCellNoDesc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC13DE3269DED8A00C79A7D /* GroupTableViewCellNoDesc.swift */; };
 		CAC13DE6269DFB9900C79A7D /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC13DE5269DFB9900C79A7D /* PhotoCollectionViewController.swift */; };
 		CAC13DE9269E00EC00C79A7D /* PhotoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC13DE8269E00EC00C79A7D /* PhotoAPI.swift */; };
-		CAC13DEB269E041200C79A7D /* DynamicJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC13DEA269E041200C79A7D /* DynamicJSON.swift */; };
 		CAC13DEE269E05CA00C79A7D /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC13DED269E05CA00C79A7D /* Photo.swift */; };
 		CAC13DF0269E0B9B00C79A7D /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC13DEF269E0B9B00C79A7D /* PhotoCollectionViewCell.swift */; };
 		CACCC30F269D7ED10024C5BF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CACCC30E269D7ED10024C5BF /* Alamofire */; };
@@ -53,7 +52,6 @@
 		CAC13DE3269DED8A00C79A7D /* GroupTableViewCellNoDesc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCellNoDesc.swift; sourceTree = "<group>"; };
 		CAC13DE5269DFB9900C79A7D /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
 		CAC13DE8269E00EC00C79A7D /* PhotoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAPI.swift; sourceTree = "<group>"; };
-		CAC13DEA269E041200C79A7D /* DynamicJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicJSON.swift; sourceTree = "<group>"; };
 		CAC13DED269E05CA00C79A7D /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		CAC13DEF269E0B9B00C79A7D /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		CACCC310269D82510024C5BF /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
@@ -84,7 +82,6 @@
 		CA2738F7269D44BE00921FA9 /* homework */ = {
 			isa = PBXGroup;
 			children = (
-				CAC13DEC269E043F00C79A7D /* DynamicJSON */,
 				CACCC313269D84C20024C5BF /* Models */,
 				CAABB45A26995D8F004944AE /* Services */,
 				CA2738F8269D46C700921FA9 /* Controllers */,
@@ -197,14 +194,6 @@
 				CAC13DEF269E0B9B00C79A7D /* PhotoCollectionViewCell.swift */,
 			);
 			path = Photos;
-			sourceTree = "<group>";
-		};
-		CAC13DEC269E043F00C79A7D /* DynamicJSON */ = {
-			isa = PBXGroup;
-			children = (
-				CAC13DEA269E041200C79A7D /* DynamicJSON.swift */,
-			);
-			path = DynamicJSON;
 			sourceTree = "<group>";
 		};
 		CACCC312269D83A10024C5BF /* CustomUIControllers */ = {
@@ -323,7 +312,6 @@
 				CA6A8FDC2695F76C00009ABC /* AppDelegate.swift in Sources */,
 				CAC13DEE269E05CA00C79A7D /* Photo.swift in Sources */,
 				CAC13DE6269DFB9900C79A7D /* PhotoCollectionViewController.swift in Sources */,
-				CAC13DEB269E041200C79A7D /* DynamicJSON.swift in Sources */,
 				CACCC324269DCAE00024C5BF /* GroupAPI.swift in Sources */,
 				CACCC319269D8FFF0024C5BF /* UserInfoViewController.swift in Sources */,
 				CA6A8FDE2695F76C00009ABC /* SceneDelegate.swift in Sources */,

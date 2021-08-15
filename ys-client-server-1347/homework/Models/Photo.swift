@@ -5,31 +5,45 @@
 //  Created by Ярослав on 13.07.2021.
 //
 
+
 import Foundation
 
-class PhotoItem: Codable {
-    
-    var id: Int = 0
-    var albumID: Int = 0
-    var ownerID: Int = 0
-    var width: Int = 0
-    var height: Int = 0
-    var photo75, photo130, photo604, photo807, photo1280: String?
-    var text: String?
-    
-    convenience required init(id: Int, albumID: Int, ownerID: Int, width: Int, height: Int, photo75: String?, photo130: String?, photo604: String?, photo807: String?, photo1280: String?, text: String?) {
-        
-        self.init()
-        self.id = id
-        self.albumID = albumID
-        self.ownerID = ownerID
-        self.width = width
-        self.height = height
-        self.photo75 = photo75
-        self.photo130 = photo130
-        self.photo604 = photo604
-        self.photo807 = photo807
-        self.photo1280 = photo1280
-        self.text = text
+// MARK: - Feed
+struct Photos: Codable {
+    let response: PhotoResponse
+}
+
+// MARK: - Response
+struct PhotoResponse: Codable {
+    let count: Int
+    let items: [PhotoItem]?
+}
+
+// MARK: - Item
+struct PhotoItem: Codable {
+    let albumID, date, id, ownerID: Int?
+    let hasTags: Bool?
+    let height: Int?
+    let photo1280, photo130, photo2560, photo604: String?
+    let photo75, photo807: String?
+    let postID: Int?
+    let text: String?
+    let width: Int?
+
+    enum CodingKeys: String, CodingKey {
+        case albumID = "album_id"
+        case date, id
+        case ownerID = "owner_id"
+        case hasTags = "has_tags"
+        case height
+        case photo1280 = "photo_1280"
+        case photo130 = "photo_130"
+        case photo2560 = "photo_2560"
+        case photo604 = "photo_604"
+        case photo75 = "photo_75"
+        case photo807 = "photo_807"
+        case postID = "post_id"
+        case text, width
     }
 }
+
