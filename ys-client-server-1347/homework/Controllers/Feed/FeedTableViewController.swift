@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class FeedTableViewController: UITableViewController {
     
@@ -15,6 +16,10 @@ class FeedTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.register(FeedItemFooter.self, forHeaderFooterViewReuseIdentifier: "sectionFooter")
+        tableView.sectionFooterHeight = 50
+        tableView.separatorStyle = .singleLine
         
         FeedAPI(Session.instance).get{ [weak self] feed in
             guard let self = self else { return }
@@ -37,6 +42,8 @@ class FeedTableViewController: UITableViewController {
 
         if currentFeedItem.hasText && currentFeedItem.hasPhoto604 {
             return 3
+        } else if !currentFeedItem.hasText && !currentFeedItem.hasPhoto604 {
+            return 1
         } else {
             return 2
         }
@@ -66,8 +73,14 @@ class FeedTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return feedItems[section].date.getDateStringFromUTC()
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "sectionFooter") as! FeedItemFooter
+        let currentFeedItem = feedItems[section]
+        
+        view.likes.text = "♥ \(currentFeedItem.likes.count)   |   ⚑ \(currentFeedItem.views.count)"
+        
+        return view
     }
     
     // MARK: - Create & configure cells.
@@ -76,6 +89,8 @@ class FeedTableViewController: UITableViewController {
     func feedInfoCell(indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedItemInfoCell", for: indexPath) as! FeedItemInfoTableViewCell
+        cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+        
         let currentFeedItem = feedItems[indexPath.section]
         
         switch feedItems[indexPath.section].sourceID.signum() {
@@ -98,9 +113,11 @@ class FeedTableViewController: UITableViewController {
     func feedTextCell(indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedItemTextCell", for: indexPath) as! FeedItemTextTableViewCell
+        cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+        
         let currentFeedItem = feedItems[indexPath.section]
         
-        if currentFeedItem.text != "" {
+        if currentFeedItem.hasText {
             
             cell.configure(text: currentFeedItem.text)
             return cell
@@ -112,10 +129,11 @@ class FeedTableViewController: UITableViewController {
     func feedPhotoCell(indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedItemPhotoCell", for: indexPath) as! FeedItemPhotoTableViewCell
+        cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+        
         let currentFeedItem = feedItems[indexPath.section]
         
-        
-        if currentFeedItem.attachments?[0].photo?.photo604 != nil {
+        if currentFeedItem.hasPhoto604 {
             
             cell.configure(url: currentFeedItem.attachments![0].photo!.photo604!)
             return cell

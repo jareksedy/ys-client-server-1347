@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CA23398426B4FC4000A23F01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA23398326B4FC4000A23F01 /* GoogleService-Info.plist */; };
 		CA3F5F1E26CAAFCF00C28A1B /* FeedItemPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3F5F1D26CAAFCF00C28A1B /* FeedItemPhotoTableViewCell.swift */; };
+		CA3F5F2226CACCCB00C28A1B /* FeedItemFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3F5F2126CACCCB00C28A1B /* FeedItemFooter.swift */; };
 		CA437F2026BE84F300406575 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA437F1F26BE84F300406575 /* Feed.swift */; };
 		CA437F2226BE853700406575 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA437F2126BE853700406575 /* FeedTableViewController.swift */; };
 		CA437F2526BE859800406575 /* FeedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA437F2426BE859800406575 /* FeedAPI.swift */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		CA23398326B4FC4000A23F01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CA3F5F1D26CAAFCF00C28A1B /* FeedItemPhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemPhotoTableViewCell.swift; sourceTree = "<group>"; };
+		CA3F5F2126CACCCB00C28A1B /* FeedItemFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemFooter.swift; sourceTree = "<group>"; };
 		CA437F1F26BE84F300406575 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		CA437F2126BE853700406575 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		CA437F2426BE859800406575 /* FeedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAPI.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				CA437F2126BE853700406575 /* FeedTableViewController.swift */,
+				CA3F5F2126CACCCB00C28A1B /* FeedItemFooter.swift */,
 				CA3F5F1D26CAAFCF00C28A1B /* FeedItemPhotoTableViewCell.swift */,
 				CA58A53D26C9622100078409 /* FeedItemInfoTableViewCell.swift */,
 				CA74FCEC26C988F900B1D16E /* FeedItemTextTableViewCell.swift */,
@@ -316,6 +319,7 @@
 				CAC13DE4269DED8A00C79A7D /* GroupTableViewCellNoDesc.swift in Sources */,
 				CACCC315269D87060024C5BF /* User.swift in Sources */,
 				CAC13DE9269E00EC00C79A7D /* PhotoAPI.swift in Sources */,
+				CA3F5F2226CACCCB00C28A1B /* FeedItemFooter.swift in Sources */,
 				CA6A8FDC2695F76C00009ABC /* AppDelegate.swift in Sources */,
 				CAC13DEE269E05CA00C79A7D /* Photo.swift in Sources */,
 				CAC13DE6269DFB9900C79A7D /* PhotoCollectionViewController.swift in Sources */,
