@@ -12,7 +12,7 @@ class FeedTableViewController: UITableViewController {
     var feedItems: [Item] = []
     var feedProfiles: [Profile] = []
     var feedGroups: [Group] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,35 +24,52 @@ class FeedTableViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
-
+    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return feedItems.count
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+
+        let currentFeedItem = feedItems[section]
+
+        if currentFeedItem.hasText && currentFeedItem.hasPhoto604 {
+            return 3
+        } else {
+            return 2
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let currentFeedItem = feedItems[indexPath.section]
+        
         switch indexPath.row {
+        
         case 0:
             return feedInfoCell(indexPath: indexPath)
             
         case 1:
-            return feedTextCell(indexPath: indexPath)
+            if !currentFeedItem.hasText {
+                return feedPhotoCell(indexPath: indexPath)
+            } else {
+                return feedTextCell(indexPath: indexPath)
+            }
+            
+        case 2:
+            return feedPhotoCell(indexPath: indexPath)
             
         default:
-            return feedInfoCell(indexPath: indexPath)
+            return UITableViewCell()
         }
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return feedItems[section].date.getDateStringFromUTC()
     }
-
+    
     // MARK: - Create & configure cells.
     
     // MARK: - Feed item author, date & image.
@@ -82,10 +99,32 @@ class FeedTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedItemTextCell", for: indexPath) as! FeedItemTextTableViewCell
         let currentFeedItem = feedItems[indexPath.section]
-        cell.configure(text: currentFeedItem.text)
         
-        return cell
+        if currentFeedItem.text != "" {
+            
+            cell.configure(text: currentFeedItem.text)
+            return cell
+            
+        } else { return UITableViewCell() }
+    }
+    
+    // MARK: - Feed item photo.
+    func feedPhotoCell(indexPath: IndexPath) -> UITableViewCell {
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "feedItemPhotoCell", for: indexPath) as! FeedItemPhotoTableViewCell
+        let currentFeedItem = feedItems[indexPath.section]
+        
+        
+        if currentFeedItem.attachments?[0].photo?.photo604 != nil {
+            
+            cell.configure(url: currentFeedItem.attachments![0].photo!.photo604!)
+            return cell
+            
+        } else {
+
+            return UITableViewCell()
+            
+        }
     }
 }
 
