@@ -78,7 +78,7 @@ class FeedTableViewController: UITableViewController {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "sectionFooter") as! FeedItemFooter
         let currentFeedItem = feedItems[section]
         
-        view.likes.text = "♥ \(currentFeedItem.likes.count)   |   ⚑ \(currentFeedItem.views.count)"
+        view.likes.text = "♥ \(currentFeedItem.likes.count)   |   ⚑ \(currentFeedItem.views?.count ?? 0)"
         
         return view
     }

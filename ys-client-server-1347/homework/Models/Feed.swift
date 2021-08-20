@@ -60,7 +60,7 @@ struct Item: Codable {
     let comments: Comments
     let likes: Likes
     let reposts: Reposts
-    let views: Views
+    let views: Views?
     let postID: Int?
     let type: String
     
