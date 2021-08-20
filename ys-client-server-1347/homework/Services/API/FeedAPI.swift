@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 // === ЛЕНТА НОВОСТЕЙ ===
 
@@ -36,17 +37,35 @@ class FeedAPI {
         
         AF.request(url, method: .get, parameters: params).responseData { response in
             
-            //print(response.request)
-            
             guard let data = response.data else { return }
             
-            do {
-                var feed: Feed
-                feed = try JSONDecoder().decode(Feed.self, from: data)
-                completion(feed)
-            } catch {
-                print(error)
+            let decoder = JSONDecoder()
+            let json = JSON(data)
+            let vkItemsJSONArr = json["response"]["items"].arrayValue
+            //let vkProfilesJSONArr = json["response"]["profiles"].arrayValue
+            //let vkGroupsJSONArr = json["response"]["groups"].arrayValue
+            
+            var vkItemsArray: [Item] = []
+            
+            for (index, items) in vkItemsJSONArr.enumerated() {
+                do {
+                    let decodedItem = try decoder.decode(Item.self, from: items.rawData())
+                    vkItemsArray.append(decodedItem)
+                    
+                } catch(let errorDecode) {
+                    print("Item decoding error at index \(index), err: \(errorDecode)")
+                }
             }
+            print(vkItemsArray.count)
+            
+            
+//            do {
+//                var feed: Feed
+//                feed = try JSONDecoder().decode(Feed.self, from: data)
+//                completion(feed)
+//            } catch {
+//                print(error)
+//            }
             
         }
     }
