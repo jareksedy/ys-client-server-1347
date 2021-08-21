@@ -41,6 +41,7 @@ class FeedAPI {
             
             let decoder = JSONDecoder()
             let json = JSON(data)
+            let dispatchGroup = DispatchGroup()
             
             let vkItemsJSONArr = json["response"]["items"].arrayValue
             let vkProfilesJSONArr = json["response"]["profiles"].arrayValue
@@ -51,57 +52,56 @@ class FeedAPI {
             var vkGroupsArray: [Group] = []
             
             // decoding items
-            for (index, items) in vkItemsJSONArr.enumerated() {
-                do {
-                    let decodedItem = try decoder.decode(Item.self, from: items.rawData())
-                    vkItemsArray.append(decodedItem)
-                    
-                } catch(let errorDecode) {
-                    print("Item decoding error at index \(index), err: \(errorDecode)")
+            DispatchQueue.global().async(group: dispatchGroup) {
+                for (index, items) in vkItemsJSONArr.enumerated() {
+                    do {
+                        let decodedItem = try decoder.decode(Item.self, from: items.rawData())
+                        vkItemsArray.append(decodedItem)
+                        
+                    } catch(let errorDecode) {
+                        print("Item decoding error at index \(index), err: \(errorDecode)")
+                    }
                 }
+                //print("items")
             }
+
             
             // decoding profiles
-            for (index, profiles) in vkProfilesJSONArr.enumerated() {
-                do {
-                    let decodedItem = try decoder.decode(Profile.self, from: profiles.rawData())
-                    vkProfilesArray.append(decodedItem)
-                    
-                } catch(let errorDecode) {
-                    print("Profile decoding error at index \(index), err: \(errorDecode)")
+            DispatchQueue.global().async(group: dispatchGroup) {
+                for (index, profiles) in vkProfilesJSONArr.enumerated() {
+                    do {
+                        let decodedItem = try decoder.decode(Profile.self, from: profiles.rawData())
+                        vkProfilesArray.append(decodedItem)
+                        
+                    } catch(let errorDecode) {
+                        print("Profile decoding error at index \(index), err: \(errorDecode)")
+                    }
                 }
+                //print("profiles")
             }
             
             // decoding groups
-            for (index, groups) in vkGroupsJSONArr.enumerated() {
-                do {
-                    let decodedItem = try decoder.decode(Group.self, from: groups.rawData())
-                    vkGroupsArray.append(decodedItem)
-                    
-                } catch(let errorDecode) {
-                    print("Group decoding error at index \(index), err: \(errorDecode)")
+            DispatchQueue.global().async(group: dispatchGroup) {
+                for (index, groups) in vkGroupsJSONArr.enumerated() {
+                    do {
+                        let decodedItem = try decoder.decode(Group.self, from: groups.rawData())
+                        vkGroupsArray.append(decodedItem)
+                        
+                    } catch(let errorDecode) {
+                        print("Group decoding error at index \(index), err: \(errorDecode)")
+                    }
                 }
+                //print("groups")
             }
             
-            let response = FeedResponse(items: vkItemsArray, profiles: vkProfilesArray, groups: vkGroupsArray)
-            let feed = Feed(response: response)
-            
-            completion(feed)
-            
-            
-//            print(vkItemsArray.count)
-//            print(vkProfilesArray.count)
-//            print(vkGroupsArray.count)
-            
-            
-//            do {
-//                var feed: Feed
-//                feed = try JSONDecoder().decode(Feed.self, from: data)
-//                completion(feed)
-//            } catch {
-//                print(error)
-//            }
-            
+            dispatchGroup.notify(queue: DispatchQueue.main) {
+                let response = FeedResponse(items: vkItemsArray,
+                                            profiles: vkProfilesArray,
+                                            groups: vkGroupsArray)
+                let feed = Feed(response: response)
+                
+                completion(feed)
+            }
         }
     }
 }
