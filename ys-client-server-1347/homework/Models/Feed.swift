@@ -10,6 +10,10 @@ import Foundation
 // MARK: - Feed
 struct Feed: Codable {
     let response: FeedResponse
+    
+    init (response: FeedResponse) {
+        self.response = response
+    }
 }
 
 // MARK: - Response
@@ -22,6 +26,13 @@ struct FeedResponse: Codable {
     enum CodingKeys: String, CodingKey {
         case items, profiles, groups
         case nextFrom = "next_from"
+    }
+    
+    init(items: [Item], profiles: [Profile], groups: [Group]) {
+        self.items = items
+        self.profiles = profiles
+        self.groups = groups
+        self.nextFrom = ""
     }
 }
 
