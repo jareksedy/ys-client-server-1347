@@ -9,8 +9,6 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-// === ЛЕНТА НОВОСТЕЙ ===
-
 class FeedAPI {
     
     let baseUrl = "https://api.vk.com/method"

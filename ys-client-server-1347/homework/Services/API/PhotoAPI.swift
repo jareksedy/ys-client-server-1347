@@ -8,8 +8,6 @@
 import Foundation
 import Alamofire
 
-// === Фотки (DynamicJSON) ===
-
 class PhotoAPI {
     
     let baseUrl = "https://api.vk.com/method"
