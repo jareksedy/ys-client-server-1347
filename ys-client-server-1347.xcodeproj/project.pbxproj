@@ -13,6 +13,7 @@
 		CA437F2026BE84F300406575 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA437F1F26BE84F300406575 /* Feed.swift */; };
 		CA437F2226BE853700406575 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA437F2126BE853700406575 /* FeedTableViewController.swift */; };
 		CA437F2526BE859800406575 /* FeedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA437F2426BE859800406575 /* FeedAPI.swift */; };
+		CA480ED826D210FB00DE5EE7 /* GroupAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA480ED726D210FB00DE5EE7 /* GroupAPIOperation.swift */; };
 		CA58A53E26C9622100078409 /* FeedItemInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA58A53D26C9622100078409 /* FeedItemInfoTableViewCell.swift */; };
 		CA6A8FDC2695F76C00009ABC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6A8FDB2695F76C00009ABC /* AppDelegate.swift */; };
 		CA6A8FDE2695F76C00009ABC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6A8FDD2695F76C00009ABC /* SceneDelegate.swift */; };
@@ -47,6 +48,7 @@
 		CA437F1F26BE84F300406575 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		CA437F2126BE853700406575 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		CA437F2426BE859800406575 /* FeedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAPI.swift; sourceTree = "<group>"; };
+		CA480ED726D210FB00DE5EE7 /* GroupAPIOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupAPIOperation.swift; sourceTree = "<group>"; };
 		CA58A53D26C9622100078409 /* FeedItemInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemInfoTableViewCell.swift; sourceTree = "<group>"; };
 		CA6A8FD82695F76C00009ABC /* ys-client-server-1347.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ys-client-server-1347.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA6A8FDB2695F76C00009ABC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			children = (
 				CACCC316269D88010024C5BF /* UserAPI.swift */,
 				CACCC323269DCAE00024C5BF /* GroupAPI.swift */,
+				CA480ED726D210FB00DE5EE7 /* GroupAPIOperation.swift */,
 				CA437F2426BE859800406575 /* FeedAPI.swift */,
 				CAC13DE8269E00EC00C79A7D /* PhotoAPI.swift */,
 			);
@@ -323,6 +326,7 @@
 				CAC13DE4269DED8A00C79A7D /* GroupTableViewCellNoDesc.swift in Sources */,
 				CACCC315269D87060024C5BF /* User.swift in Sources */,
 				CAC13DE9269E00EC00C79A7D /* PhotoAPI.swift in Sources */,
+				CA480ED826D210FB00DE5EE7 /* GroupAPIOperation.swift in Sources */,
 				CA3F5F2226CACCCB00C28A1B /* FeedItemFooter.swift in Sources */,
 				CA6A8FDC2695F76C00009ABC /* AppDelegate.swift in Sources */,
 				CAC13DEE269E05CA00C79A7D /* Photo.swift in Sources */,

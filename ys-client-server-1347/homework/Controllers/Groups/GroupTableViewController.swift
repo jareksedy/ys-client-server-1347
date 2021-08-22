@@ -14,11 +14,18 @@ class GroupTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        GroupAPI(Session.instance).get{ [weak self] groups in
-            guard let self = self else { return }
-            self.groupItems = groups!.response.items
-            self.tableView.reloadData()
-        }
+        let opq = OperationQueue()
+        
+        let fetchGroupData = FetchGroupData()
+        opq.addOperation(fetchGroupData)
+        
+        let parseGroupData = ParseGroupData()
+        parseGroupData.addDependency(fetchGroupData)
+        opq.addOperation(parseGroupData)
+        
+        let displayGroupData = DisplayGroupData(self)
+        displayGroupData.addDependency(parseGroupData)
+        OperationQueue.main.addOperation(displayGroupData)
     }
     
     // MARK: - Table view data source
