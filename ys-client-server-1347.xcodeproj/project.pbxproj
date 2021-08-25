@@ -39,6 +39,7 @@
 		CACCC324269DCAE00024C5BF /* GroupAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACCC323269DCAE00024C5BF /* GroupAPI.swift */; };
 		CAD3ABE0269892090020BF1F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3ABDF269892090020BF1F /* FirstViewController.swift */; };
 		CAD3ABE4269892E20020BF1F /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3ABE3269892E20020BF1F /* Session.swift */; };
+		CAE01FBA26D6A18600C33A48 /* ImageViewer_swift in Frameworks */ = {isa = PBXBuildFile; productRef = CAE01FB926D6A18600C33A48 /* ImageViewer_swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 			files = (
 				CA9A960926D01AAA000A8DDC /* SwiftyJSON in Frameworks */,
 				CACCC30F269D7ED10024C5BF /* Alamofire in Frameworks */,
+				CAE01FBA26D6A18600C33A48 /* ImageViewer_swift in Frameworks */,
 				CACCC31C269DAABA0024C5BF /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +252,7 @@
 				CACCC30E269D7ED10024C5BF /* Alamofire */,
 				CACCC31B269DAABA0024C5BF /* AlamofireImage */,
 				CA9A960826D01AAA000A8DDC /* SwiftyJSON */,
+				CAE01FB926D6A18600C33A48 /* ImageViewer_swift */,
 			);
 			productName = "ys-client-server-1347";
 			productReference = CA6A8FD82695F76C00009ABC /* ys-client-server-1347.app */;
@@ -282,6 +285,7 @@
 				CACCC30D269D7ED10024C5BF /* XCRemoteSwiftPackageReference "Alamofire" */,
 				CACCC31A269DAABA0024C5BF /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 				CA9A960726D01AAA000A8DDC /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				CAE01FB826D6A18600C33A48 /* XCRemoteSwiftPackageReference "ImageViewer.swift" */,
 			);
 			productRefGroup = CA6A8FD92695F76C00009ABC /* Products */;
 			projectDirPath = "";
@@ -563,6 +567,14 @@
 				minimumVersion = 4.2.0;
 			};
 		};
+		CAE01FB826D6A18600C33A48 /* XCRemoteSwiftPackageReference "ImageViewer.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/michaelhenry/ImageViewer.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.3.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -580,6 +592,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CACCC31A269DAABA0024C5BF /* XCRemoteSwiftPackageReference "AlamofireImage" */;
 			productName = AlamofireImage;
+		};
+		CAE01FB926D6A18600C33A48 /* ImageViewer_swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CAE01FB826D6A18600C33A48 /* XCRemoteSwiftPackageReference "ImageViewer.swift" */;
+			productName = ImageViewer_swift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
