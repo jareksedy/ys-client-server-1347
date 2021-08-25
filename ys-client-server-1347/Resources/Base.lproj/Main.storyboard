@@ -53,7 +53,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yVv-7f-VHN">
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yVv-7f-VHN" customClass="GalleryFlowLayout" customModule="ys_client_server_1347" customModuleProvider="target">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -96,7 +96,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rwk-9I-Mpe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1767" y="579"/>
+            <point key="canvasLocation" x="1767" y="573"/>
         </scene>
         <!--Я-->
         <scene sceneID="QcC-wW-z22">
@@ -173,7 +173,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="H3W-VA-io3" kind="relationship" relationship="viewControllers" id="2oJ-4L-sWA"/>
-                        <segue destination="iGM-ad-LIN" kind="relationship" relationship="viewControllers" id="1U2-uv-K9z"/>
+                        <segue destination="iGM-ad-LIN" kind="relationship" relationship="viewControllers" id="8Vr-Cu-mKt"/>
                         <segue destination="YlS-rE-sBo" kind="relationship" relationship="viewControllers" id="vRp-ZN-iDe"/>
                         <segue destination="YdX-Vq-foD" kind="relationship" relationship="viewControllers" id="45V-FA-MI3"/>
                     </connections>
