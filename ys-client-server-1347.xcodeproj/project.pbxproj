@@ -14,6 +14,7 @@
 		CA437F2226BE853700406575 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA437F2126BE853700406575 /* FeedTableViewController.swift */; };
 		CA437F2526BE859800406575 /* FeedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA437F2426BE859800406575 /* FeedAPI.swift */; };
 		CA480ED826D210FB00DE5EE7 /* GroupAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA480ED726D210FB00DE5EE7 /* GroupAPIOperation.swift */; };
+		CA50178D26D684930052F6BD /* IGListKit in Frameworks */ = {isa = PBXBuildFile; productRef = CA50178C26D684930052F6BD /* IGListKit */; };
 		CA58A53E26C9622100078409 /* FeedItemInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA58A53D26C9622100078409 /* FeedItemInfoTableViewCell.swift */; };
 		CA6A8FDC2695F76C00009ABC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6A8FDB2695F76C00009ABC /* AppDelegate.swift */; };
 		CA6A8FDE2695F76C00009ABC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6A8FDD2695F76C00009ABC /* SceneDelegate.swift */; };
@@ -81,6 +82,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA9A960926D01AAA000A8DDC /* SwiftyJSON in Frameworks */,
+				CA50178D26D684930052F6BD /* IGListKit in Frameworks */,
 				CACCC30F269D7ED10024C5BF /* Alamofire in Frameworks */,
 				CACCC31C269DAABA0024C5BF /* AlamofireImage in Frameworks */,
 			);
@@ -250,6 +252,7 @@
 				CACCC30E269D7ED10024C5BF /* Alamofire */,
 				CACCC31B269DAABA0024C5BF /* AlamofireImage */,
 				CA9A960826D01AAA000A8DDC /* SwiftyJSON */,
+				CA50178C26D684930052F6BD /* IGListKit */,
 			);
 			productName = "ys-client-server-1347";
 			productReference = CA6A8FD82695F76C00009ABC /* ys-client-server-1347.app */;
@@ -282,6 +285,7 @@
 				CACCC30D269D7ED10024C5BF /* XCRemoteSwiftPackageReference "Alamofire" */,
 				CACCC31A269DAABA0024C5BF /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 				CA9A960726D01AAA000A8DDC /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				CA50178B26D684930052F6BD /* XCRemoteSwiftPackageReference "IGListKit" */,
 			);
 			productRefGroup = CA6A8FD92695F76C00009ABC /* Products */;
 			projectDirPath = "";
@@ -539,6 +543,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CA50178B26D684930052F6BD /* XCRemoteSwiftPackageReference "IGListKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Instagram/IGListKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		CA9A960726D01AAA000A8DDC /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
@@ -566,6 +578,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CA50178C26D684930052F6BD /* IGListKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA50178B26D684930052F6BD /* XCRemoteSwiftPackageReference "IGListKit" */;
+			productName = IGListKit;
+		};
 		CA9A960826D01AAA000A8DDC /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CA9A960726D01AAA000A8DDC /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
