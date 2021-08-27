@@ -13,7 +13,6 @@ import ImageViewer_swift
 class PhotoCollectionViewController: UICollectionViewController {
     
     var photoItems: [PhotoItem] = []
-    var photoUrls: [URL] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +20,6 @@ class PhotoCollectionViewController: UICollectionViewController {
         PhotoAPI(Session.instance).get{ [weak self] photos in
             guard let self = self else { return }
             self.photoItems = photos!.response.items!
-            self.photoUrls = self.photoItems.map{ URL(string: $0.photo1280 ?? "")! }
             self.collectionView.reloadData()
         }
     }

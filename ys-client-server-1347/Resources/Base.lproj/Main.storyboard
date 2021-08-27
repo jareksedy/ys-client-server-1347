@@ -107,12 +107,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendCell" id="VcP-mx-YFs">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendCell" rowHeight="120" id="VcP-mx-YFs">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VcP-mx-YFs" id="gdi-EF-vbO">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W6O-o2-yxT" customClass="RoundedImageView" customModule="ys_client_server_1347" customModuleProvider="target">
+                                            <rect key="frame" x="10" y="10" width="100" height="100"/>
+                                            <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="W6O-o2-yxT" secondAttribute="height" multiplier="1:1" id="be3-Lq-PiG"/>
+                                                <constraint firstAttribute="width" constant="100" id="tWg-Mx-Zo4"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя Фамилия" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8W-xe-dT8">
+                                            <rect key="frame" x="120" y="36.5" width="264" height="17"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Оффлайн" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvD-jv-rHd">
+                                            <rect key="frame" x="120" y="67.5" width="264" height="15"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="J8W-xe-dT8" secondAttribute="trailing" constant="10" id="Hct-o2-fQm"/>
+                                        <constraint firstItem="J8W-xe-dT8" firstAttribute="leading" secondItem="W6O-o2-yxT" secondAttribute="trailing" constant="10" id="KPR-97-tPb"/>
+                                        <constraint firstItem="J8W-xe-dT8" firstAttribute="centerY" secondItem="gdi-EF-vbO" secondAttribute="centerY" constant="-15" id="Uxk-5M-Yre"/>
+                                        <constraint firstItem="W6O-o2-yxT" firstAttribute="leading" secondItem="gdi-EF-vbO" secondAttribute="leading" constant="10" id="WEx-Ed-FnZ"/>
+                                        <constraint firstItem="fvD-jv-rHd" firstAttribute="leading" secondItem="W6O-o2-yxT" secondAttribute="trailing" constant="10" id="Xor-lM-uV1"/>
+                                        <constraint firstItem="fvD-jv-rHd" firstAttribute="centerY" secondItem="gdi-EF-vbO" secondAttribute="centerY" constant="15" id="Zid-Mh-1mo"/>
+                                        <constraint firstAttribute="bottom" secondItem="W6O-o2-yxT" secondAttribute="bottom" constant="10" id="v5X-e8-Kwl"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="fvD-jv-rHd" secondAttribute="trailing" constant="10" id="vMj-Pk-nKm"/>
+                                        <constraint firstItem="W6O-o2-yxT" firstAttribute="top" secondItem="gdi-EF-vbO" secondAttribute="top" constant="10" id="zD8-n4-I4y"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -125,7 +158,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LBN-JC-bz5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1767" y="-96"/>
+            <point key="canvasLocation" x="1766.6666666666667" y="-96.428571428571431"/>
         </scene>
         <!--Я-->
         <scene sceneID="QcC-wW-z22">
