@@ -14,6 +14,7 @@
 		CA437F2226BE853700406575 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA437F2126BE853700406575 /* FeedTableViewController.swift */; };
 		CA437F2526BE859800406575 /* FeedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA437F2426BE859800406575 /* FeedAPI.swift */; };
 		CA480ED826D210FB00DE5EE7 /* GroupAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA480ED726D210FB00DE5EE7 /* GroupAPIOperation.swift */; };
+		CA4F729C26D927C500398611 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4F729B26D927C500398611 /* FriendsTableViewController.swift */; };
 		CA5717BF26D6ADF8009D5288 /* GalleryFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5717BE26D6ADF8009D5288 /* GalleryFlowLayout.swift */; };
 		CA58A53E26C9622100078409 /* FeedItemInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA58A53D26C9622100078409 /* FeedItemInfoTableViewCell.swift */; };
 		CA6A8FDC2695F76C00009ABC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6A8FDB2695F76C00009ABC /* AppDelegate.swift */; };
@@ -51,6 +52,7 @@
 		CA437F2126BE853700406575 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		CA437F2426BE859800406575 /* FeedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAPI.swift; sourceTree = "<group>"; };
 		CA480ED726D210FB00DE5EE7 /* GroupAPIOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupAPIOperation.swift; sourceTree = "<group>"; };
+		CA4F729B26D927C500398611 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		CA5717BE26D6ADF8009D5288 /* GalleryFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryFlowLayout.swift; sourceTree = "<group>"; };
 		CA58A53D26C9622100078409 /* FeedItemInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemInfoTableViewCell.swift; sourceTree = "<group>"; };
 		CA6A8FD82695F76C00009ABC /* ys-client-server-1347.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ys-client-server-1347.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				CACCC312269D83A10024C5BF /* CustomUIControllers */,
+				CA4F729D26D927CB00398611 /* Friends */,
 				CA437F2326BE853C00406575 /* Feed */,
 				CAC13DE1269DECA000C79A7D /* User */,
 				CAC13DE7269DFBA100C79A7D /* Photos */,
@@ -126,6 +129,14 @@
 				CA74FCEC26C988F900B1D16E /* FeedItemTextTableViewCell.swift */,
 			);
 			path = Feed;
+			sourceTree = "<group>";
+		};
+		CA4F729D26D927CB00398611 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				CA4F729B26D927C500398611 /* FriendsTableViewController.swift */,
+			);
+			path = Friends;
 			sourceTree = "<group>";
 		};
 		CA5717C026D6B994009D5288 /* Layouts */ = {
@@ -346,6 +357,7 @@
 				CA6A8FDC2695F76C00009ABC /* AppDelegate.swift in Sources */,
 				CAC13DEE269E05CA00C79A7D /* Photo.swift in Sources */,
 				CAC13DE6269DFB9900C79A7D /* PhotoCollectionViewController.swift in Sources */,
+				CA4F729C26D927C500398611 /* FriendsTableViewController.swift in Sources */,
 				CACCC324269DCAE00024C5BF /* GroupAPI.swift in Sources */,
 				CACCC319269D8FFF0024C5BF /* UserInfoViewController.swift in Sources */,
 				CA3F5F1E26CAAFCF00C28A1B /* FeedItemPhotoTableViewCell.swift in Sources */,

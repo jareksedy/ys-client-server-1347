@@ -98,6 +98,35 @@
             </objects>
             <point key="canvasLocation" x="1767" y="573"/>
         </scene>
+        <!--Друзья-->
+        <scene sceneID="MMC-2R-UEZ">
+            <objects>
+                <tableViewController id="ftR-x6-4rm" customClass="FriendsTableViewController" customModule="ys_client_server_1347" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Knm-1o-SiS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendCell" id="VcP-mx-YFs">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VcP-mx-YFs" id="gdi-EF-vbO">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ftR-x6-4rm" id="4Z1-XW-wqz"/>
+                            <outlet property="delegate" destination="ftR-x6-4rm" id="Blc-LR-orU"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Друзья" image="figure.wave.circle" catalog="system" selectedImage="figure.wave.circle.fill" id="A5u-Tk-ybR"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LBN-JC-bz5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1767" y="-96"/>
+        </scene>
         <!--Я-->
         <scene sceneID="QcC-wW-z22">
             <objects>
@@ -159,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9qd-hG-aHY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1766.6666666666667" y="-131.25"/>
+            <point key="canvasLocation" x="1767" y="-773"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="tYq-Cw-owN">
@@ -175,6 +204,7 @@
                         <segue destination="H3W-VA-io3" kind="relationship" relationship="viewControllers" id="2oJ-4L-sWA"/>
                         <segue destination="iGM-ad-LIN" kind="relationship" relationship="viewControllers" id="8Vr-Cu-mKt"/>
                         <segue destination="YlS-rE-sBo" kind="relationship" relationship="viewControllers" id="vRp-ZN-iDe"/>
+                        <segue destination="ftR-x6-4rm" kind="relationship" relationship="viewControllers" id="7JF-y2-5Je"/>
                         <segue destination="YdX-Vq-foD" kind="relationship" relationship="viewControllers" id="45V-FA-MI3"/>
                     </connections>
                 </tabBarController>
@@ -428,6 +458,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="figure.wave.circle" catalog="system" width="128" height="121"/>
+        <image name="figure.wave.circle.fill" catalog="system" width="128" height="121"/>
         <image name="mappin.circle" catalog="system" width="128" height="121"/>
         <image name="newspaper" catalog="system" width="128" height="108"/>
         <image name="newspaper.fill" catalog="system" width="128" height="111"/>
