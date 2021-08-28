@@ -13,6 +13,11 @@ class UserAPI {
     let baseUrl = "https://api.vk.com/method"
     let method = "/users.get"
     
+    enum Errors: Error {
+        case unknownError
+        case noPhotoUrl
+    }
+    
     var params: Parameters
     
     init(_ session: Session) {

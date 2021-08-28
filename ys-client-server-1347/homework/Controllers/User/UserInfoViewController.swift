@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PromiseKit
 import Alamofire
 import AlamofireImage
 
@@ -15,26 +16,75 @@ class UserInfoViewController: UIViewController {
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var pinIcon: UIImageView!
     @IBOutlet weak var userLocation: UILabel!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UserAPI(Session.instance).get{ [weak self] user in
-            guard let self = self else { return }
-            self.display(user!)
+        promiseFetchUserData().then { [self] user in
+            
+            promiseFetchUserPicture(user).map{ ($0, user) }
+            
+        }.done { [self] image, user in
+            
+            displayUserInfo(user: user, image: image)
+            
+        }.catch { error in
+            
+            print(error)
+            
         }
     }
     
-    private func display(_ user: User) {
+    // MARK: - Promise methods.
+    
+    func promiseFetchUserData() -> Promise<User> {
         
-        self.userName.text = "\(user.response[0].firstName) \(user.response[0].lastName)"
-        self.userLocation.text = "\(user.response[0].city.title), \(user.response[0].country.title)."
-        
-        if let imageURL = user.response[0].photo200 {
-            AF.request(imageURL, method: .get).responseImage { response in
-                guard let image = response.value else { return }
-                self.userImage.image = image
+        return Promise<User> { seal in
+            
+            UserAPI(Session.instance).get{ [weak self] user in
+                
+                guard self == self else {
+                    seal.reject(UserAPI.Errors.unknownError)
+                    return
+                }
+                seal.fulfill(user!)
             }
         }
+    }
+    
+    func promiseFetchUserPicture(_ user: User) -> Promise<UIImage> {
+        
+        return Promise<UIImage> { seal in
+            
+            guard let imageUrl = user.response[0].photo200 else {
+                seal.reject(UserAPI.Errors.noPhotoUrl)
+                return
+            }
+            
+            AF.request(imageUrl, method: .get).responseImage{ response in
+                
+                guard let image = response.value else { return }
+                seal.fulfill(image)
+            }
+        }
+    }
+    
+    // MARK: - Private methods.
+    
+    private func displayUserInfo(user: User, image: UIImage) {
+        
+        sleep(1)
+        
+        userName.text = "\(user.response[0].firstName) \(user.response[0].lastName)"
+        userLocation.text = "\(user.response[0].city.title), \(user.response[0].country.title)."
+        userImage.image = image
+        
+        self.userImage.isHidden = false
+        self.userName.isHidden = false
+        self.pinIcon.isHidden = false
+        self.userLocation.isHidden = false
+        self.loadingIndicator.stopAnimating()
+        
     }
 }

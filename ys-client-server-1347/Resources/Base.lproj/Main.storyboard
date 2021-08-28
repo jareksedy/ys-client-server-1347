@@ -223,6 +223,7 @@
                     <tabBarItem key="tabBarItem" title="Я" image="person.circle" catalog="system" selectedImage="person.circle.fill" id="mfU-oB-Je0"/>
                     <navigationItem key="navigationItem" id="4Nr-4w-Shx"/>
                     <connections>
+                        <outlet property="loadingIndicator" destination="4yh-s6-gfv" id="GNF-3M-Cbq"/>
                         <outlet property="pinIcon" destination="U90-G6-fcq" id="1Ox-Yh-G1G"/>
                         <outlet property="userImage" destination="gVw-F0-wHR" id="cJy-Tq-CkC"/>
                         <outlet property="userLocation" destination="Fwl-HN-pTW" id="c5d-We-22r"/>
