@@ -14,6 +14,8 @@ class FriendsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
+        
         tableView.separatorStyle = .none
         
         FriendAPI(Session.instance).get{ [weak self] friends in
@@ -35,5 +37,16 @@ class FriendsTableViewController: UITableViewController {
         
         cell.configure(friendItems[indexPath.row])
         return cell
+    }
+    
+    // MARK: - Refresh table.
+    @objc func refresh(sender:AnyObject)
+    {
+        FriendAPI(Session.instance).get{ [weak self] friends in
+            guard let self = self else { return }
+            self.friendItems = friends!.response.items
+            self.tableView.reloadData()
+            self.refreshControl?.endRefreshing()
+        }
     }
 }
