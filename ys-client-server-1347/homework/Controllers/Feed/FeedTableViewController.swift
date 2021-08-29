@@ -17,6 +17,9 @@ class FeedTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        self.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
+        
         tableView.register(FeedItemFooter.self, forHeaderFooterViewReuseIdentifier: "sectionFooter")
         tableView.sectionFooterHeight = 50
         tableView.separatorStyle = .singleLine
@@ -37,9 +40,9 @@ class FeedTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+        
         let currentFeedItem = feedItems[section]
-
+        
         if currentFeedItem.hasText && currentFeedItem.hasPhoto604 {
             return 3
         } else if !currentFeedItem.hasText && !currentFeedItem.hasPhoto604 {
@@ -139,9 +142,24 @@ class FeedTableViewController: UITableViewController {
             return cell
             
         } else {
-
+            
             return UITableViewCell()
             
         }
     }
+    
+    // MARK: - Refresh table.
+    @objc func refresh(sender:AnyObject)
+    {
+        FeedAPI(Session.instance).get{ [weak self] feed in
+            guard let self = self else { return }
+            self.feedItems = feed!.response.items
+            self.feedProfiles = feed!.response.profiles
+            self.feedGroups = feed!.response.groups
+            
+            self.tableView.reloadData()
+            self.refreshControl?.endRefreshing()
+        }
+    }
+    
 }
