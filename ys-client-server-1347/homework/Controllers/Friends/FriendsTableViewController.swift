@@ -14,6 +14,8 @@ class FriendsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.separatorStyle = .none
+        
         FriendAPI(Session.instance).get{ [weak self] friends in
             guard let self = self else { return }
             self.friendItems = friends!.response.items

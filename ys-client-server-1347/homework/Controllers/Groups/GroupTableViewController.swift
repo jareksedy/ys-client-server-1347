@@ -14,6 +14,8 @@ class GroupTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.separatorStyle = .none
+        
         let opq = OperationQueue()
         
         let fetchGroupData = FetchGroupData()

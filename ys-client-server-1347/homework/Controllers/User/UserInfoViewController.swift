@@ -74,8 +74,6 @@ class UserInfoViewController: UIViewController {
     
     private func displayUserInfo(user: User, image: UIImage) {
         
-        sleep(1)
-        
         userName.text = "\(user.response[0].firstName) \(user.response[0].lastName)"
         userLocation.text = "\(user.response[0].city.title), \(user.response[0].country.title)."
         userImage.image = image
