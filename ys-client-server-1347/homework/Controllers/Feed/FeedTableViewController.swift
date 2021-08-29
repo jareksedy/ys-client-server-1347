@@ -76,12 +76,19 @@ class FeedTableViewController: UITableViewController {
         }
     }
     
+    // MARK: - Footer
+    
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "sectionFooter") as! FeedItemFooter
         let currentFeedItem = feedItems[section]
         
-        view.likes.text = "♥ \(currentFeedItem.likes.count)   |   ⚑ \(currentFeedItem.views?.count ?? 0)"
+        view.likeButton.likesCount = currentFeedItem.likes.count
+        view.likeButton.isLikedByMe = currentFeedItem.likes.userLikes == 1 ? true : false
+        
+        // -- ⚑ --
+        
+        view.postInfo.text = "✦ \(Int(currentFeedItem.views?.count ?? 0).formatted)   |   ✃ \(Int(currentFeedItem.reposts.count).formatted)   |   ⚑ \(Int(currentFeedItem.comments.count).formatted)"
         
         return view
     }

@@ -47,6 +47,7 @@
 		CAD3ABE0269892090020BF1F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3ABDF269892090020BF1F /* FirstViewController.swift */; };
 		CAD3ABE4269892E20020BF1F /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3ABE3269892E20020BF1F /* Session.swift */; };
 		CAE01FBA26D6A18600C33A48 /* ImageViewer_swift in Frameworks */ = {isa = PBXBuildFile; productRef = CAE01FB926D6A18600C33A48 /* ImageViewer_swift */; };
+		CAE3402326DB9B80006C73ED /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE3402226DB9B80006C73ED /* LikeButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		CACCC323269DCAE00024C5BF /* GroupAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupAPI.swift; sourceTree = "<group>"; };
 		CAD3ABDF269892090020BF1F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		CAD3ABE3269892E20020BF1F /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		CAE3402226DB9B80006C73ED /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				CACCC310269D82510024C5BF /* RoundedImageView.swift */,
+				CAE3402226DB9B80006C73ED /* LikeButton.swift */,
 			);
 			path = CustomUIControllers;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				CACCC322269DC3E10024C5BF /* GroupTableViewCell.swift in Sources */,
 				CA4F72A326D92FFC00398611 /* FriendAPI.swift in Sources */,
 				CA74FCED26C988F900B1D16E /* FeedItemTextTableViewCell.swift in Sources */,
+				CAE3402326DB9B80006C73ED /* LikeButton.swift in Sources */,
 				CAC13DF0269E0B9B00C79A7D /* PhotoCollectionViewCell.swift in Sources */,
 				CAD3ABE0269892090020BF1F /* FirstViewController.swift in Sources */,
 				CAC13DE4269DED8A00C79A7D /* GroupTableViewCellNoDesc.swift in Sources */,

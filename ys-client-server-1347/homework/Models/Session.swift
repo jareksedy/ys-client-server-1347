@@ -16,6 +16,10 @@ class Session {
     var userId: Int = 0
     var token: String = ""
     
-    let cliendId = "7937012"
+    // My Client ID's
+    // 7937012
+    // 7938282
+    
+    let cliendId = "7938282"
     let version = "5.68"
 }
