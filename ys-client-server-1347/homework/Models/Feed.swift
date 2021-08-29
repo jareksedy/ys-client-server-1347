@@ -69,7 +69,7 @@ struct Item: Codable {
     let attachments: [Attachment]?
     let postSource: PostSource
     let comments: Comments
-    let likes: Likes
+    var likes: feedLikes
     let reposts: Reposts
     let views: Views?
     let postID: Int?
@@ -156,8 +156,8 @@ struct Comments: Codable {
 }
 
 // MARK: - Likes
-struct Likes: Codable {
-    let count, userLikes, canLike, canPublish: Int
+struct feedLikes: Codable {
+    var count, userLikes, canLike, canPublish: Int
     
     enum CodingKeys: String, CodingKey {
         case count
