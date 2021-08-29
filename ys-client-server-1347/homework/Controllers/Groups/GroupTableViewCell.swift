@@ -26,6 +26,7 @@ class GroupTableViewCell: UITableViewCell {
     func configure(_ groupItem: GroupItem) {
         
         groupName.text = groupItem.name
+        groupImage.image = UIImage(named: "placeholder")
         
         if let description = groupItem.groupDescription {
             groupDescription.text = description

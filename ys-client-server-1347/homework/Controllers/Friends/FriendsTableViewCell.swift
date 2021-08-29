@@ -26,6 +26,7 @@ class FriendsTableViewCell: UITableViewCell {
     func configure(_ friendItem: FriendItem) {
         
         friendName.text = "\(friendItem.firstName) \(friendItem.lastName)"
+        friendImage.image = UIImage(named: "placeholder")
         
         if friendItem.online == 1 {
             friendOnlineStatus.text = "Онлайн"

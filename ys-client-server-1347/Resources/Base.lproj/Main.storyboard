@@ -67,7 +67,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7r2-6N-hxA">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7r2-6N-hxA">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="7r2-6N-hxA" secondAttribute="height" multiplier="1:1" id="hE6-vX-KoS"/>
@@ -116,7 +116,6 @@
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W6O-o2-yxT" customClass="RoundedImageView" customModule="ys_client_server_1347" customModuleProvider="target">
                                             <rect key="frame" x="10" y="10" width="100" height="100"/>
-                                            <color key="backgroundColor" systemColor="systemYellowColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="W6O-o2-yxT" secondAttribute="height" multiplier="1:1" id="be3-Lq-PiG"/>
                                                 <constraint firstAttribute="width" constant="100" id="tWg-Mx-Zo4"/>
@@ -175,7 +174,6 @@
                         <subviews>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gVw-F0-wHR" customClass="RoundedImageView" customModule="ys_client_server_1347" customModuleProvider="target">
                                 <rect key="frame" x="107" y="64" width="200" height="200"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Tx1-PV-WoS"/>
                                     <constraint firstAttribute="width" secondItem="gVw-F0-wHR" secondAttribute="height" id="zc7-Vc-gqX"/>
@@ -280,7 +278,6 @@
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Zn-5z-W4J" customClass="RoundedImageView" customModule="ys_client_server_1347" customModuleProvider="target">
                                             <rect key="frame" x="10" y="10" width="100" height="100"/>
-                                            <color key="backgroundColor" systemColor="systemYellowColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" secondItem="5Zn-5z-W4J" secondAttribute="width" id="2q5-LA-dci"/>
                                                 <constraint firstAttribute="width" constant="100" id="HAi-Hv-lk8"/>
@@ -337,7 +334,6 @@
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fs3-gg-kXu" customClass="RoundedImageView" customModule="ys_client_server_1347" customModuleProvider="target">
                                             <rect key="frame" x="10" y="10" width="100" height="100"/>
-                                            <color key="backgroundColor" systemColor="systemYellowColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="100" id="IPy-YV-oMK"/>
                                                 <constraint firstAttribute="height" secondItem="Fs3-gg-kXu" secondAttribute="width" id="gjC-0M-XKR"/>
@@ -406,7 +402,6 @@
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WDj-LK-Agx" customClass="RoundedImageView" customModule="ys_client_server_1347" customModuleProvider="target">
                                             <rect key="frame" x="10" y="10" width="100" height="100"/>
-                                            <color key="backgroundColor" systemColor="systemYellowColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="100" id="Jcr-VM-7HK"/>
                                                 <constraint firstAttribute="width" secondItem="WDj-LK-Agx" secondAttribute="height" id="foc-3k-RrE"/>
@@ -477,7 +472,6 @@
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TB2-NV-DMV">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
-                                            <color key="backgroundColor" systemColor="systemYellowColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="350" id="ef1-1N-S4X"/>
                                             </constraints>
@@ -524,9 +518,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

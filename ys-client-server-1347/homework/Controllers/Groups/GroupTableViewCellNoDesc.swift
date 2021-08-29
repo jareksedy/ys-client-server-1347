@@ -26,6 +26,7 @@ class GroupTableViewCellNoDesc: UITableViewCell {
     func configure(_ groupItem: GroupItem) {
         
         groupName.text = groupItem.name
+        groupImage.image = UIImage(named: "placeholder")
         
         membersCount.text =  "\(groupItem.membersCount.formatted) подписчиков"
         
