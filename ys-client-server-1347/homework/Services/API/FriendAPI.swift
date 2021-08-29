@@ -23,7 +23,7 @@ class FriendAPI {
             "access_token": session.token,
             "v": "5.80",
             "extended": "1",
-            "fields": "photo_100,online,last_seen",
+            "fields": "photo_100,online,sex,last_seen",
         ]
         
     }

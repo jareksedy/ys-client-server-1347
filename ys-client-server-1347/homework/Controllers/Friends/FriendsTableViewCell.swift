@@ -28,11 +28,23 @@ class FriendsTableViewCell: UITableViewCell {
         friendName.text = "\(friendItem.firstName) \(friendItem.lastName)"
         friendImage.image = UIImage(named: "placeholder")
         
+        var friendFemale: Bool {
+            switch friendItem.sex {
+            case 2:
+                return false
+            case 1:
+                return true
+            default:
+                return false
+            }
+        }
+        
         if friendItem.online == 1 {
             friendOnlineStatus.text = "Онлайн"
             friendOnlineStatus.textColor = UIColor.systemGreen
         } else {
-            friendOnlineStatus.text = friendItem.lastSeen?.time.getDateStringFromUTC() ?? ""
+            friendOnlineStatus.text = friendFemale ? "Была " : "Был "
+            friendOnlineStatus.text! += friendItem.lastSeen?.time.getRelativeDateStringFromUTC().lowercased() ?? ""
             friendOnlineStatus.textColor = UIColor.secondaryLabel
         }
         

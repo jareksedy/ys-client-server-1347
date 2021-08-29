@@ -45,6 +45,6 @@ class FeedItemInfoTableViewCell: UITableViewCell {
             }
         }
         
-        feedItemPostDate.text = postDate.getDateStringFromUTC()
+        feedItemPostDate.text = postDate.getRelativeDateStringFromUTC()
     }
 }

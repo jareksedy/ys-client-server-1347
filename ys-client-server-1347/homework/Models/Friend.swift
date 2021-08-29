@@ -25,6 +25,7 @@ struct FriendItem: Codable {
     let lastName: String
     let photo100: String?
     let online: Int?
+    let sex: Int?
     let lastSeen: LastSeen?
     let trackCode: String?
 
@@ -33,7 +34,7 @@ struct FriendItem: Codable {
         case id
         case lastName = "last_name"
         case photo100 = "photo_100"
-        case online
+        case online, sex
         case lastSeen = "last_seen"
         case trackCode = "track_code"
     }
