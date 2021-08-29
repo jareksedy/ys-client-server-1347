@@ -74,15 +74,21 @@
                                                 <constraint firstAttribute="width" constant="100" id="x2y-5M-WC0"/>
                                             </constraints>
                                         </imageView>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="CPI-2b-Lcc">
+                                            <rect key="frame" x="40" y="40" width="20" height="20"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="CPI-2b-Lcc" firstAttribute="centerY" secondItem="ycS-Eo-DFA" secondAttribute="centerY" id="6Gq-HP-yVz"/>
                                         <constraint firstItem="7r2-6N-hxA" firstAttribute="top" secondItem="ycS-Eo-DFA" secondAttribute="top" id="DAw-kw-u8b"/>
                                         <constraint firstAttribute="trailing" secondItem="7r2-6N-hxA" secondAttribute="trailing" id="Guv-TP-fNN"/>
                                         <constraint firstAttribute="bottom" secondItem="7r2-6N-hxA" secondAttribute="bottom" priority="999" id="R6t-k2-2Dj"/>
+                                        <constraint firstItem="CPI-2b-Lcc" firstAttribute="centerX" secondItem="ycS-Eo-DFA" secondAttribute="centerX" id="SQu-av-fM5"/>
                                         <constraint firstItem="7r2-6N-hxA" firstAttribute="leading" secondItem="ycS-Eo-DFA" secondAttribute="leading" id="d4N-5L-Z4f"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
+                                    <outlet property="photoIndicator" destination="CPI-2b-Lcc" id="DAv-FO-nfH"/>
                                     <outlet property="photoView" destination="7r2-6N-hxA" id="6pc-cj-y6w"/>
                                 </connections>
                             </collectionViewCell>
