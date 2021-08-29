@@ -76,15 +76,18 @@ class FeedTableViewController: UITableViewController {
         }
     }
     
-    // MARK: - Footer
+    // MARK: - Configure footer
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "sectionFooter") as! FeedItemFooter
         let currentFeedItem = feedItems[section]
         
-        view.likeButton.likesCount = currentFeedItem.likes.count
-        view.likeButton.isLikedByMe = currentFeedItem.likes.userLikes == 1 ? true : false
+        view.likeButton.configure(likesCount: currentFeedItem.likes.count,
+                                  isLikedByMe: currentFeedItem.likes.userLikes == 1 ? true : false)
+        
+//        view.likeButton.likesCount = currentFeedItem.likes.count
+//        view.likeButton.isLikedByMe = currentFeedItem.likes.userLikes == 1 ? true : false
         
         // -- ⚑ --
         

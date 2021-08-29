@@ -23,26 +23,41 @@ class LikeButton: UIButton {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        configure()
+        addActions()
     }
-    
+
     override var intrinsicContentSize: CGSize {
         return CGSize(width: 15, height: 25)
     }
     
-    private func configure() {
+    func configure(likesCount: Int, isLikedByMe: Bool) {
+        
+        self.likesCount = likesCount
+        self.isLikedByMe = isLikedByMe
         
         self.contentHorizontalAlignment = .leading
         self.titleLabel?.font = UIFont.preferredFont(forTextStyle: .footnote)
         
-        self.setTitleColor(isLikedByMe ?  UIColor.systemPink : UIColor.secondaryLabel, for: .normal)
-        self.setTitle("\(isLikedByMe ? "♥" : "♡") \(likesCount.formatted)", for: .normal)
+        setTitleDependingOnState()
+
+    }
+    
+    private func addActions() {
         
         addTarget(self, action: #selector(onTap(_:)), for: .touchUpInside)
     }
     
+    private func setTitleDependingOnState() {
+        
+        self.setTitleColor(isLikedByMe ?  UIColor.systemPink : UIColor.secondaryLabel, for: .normal)
+        self.setTitle("\(isLikedByMe ? "♥" : "♡") \(likesCount.formatted)", for: .normal)
+    }
+    
     @objc func onTap(_ sender: UIButton) {
+        
         isLikedByMe.toggle()
         likesCount += isLikedByMe ? 1 : -1
+        
+        self.setTitleDependingOnState()
     }
 }
