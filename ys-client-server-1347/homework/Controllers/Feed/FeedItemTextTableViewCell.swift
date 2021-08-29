@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import ActiveLabel
 
 class FeedItemTextTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var feedItemText: UILabel!
+    @IBOutlet weak var feedItemText: ActiveLabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,7 +21,13 @@ class FeedItemTextTableViewCell: UITableViewCell {
     }
     
     func configure(text: String?) {
-        feedItemText.text = text
-    }
+        
+        guard let text = text else { return }
 
+        feedItemText.text = text
+        
+//        if text.numberOfWords > maxWordsCount {
+//        } else {
+//        }
+    }
 }

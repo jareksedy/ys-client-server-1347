@@ -51,6 +51,8 @@
 		CAE3402526DBC82D006C73ED /* LikeUnlikeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE3402426DBC82D006C73ED /* LikeUnlikeAPI.swift */; };
 		CAE3402726DBCCA8006C73ED /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE3402626DBCCA8006C73ED /* Global.swift */; };
 		CAE3402926DBE583006C73ED /* Likes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE3402826DBE582006C73ED /* Likes.swift */; };
+		CAE3402B26DBFEB5006C73ED /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE3402A26DBFEB5006C73ED /* Config.swift */; };
+		CAE3403126DC1BEE006C73ED /* ActiveLabel in Frameworks */ = {isa = PBXBuildFile; productRef = CAE3403026DC1BEE006C73ED /* ActiveLabel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +97,7 @@
 		CAE3402426DBC82D006C73ED /* LikeUnlikeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeUnlikeAPI.swift; sourceTree = "<group>"; };
 		CAE3402626DBCCA8006C73ED /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		CAE3402826DBE582006C73ED /* Likes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Likes.swift; sourceTree = "<group>"; };
+		CAE3402A26DBFEB5006C73ED /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA5A808926D9F5EC00FFBB5D /* PromiseKit in Frameworks */,
+				CAE3403126DC1BEE006C73ED /* ActiveLabel in Frameworks */,
 				CA9A960926D01AAA000A8DDC /* SwiftyJSON in Frameworks */,
 				CACCC30F269D7ED10024C5BF /* Alamofire in Frameworks */,
 				CAE01FBA26D6A18600C33A48 /* ImageViewer_swift in Frameworks */,
@@ -116,6 +120,7 @@
 		CA2738F7269D44BE00921FA9 /* homework */ = {
 			isa = PBXGroup;
 			children = (
+				CAE3402C26DBFEBC006C73ED /* Config */,
 				CABEB6C826DB80D30061CDDA /* Extensions */,
 				CACCC313269D84C20024C5BF /* Models */,
 				CAABB45A26995D8F004944AE /* Services */,
@@ -288,6 +293,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		CAE3402C26DBFEBC006C73ED /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				CAE3402A26DBFEB5006C73ED /* Config.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -310,6 +323,7 @@
 				CA9A960826D01AAA000A8DDC /* SwiftyJSON */,
 				CAE01FB926D6A18600C33A48 /* ImageViewer_swift */,
 				CA5A808826D9F5EC00FFBB5D /* PromiseKit */,
+				CAE3403026DC1BEE006C73ED /* ActiveLabel */,
 			);
 			productName = "ys-client-server-1347";
 			productReference = CA6A8FD82695F76C00009ABC /* ys-client-server-1347.app */;
@@ -344,6 +358,7 @@
 				CA9A960726D01AAA000A8DDC /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				CAE01FB826D6A18600C33A48 /* XCRemoteSwiftPackageReference "ImageViewer.swift" */,
 				CA5A808726D9F5EC00FFBB5D /* XCRemoteSwiftPackageReference "PromiseKit" */,
+				CAE3402F26DC1BED006C73ED /* XCRemoteSwiftPackageReference "ActiveLabel.swift" */,
 			);
 			productRefGroup = CA6A8FD92695F76C00009ABC /* Products */;
 			projectDirPath = "";
@@ -402,6 +417,7 @@
 				CA4F729C26D927C500398611 /* FriendsTableViewController.swift in Sources */,
 				CACCC324269DCAE00024C5BF /* GroupAPI.swift in Sources */,
 				CACCC319269D8FFF0024C5BF /* UserInfoViewController.swift in Sources */,
+				CAE3402B26DBFEB5006C73ED /* Config.swift in Sources */,
 				CA3F5F1E26CAAFCF00C28A1B /* FeedItemPhotoTableViewCell.swift in Sources */,
 				CA6A8FDE2695F76C00009ABC /* SceneDelegate.swift in Sources */,
 				CA5717BF26D6ADF8009D5288 /* GalleryFlowLayout.swift in Sources */,
@@ -651,6 +667,14 @@
 				minimumVersion = 3.3.4;
 			};
 		};
+		CAE3402F26DC1BED006C73ED /* XCRemoteSwiftPackageReference "ActiveLabel.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/optonaut/ActiveLabel.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.5;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -678,6 +702,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CAE01FB826D6A18600C33A48 /* XCRemoteSwiftPackageReference "ImageViewer.swift" */;
 			productName = ImageViewer_swift;
+		};
+		CAE3403026DC1BEE006C73ED /* ActiveLabel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CAE3402F26DC1BED006C73ED /* XCRemoteSwiftPackageReference "ActiveLabel.swift" */;
+			productName = ActiveLabel;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
