@@ -24,7 +24,22 @@ class FeedItemTextTableViewCell: UITableViewCell {
         
         guard let text = text else { return }
 
-        feedItemText.text = text
+        feedItemText.customize { label in
+            
+            label.text = text
+            label.urlMaximumLength = 25
+            label.enabledTypes = [.url, .hashtag]
+            
+            label.URLColor = UIColor(red: 41.0/255, green: 151.0/255, blue: 255.0/255, alpha: 1)
+            label.URLSelectedColor = UIColor(red: 41.0/255, green: 151.0/255, blue: 255.0/255, alpha: 0.5)
+            
+            label.hashtagColor = UIColor(red: 255.0/255, green: 123.0/255, blue: 114.0/255, alpha: 1)
+            label.hashtagSelectedColor = UIColor(red: 255.0/255, green: 123.0/255, blue: 114.0/255, alpha: 0.5)
+            
+            label.handleURLTap { url in
+                UIApplication.shared.open(url)
+            }
+        }
         
 //        if text.numberOfWords > maxWordsCount {
 //        } else {
