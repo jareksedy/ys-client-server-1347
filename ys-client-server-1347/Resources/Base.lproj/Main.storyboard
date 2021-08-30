@@ -449,15 +449,14 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="feedItemTextCell" id="8ph-aJ-zAb" customClass="FeedItemTextTableViewCell" customModule="ys_client_server_1347" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="170" width="414" height="132"/>
+                                <rect key="frame" x="0.0" y="170" width="414" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8ph-aJ-zAb" id="7BU-uP-6CX">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="132"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIi-Tk-OYa" customClass="ActiveLabel" customModule="ActiveLabel">
-                                            <rect key="frame" x="15" y="15" width="384" height="101.5"/>
-                                            <string key="text">Люди утомились от дневной работы, называемой ими долгом, и ищут свежих сил во сне, чтобы нарушить счастье своих братьев, — чтобы задумать новые убийства на следующий день при солнечном свете.</string>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" text="Текст публикации." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIi-Tk-OYa" customClass="ActiveLabel" customModule="ActiveLabel">
+                                            <rect key="frame" x="15" y="15" width="384" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -475,7 +474,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="feedItemPhotoCell" id="nh4-8Y-JhR" customClass="FeedItemPhotoTableViewCell" customModule="ys_client_server_1347" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="301.5" width="414" height="414.5"/>
+                                <rect key="frame" x="0.0" y="220.5" width="414" height="414.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nh4-8Y-JhR" id="bNC-6U-JBW">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="414.5"/>
@@ -499,6 +498,41 @@
                                     <outlet property="feedItemPhoto" destination="TB2-NV-DMV" id="ljh-eW-niA"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="feedItemLinkCell" rowHeight="100" id="RXJ-es-yG8" customClass="FeedItemLinkCell" customModule="ys_client_server_1347" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="635" width="414" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RXJ-es-yG8" id="oVJ-Np-fLk">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название ссылки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRN-cM-79t">
+                                            <rect key="frame" x="35" y="16" width="344" height="30"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL-ссылки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYw-ft-uNG">
+                                            <rect key="frame" x="35" y="61" width="344" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="cYw-ft-uNG" secondAttribute="trailing" constant="15" id="N0v-UW-d7p"/>
+                                        <constraint firstItem="cYw-ft-uNG" firstAttribute="top" secondItem="zRN-cM-79t" secondAttribute="bottom" constant="15" id="PFA-82-6aJ"/>
+                                        <constraint firstItem="zRN-cM-79t" firstAttribute="top" secondItem="oVJ-Np-fLk" secondAttribute="topMargin" constant="5" id="YqU-FP-cKD"/>
+                                        <constraint firstItem="cYw-ft-uNG" firstAttribute="leading" secondItem="oVJ-Np-fLk" secondAttribute="leadingMargin" constant="15" id="bK6-iT-duQ"/>
+                                        <constraint firstItem="zRN-cM-79t" firstAttribute="leading" secondItem="oVJ-Np-fLk" secondAttribute="leadingMargin" constant="15" id="e1u-kB-Dpw"/>
+                                        <constraint firstAttribute="bottomMargin" relation="lessThanOrEqual" secondItem="cYw-ft-uNG" secondAttribute="bottom" constant="10" id="o27-r5-oPl"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="zRN-cM-79t" secondAttribute="trailing" constant="15" id="ygN-UQ-lRc"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="linkTitle" destination="zRN-cM-79t" id="kyA-xO-Pm2"/>
+                                    <outlet property="linkURL" destination="cYw-ft-uNG" id="BZC-xJ-03H"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="H3W-VA-io3" id="lm1-an-q2F"/>
@@ -519,7 +553,7 @@
     </scenes>
     <designables>
         <designable name="RIi-Tk-OYa">
-            <size key="intrinsicContentSize" width="1666.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="148.5" height="20.5"/>
         </designable>
     </designables>
     <resources>
