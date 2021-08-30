@@ -41,14 +41,13 @@ class FeedTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         let currentFeedItem = feedItems[section]
+        var count = 1
         
-        if currentFeedItem.hasText && currentFeedItem.hasPhoto604 {
-            return 3
-        } else if !currentFeedItem.hasText && !currentFeedItem.hasPhoto604 {
-            return 1
-        } else {
-            return 2
-        }
+        if currentFeedItem.hasText { count += 1 }
+        if currentFeedItem.hasPhoto604 { count += 1 }
+        if currentFeedItem.hasLink { count += 1}
+        
+        return count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -61,14 +60,10 @@ class FeedTableViewController: UITableViewController {
             return feedInfoCell(indexPath: indexPath)
             
         case 1:
-            if !currentFeedItem.hasText {
-                return feedPhotoCell(indexPath: indexPath)
-            } else {
-                return feedTextCell(indexPath: indexPath)
-            }
+            return currentFeedItem.hasText ? feedTextCell(indexPath: indexPath) : feedPhotoCell(indexPath: indexPath)
             
         case 2:
-            return feedPhotoCell(indexPath: indexPath)
+            return currentFeedItem.hasLink ? feedLinkCell(indexPath: indexPath) : feedPhotoCell(indexPath: indexPath)
             
         default:
             return UITableViewCell()
@@ -141,6 +136,23 @@ class FeedTableViewController: UITableViewController {
         if currentFeedItem.hasText {
             
             cell.configure(text: currentFeedItem.text)
+            return cell
+            
+        } else { return UITableViewCell() }
+    }
+    
+    // MARK: - Feed item link.
+    
+    func feedLinkCell(indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "feedItemLinkCell", for: indexPath) as! FeedItemLinkCell
+        cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+        
+        let currentFeedItem = feedItems[indexPath.section]
+        
+        if currentFeedItem.hasLink {
+            
+            cell.configure(link: currentFeedItem.attachments![0].link!)
             return cell
             
         } else { return UITableViewCell() }

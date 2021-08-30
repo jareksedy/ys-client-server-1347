@@ -85,7 +85,7 @@ struct Item: Codable {
         return self.attachments?[0].photo?.photo604 != nil
     }
     
-    var hasAttachedLink: Bool {
+    var hasLink: Bool {
         return self.attachments?[0].link?.url != nil
     }
     
