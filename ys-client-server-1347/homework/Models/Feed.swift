@@ -85,6 +85,14 @@ struct Item: Codable {
         return self.attachments?[0].photo?.photo604 != nil
     }
     
+    var hasAttachedLink: Bool {
+        return self.attachments?[0].link?.url != nil
+    }
+    
+//    var attachedLinkIndex: Int? {
+//        return self.attachments?.firstIndex(where: { $0.type == "link" })
+//    }
+    
     enum CodingKeys: String, CodingKey {
         case sourceID = "source_id"
         case date
@@ -111,6 +119,7 @@ struct Attachment: Codable {
 // MARK: - Link
 struct Link: Codable {
     let url: String
+    let title: String?
     let photo: Photo?
 }
 
