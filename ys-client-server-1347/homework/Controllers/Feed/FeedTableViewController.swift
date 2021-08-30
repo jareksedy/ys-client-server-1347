@@ -99,8 +99,16 @@ class FeedTableViewController: UITableViewController {
         
         // --[ ⚑ ]--
         
-        view.postInfo.text = "⊹ \(Int(currentFeedItem.views?.count ?? 0).formatted)   |   ⌁ \(Int(currentFeedItem.reposts.count).formatted)   |   ℘ \(Int(currentFeedItem.comments.count).formatted)"
+        var footerText = ""
         
+        footerText += (currentFeedItem.views?.count ?? 0) > 0 ? "⊹ \(Int(currentFeedItem.views!.count).formatted)" : ""
+        footerText += currentFeedItem.reposts.count > 0 ? "   |   ⌁ \(Int(currentFeedItem.reposts.count).formatted)" : ""
+        footerText += currentFeedItem.comments.count > 0 ? "   |   ℘ \(Int(currentFeedItem.comments.count).formatted)" : ""
+        
+        view.postInfo.text = footerText
+        
+//        view.postInfo.text = "⊹ \(Int(currentFeedItem.views?.count ?? 0).formatted)   |   ⌁ \(Int(currentFeedItem.reposts.count).formatted)   |   ℘ \(Int(currentFeedItem.comments.count).formatted)"
+//
         return view
     }
     
