@@ -28,17 +28,23 @@ class FeedItemTextTableViewCell: UITableViewCell {
             
             label.text = text
             
-            label.urlMaximumLength = 25
-            label.enabledTypes = [.url, .hashtag]
+            let vkHashTag = ActiveType.custom(pattern: #"#\S+"#)
+            
+            label.urlMaximumLength = 22
+            label.enabledTypes = [.url, vkHashTag]
+            
+            label.customColor[vkHashTag] = activeHashTagColor
+            label.customSelectedColor[vkHashTag] = activeHashTagColor
             
             label.URLColor = activeURLColor
             label.URLSelectedColor = activeURLColorSelected
             
-            label.hashtagColor = activeHashTagColor
-            label.hashtagSelectedColor = activeHashTagColorSelected
-            
             label.handleURLTap { url in
                 UIApplication.shared.open(url)
+            }
+            
+            label.handleCustomTap(for: vkHashTag) { hashtag in
+                print("vkhashtag tapped \(hashtag).")
             }
         }
     }

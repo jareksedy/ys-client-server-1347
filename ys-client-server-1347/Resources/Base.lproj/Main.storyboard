@@ -449,14 +449,14 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="feedItemTextCell" id="8ph-aJ-zAb" customClass="FeedItemTextTableViewCell" customModule="ys_client_server_1347" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="170" width="414" height="122"/>
+                                <rect key="frame" x="0.0" y="170" width="414" height="132"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8ph-aJ-zAb" id="7BU-uP-6CX">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="122"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="132"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIi-Tk-OYa" customClass="ActiveLabel" customModule="ActiveLabel">
-                                            <rect key="frame" x="15" y="10" width="384" height="101.5"/>
+                                            <rect key="frame" x="15" y="15" width="384" height="101.5"/>
                                             <string key="text">Люди утомились от дневной работы, называемой ими долгом, и ищут свежих сил во сне, чтобы нарушить счастье своих братьев, — чтобы задумать новые убийства на следующий день при солнечном свете.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -464,8 +464,8 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="RIi-Tk-OYa" secondAttribute="bottom" constant="10" id="2WY-Pr-8ZE"/>
-                                        <constraint firstItem="RIi-Tk-OYa" firstAttribute="top" secondItem="7BU-uP-6CX" secondAttribute="top" constant="10" id="VoR-bG-hRP"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="RIi-Tk-OYa" secondAttribute="bottom" constant="15" id="2WY-Pr-8ZE"/>
+                                        <constraint firstItem="RIi-Tk-OYa" firstAttribute="top" secondItem="7BU-uP-6CX" secondAttribute="top" constant="15" id="VoR-bG-hRP"/>
                                         <constraint firstAttribute="trailing" secondItem="RIi-Tk-OYa" secondAttribute="trailing" constant="15" id="c77-xT-k2o"/>
                                         <constraint firstItem="RIi-Tk-OYa" firstAttribute="leading" secondItem="7BU-uP-6CX" secondAttribute="leading" constant="15" id="wNm-P6-vpp"/>
                                     </constraints>
@@ -475,7 +475,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="feedItemPhotoCell" id="nh4-8Y-JhR" customClass="FeedItemPhotoTableViewCell" customModule="ys_client_server_1347" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="291.5" width="414" height="414.5"/>
+                                <rect key="frame" x="0.0" y="301.5" width="414" height="414.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nh4-8Y-JhR" id="bNC-6U-JBW">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="414.5"/>
