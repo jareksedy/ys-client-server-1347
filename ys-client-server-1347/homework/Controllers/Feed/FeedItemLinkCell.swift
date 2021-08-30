@@ -7,11 +7,12 @@
 
 import Foundation
 import UIKit
+import ActiveLabel
 
 class FeedItemLinkCell: UITableViewCell {
     
     @IBOutlet weak var linkTitle: UILabel!
-    @IBOutlet weak var linkURL: UILabel!
+    @IBOutlet weak var linkURL: ActiveLabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,8 +24,20 @@ class FeedItemLinkCell: UITableViewCell {
     
     func configure(link: Link) {
      
-        linkTitle.text = link.title ?? "No title"
-        linkURL.text = link.url
+        linkTitle.text = link.title ?? "Без названия..."
         
+        linkURL.customize { label in
+            
+            label.text = link.url
+            
+            label.enabledTypes = [.url]
+            
+            label.URLColor = activeURLColor
+            label.URLSelectedColor = activeURLColorSelected
+            
+            label.handleURLTap { url in
+                UIApplication.shared.open(url)
+            }
+        }
     }
 }
