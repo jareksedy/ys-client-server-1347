@@ -456,14 +456,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Здесь расположен текст нашей публикации. Возможно здесь будет много строк." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIi-Tk-OYa" customClass="ActiveLabel" customModule="ActiveLabel">
-                                            <rect key="frame" x="10" y="10" width="394" height="140"/>
+                                            <rect key="frame" x="10" y="10" width="394" height="41"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="RIi-Tk-OYa" secondAttribute="bottom" constant="20" id="2WY-Pr-8ZE"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="RIi-Tk-OYa" secondAttribute="bottom" constant="10" id="2WY-Pr-8ZE"/>
                                         <constraint firstItem="RIi-Tk-OYa" firstAttribute="top" secondItem="7BU-uP-6CX" secondAttribute="top" constant="10" id="VoR-bG-hRP"/>
                                         <constraint firstAttribute="trailing" secondItem="RIi-Tk-OYa" secondAttribute="trailing" constant="10" id="c77-xT-k2o"/>
                                         <constraint firstItem="RIi-Tk-OYa" firstAttribute="leading" secondItem="7BU-uP-6CX" secondAttribute="leading" constant="10" id="wNm-P6-vpp"/>
@@ -506,6 +506,7 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Лента" image="newspaper" catalog="system" selectedImage="newspaper.fill" id="o1I-jE-fH9"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="HGa-BY-nnn">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <attributedString key="attributedTitle"/>
                     </refreshControl>
@@ -515,6 +516,11 @@
             <point key="canvasLocation" x="1766.6666666666667" y="2189.7321428571427"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="RIi-Tk-OYa">
+            <size key="intrinsicContentSize" width="651.5" height="20.5"/>
+        </designable>
+    </designables>
     <resources>
         <image name="figure.wave.circle" catalog="system" width="128" height="121"/>
         <image name="figure.wave.circle.fill" catalog="system" width="128" height="121"/>

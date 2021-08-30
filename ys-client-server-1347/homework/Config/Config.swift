@@ -7,3 +7,4 @@
 
 
 let maxWordsCount = 60
+let readMore = "ExpandThisText"

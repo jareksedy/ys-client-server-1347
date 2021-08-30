@@ -23,12 +23,26 @@ class FeedItemTextTableViewCell: UITableViewCell {
     func configure(text: String?) {
         
         guard let text = text else { return }
+        
+        let firstLine = String(text.firstLine!)
 
         feedItemText.customize { label in
             
-            label.text = text
+            if text.numberOfWords > maxWordsCount {
+                label.text = firstLine
+                label.text! += "\n"
+                label.text! += readMore
+            } else {
+                label.text = text
+            }
+
+            let readMoreType = ActiveType.custom(pattern: "\\s\(readMore)\\b")
+            
             label.urlMaximumLength = 25
-            label.enabledTypes = [.url, .hashtag]
+            label.enabledTypes = [.url, .hashtag, readMoreType]
+            
+            label.customColor[readMoreType] = UIColor(red: 41.0/255, green: 151.0/255, blue: 255.0/255, alpha: 1)
+            label.customSelectedColor[readMoreType] = UIColor(red: 41.0/255, green: 151.0/255, blue: 255.0/255, alpha: 0.5)
             
             label.URLColor = UIColor(red: 41.0/255, green: 151.0/255, blue: 255.0/255, alpha: 1)
             label.URLSelectedColor = UIColor(red: 41.0/255, green: 151.0/255, blue: 255.0/255, alpha: 0.5)
@@ -39,10 +53,11 @@ class FeedItemTextTableViewCell: UITableViewCell {
             label.handleURLTap { url in
                 UIApplication.shared.open(url)
             }
+            
+            label.handleCustomTap(for: readMoreType) { _ in
+                label.text = text
+                label.layoutIfNeeded()
+            }
         }
-        
-//        if text.numberOfWords > maxWordsCount {
-//        } else {
-//        }
     }
 }
