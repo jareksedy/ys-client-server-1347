@@ -17,9 +17,9 @@ class Session {
     var token: String = ""
     
     // My Client ID's
-    // 7937012
-    // 7938282
+    // 7937012 (main)
+    // 7938282 (reserve)
     
-    let cliendId = "7938282"
+    let cliendId = "7937012"
     let version = "5.68"
 }

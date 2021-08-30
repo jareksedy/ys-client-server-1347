@@ -107,8 +107,6 @@ class FeedTableViewController: UITableViewController {
         
         view.postInfo.text = footerText
         
-//        view.postInfo.text = "⊹ \(Int(currentFeedItem.views?.count ?? 0).formatted)   |   ⌁ \(Int(currentFeedItem.reposts.count).formatted)   |   ℘ \(Int(currentFeedItem.comments.count).formatted)"
-//
         return view
     }
     

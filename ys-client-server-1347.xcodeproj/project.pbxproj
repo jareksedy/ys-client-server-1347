@@ -284,7 +284,6 @@
 		CACCC313269D84C20024C5BF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CAD3ABE3269892E20020BF1F /* Session.swift */,
 				CAE3402826DBE582006C73ED /* Likes.swift */,
 				CAE3402626DBCCA8006C73ED /* Global.swift */,
 				CACCC314269D87060024C5BF /* User.swift */,
@@ -299,6 +298,7 @@
 		CAE3402C26DBFEBC006C73ED /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				CAD3ABE3269892E20020BF1F /* Session.swift */,
 				CAE3402A26DBFEB5006C73ED /* Config.swift */,
 			);
 			path = Config;
