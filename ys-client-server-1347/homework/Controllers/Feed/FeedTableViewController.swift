@@ -17,7 +17,6 @@ class FeedTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         self.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
         
         tableView.register(FeedItemFooter.self, forHeaderFooterViewReuseIdentifier: "sectionFooter")
@@ -106,6 +105,7 @@ class FeedTableViewController: UITableViewController {
     // MARK: - Create & configure cells.
     
     // MARK: - Feed item author, date & image.
+    
     func feedInfoCell(indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedItemInfoCell", for: indexPath) as! FeedItemInfoTableViewCell
@@ -130,6 +130,7 @@ class FeedTableViewController: UITableViewController {
     }
     
     // MARK: - Feed item text.
+    
     func feedTextCell(indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedItemTextCell", for: indexPath) as! FeedItemTextTableViewCell
@@ -146,6 +147,7 @@ class FeedTableViewController: UITableViewController {
     }
     
     // MARK: - Feed item photo.
+    
     func feedPhotoCell(indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedItemPhotoCell", for: indexPath) as! FeedItemPhotoTableViewCell
@@ -166,6 +168,7 @@ class FeedTableViewController: UITableViewController {
     }
     
     // MARK: - Refresh table.
+    
     @objc func refresh(sender:AnyObject)
     {
         FeedAPI(Session.instance).get{ [weak self] feed in

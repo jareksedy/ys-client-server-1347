@@ -20,6 +20,6 @@ class Session {
     // 7937012
     // 7938282
     
-    let cliendId = "7937012"
+    let cliendId = "7938282"
     let version = "5.68"
 }
