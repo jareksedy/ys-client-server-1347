@@ -498,34 +498,36 @@
                                     <outlet property="feedItemPhoto" destination="TB2-NV-DMV" id="ljh-eW-niA"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="feedItemLinkCell" rowHeight="100" id="RXJ-es-yG8" customClass="FeedItemLinkCell" customModule="ys_client_server_1347" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="635" width="414" height="100"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="feedItemLinkCell" id="RXJ-es-yG8" customClass="FeedItemLinkCell" customModule="ys_client_server_1347" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="635" width="414" height="90.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RXJ-es-yG8" id="oVJ-Np-fLk">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="90.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название ссылки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRN-cM-79t">
-                                            <rect key="frame" x="35" y="16" width="344" height="30"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название ссылки" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRN-cM-79t">
+                                            <rect key="frame" x="20" y="16" width="374" height="23.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL-ссылки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYw-ft-uNG">
-                                            <rect key="frame" x="35" y="61" width="344" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL-ссылки" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYw-ft-uNG" customClass="ActiveLabel" customModule="ActiveLabel">
+                                            <rect key="frame" x="20" y="54.5" width="374" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="irl-Ba-Wse"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="cYw-ft-uNG" secondAttribute="trailing" constant="15" id="N0v-UW-d7p"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="cYw-ft-uNG" secondAttribute="trailing" id="N0v-UW-d7p"/>
                                         <constraint firstItem="cYw-ft-uNG" firstAttribute="top" secondItem="zRN-cM-79t" secondAttribute="bottom" constant="15" id="PFA-82-6aJ"/>
                                         <constraint firstItem="zRN-cM-79t" firstAttribute="top" secondItem="oVJ-Np-fLk" secondAttribute="topMargin" constant="5" id="YqU-FP-cKD"/>
-                                        <constraint firstItem="cYw-ft-uNG" firstAttribute="leading" secondItem="oVJ-Np-fLk" secondAttribute="leadingMargin" constant="15" id="bK6-iT-duQ"/>
-                                        <constraint firstItem="zRN-cM-79t" firstAttribute="leading" secondItem="oVJ-Np-fLk" secondAttribute="leadingMargin" constant="15" id="e1u-kB-Dpw"/>
-                                        <constraint firstAttribute="bottomMargin" relation="lessThanOrEqual" secondItem="cYw-ft-uNG" secondAttribute="bottom" constant="10" id="o27-r5-oPl"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="zRN-cM-79t" secondAttribute="trailing" constant="15" id="ygN-UQ-lRc"/>
+                                        <constraint firstItem="cYw-ft-uNG" firstAttribute="leading" secondItem="oVJ-Np-fLk" secondAttribute="leadingMargin" id="bK6-iT-duQ"/>
+                                        <constraint firstItem="zRN-cM-79t" firstAttribute="leading" secondItem="oVJ-Np-fLk" secondAttribute="leadingMargin" id="e1u-kB-Dpw"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="cYw-ft-uNG" secondAttribute="bottom" constant="5" id="o27-r5-oPl"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="zRN-cM-79t" secondAttribute="trailing" id="ygN-UQ-lRc"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
