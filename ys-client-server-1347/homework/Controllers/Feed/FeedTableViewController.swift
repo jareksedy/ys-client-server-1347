@@ -70,6 +70,13 @@ class FeedTableViewController: UITableViewController {
         }
     }
     
+    // MARK: - Open link on cell tap.
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let url = feedItems[indexPath.section].attachments?[0].link?.url else { return }
+        UIApplication.shared.open(URL(string: url)!)
+    }
+    
     // MARK: - Configure footer.
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -90,7 +97,7 @@ class FeedTableViewController: UITableViewController {
                                     self.feedItems[section].likes.userLikes = 0
                                   })
         
-        // --[ ✦ ⚑ ✦ ]--
+        // --[ ⚑ ]--
         
         view.postInfo.text = "⊹ \(Int(currentFeedItem.views?.count ?? 0).formatted)   |   ⌁ \(Int(currentFeedItem.reposts.count).formatted)   |   ℘ \(Int(currentFeedItem.comments.count).formatted)"
         
