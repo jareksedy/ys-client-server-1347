@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -139,14 +140,25 @@
                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOm-Bg-C9z">
+                                            <rect key="frame" x="120" y="49" width="264" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="tintColor" systemColor="secondaryLabelColor"/>
+                                            <state key="normal">
+                                                <imageReference key="image" image="ellipsis" catalog="system" symbolScale="large"/>
+                                            </state>
+                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="tOm-Bg-C9z" secondAttribute="trailing" constant="10" id="HUE-55-TtF"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="J8W-xe-dT8" secondAttribute="trailing" constant="10" id="Hct-o2-fQm"/>
                                         <constraint firstItem="J8W-xe-dT8" firstAttribute="leading" secondItem="W6O-o2-yxT" secondAttribute="trailing" constant="10" id="KPR-97-tPb"/>
                                         <constraint firstItem="J8W-xe-dT8" firstAttribute="centerY" secondItem="gdi-EF-vbO" secondAttribute="centerY" constant="-15" id="Uxk-5M-Yre"/>
                                         <constraint firstItem="W6O-o2-yxT" firstAttribute="leading" secondItem="gdi-EF-vbO" secondAttribute="leading" constant="10" id="WEx-Ed-FnZ"/>
                                         <constraint firstItem="fvD-jv-rHd" firstAttribute="leading" secondItem="W6O-o2-yxT" secondAttribute="trailing" constant="10" id="Xor-lM-uV1"/>
                                         <constraint firstItem="fvD-jv-rHd" firstAttribute="centerY" secondItem="gdi-EF-vbO" secondAttribute="centerY" constant="15" id="Zid-Mh-1mo"/>
+                                        <constraint firstItem="tOm-Bg-C9z" firstAttribute="centerY" secondItem="gdi-EF-vbO" secondAttribute="centerY" id="abt-Cf-y6G"/>
+                                        <constraint firstItem="tOm-Bg-C9z" firstAttribute="leading" secondItem="W6O-o2-yxT" secondAttribute="trailing" constant="10" id="nXP-7v-ae9"/>
                                         <constraint firstAttribute="bottom" secondItem="W6O-o2-yxT" secondAttribute="bottom" priority="999" constant="10" id="v5X-e8-Kwl"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="fvD-jv-rHd" secondAttribute="trailing" constant="10" id="vMj-Pk-nKm"/>
                                         <constraint firstItem="W6O-o2-yxT" firstAttribute="top" secondItem="gdi-EF-vbO" secondAttribute="top" constant="10" id="zD8-n4-I4y"/>
@@ -557,8 +569,12 @@
         <designable name="RIi-Tk-OYa">
             <size key="intrinsicContentSize" width="148.5" height="20.5"/>
         </designable>
+        <designable name="cYw-ft-uNG">
+            <size key="intrinsicContentSize" width="97" height="20.5"/>
+        </designable>
     </designables>
     <resources>
+        <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="figure.wave.circle" catalog="system" width="128" height="121"/>
         <image name="figure.wave.circle.fill" catalog="system" width="128" height="121"/>
         <image name="mappin.circle" catalog="system" width="128" height="121"/>
