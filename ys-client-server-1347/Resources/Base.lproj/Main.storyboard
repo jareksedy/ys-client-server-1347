@@ -147,6 +147,9 @@
                                             <state key="normal">
                                                 <imageReference key="image" image="ellipsis" catalog="system" symbolScale="large"/>
                                             </state>
+                                            <connections>
+                                                <action selector="friendMenuTap:" destination="VcP-mx-YFs" eventType="touchUpInside" id="bri-pl-Vp5"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -166,6 +169,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="friendImage" destination="W6O-o2-yxT" id="PrZ-de-vlP"/>
+                                    <outlet property="friendMenuButton" destination="tOm-Bg-C9z" id="tRs-Yz-iu2"/>
                                     <outlet property="friendName" destination="J8W-xe-dT8" id="9Gh-0J-epf"/>
                                     <outlet property="friendOnlineStatus" destination="fvD-jv-rHd" id="2v0-wt-Pk6"/>
                                 </connections>
