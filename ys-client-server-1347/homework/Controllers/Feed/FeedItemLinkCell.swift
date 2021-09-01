@@ -8,10 +8,12 @@
 import Foundation
 import UIKit
 import ActiveLabel
+import Alamofire
 
 class FeedItemLinkCell: UITableViewCell {
     
     @IBOutlet weak var linkTitle: UILabel!
+    @IBOutlet weak var linkPhoto: UIImageView!
     @IBOutlet weak var linkURL: ActiveLabel!
     
     override func awakeFromNib() {
@@ -38,6 +40,15 @@ class FeedItemLinkCell: UITableViewCell {
             label.handleURLTap { url in
                 UIApplication.shared.open(url)
             }
+        }
+        
+        guard let linkPhotoUrl = link.photo?.photo604 else { return }
+        
+        linkPhoto.image = UIImage(named: "placeholder")
+        
+        AF.request(linkPhotoUrl, method: .get).responseImage { response in
+            guard let image = response.value else { return }
+            self.linkPhoto.image = image
         }
     }
 }
