@@ -146,10 +146,8 @@
                                             <color key="tintColor" systemColor="secondaryLabelColor"/>
                                             <state key="normal">
                                                 <imageReference key="image" image="ellipsis" catalog="system" symbolScale="large"/>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                             </state>
-                                            <connections>
-                                                <action selector="friendMenuTap:" destination="VcP-mx-YFs" eventType="touchUpInside" id="bri-pl-Vp5"/>
-                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -161,7 +159,7 @@
                                         <constraint firstItem="fvD-jv-rHd" firstAttribute="leading" secondItem="W6O-o2-yxT" secondAttribute="trailing" constant="10" id="Xor-lM-uV1"/>
                                         <constraint firstItem="fvD-jv-rHd" firstAttribute="centerY" secondItem="gdi-EF-vbO" secondAttribute="centerY" constant="15" id="Zid-Mh-1mo"/>
                                         <constraint firstItem="tOm-Bg-C9z" firstAttribute="centerY" secondItem="gdi-EF-vbO" secondAttribute="centerY" id="abt-Cf-y6G"/>
-                                        <constraint firstItem="tOm-Bg-C9z" firstAttribute="leading" secondItem="W6O-o2-yxT" secondAttribute="trailing" constant="10" id="nXP-7v-ae9"/>
+                                        <constraint firstItem="tOm-Bg-C9z" firstAttribute="leading" secondItem="J8W-xe-dT8" secondAttribute="trailing" constant="-264" id="nXP-7v-ae9"/>
                                         <constraint firstAttribute="bottom" secondItem="W6O-o2-yxT" secondAttribute="bottom" priority="999" constant="10" id="v5X-e8-Kwl"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="fvD-jv-rHd" secondAttribute="trailing" constant="10" id="vMj-Pk-nKm"/>
                                         <constraint firstItem="W6O-o2-yxT" firstAttribute="top" secondItem="gdi-EF-vbO" secondAttribute="top" constant="10" id="zD8-n4-I4y"/>
@@ -514,7 +512,7 @@
                                     <outlet property="feedItemPhoto" destination="TB2-NV-DMV" id="ljh-eW-niA"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="feedItemLinkCell" id="RXJ-es-yG8" customClass="FeedItemLinkCell" customModule="ys_client_server_1347" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="feedItemLinkCell" id="RXJ-es-yG8" customClass="FeedItemLinkCell" customModule="ys_client_server_1347" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="635" width="414" height="90.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RXJ-es-yG8" id="oVJ-Np-fLk">

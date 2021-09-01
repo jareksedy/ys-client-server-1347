@@ -15,32 +15,15 @@ class FriendsTableViewCell: UITableViewCell {
     @IBOutlet weak var friendMenuButton: UIButton!
     @IBOutlet weak var friendOnlineStatus: UILabel!
     
-    var menuItems: [UIAction] {
-        return [
-            UIAction(title: "Просмотреть профиль", image: UIImage(systemName: "doc.plaintext"), handler: { (_) in
-            }),
-            UIAction(title: "Удалить из друзей", image: UIImage(systemName: "heart.slash"), attributes: .destructive, handler: { (_) in
-            }),
-        ]
-    }
-    
-    var demoMenu: UIMenu {
-        return UIMenu(children: menuItems)
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        friendMenuButton.menu = demoMenu
+        friendMenuButton.menu = friendsMenu
         friendMenuButton.showsMenuAsPrimaryAction = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-    }
-    
-    @IBAction func friendMenuTap(_ sender: Any) {
-        
     }
     
     func configure(_ friendItem: FriendItem) {

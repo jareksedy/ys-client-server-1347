@@ -32,6 +32,31 @@ class FeedTableViewController: UITableViewController {
         }
     }
     
+    // MARK: - Context menus.
+    
+    override func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        
+        if tableView.cellForRow(at: indexPath)?.reuseIdentifier != "feedItemLinkCell" { return nil }
+        guard let url = feedItems[indexPath.section].attachments?[0].link?.url else { return nil }
+        
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { action in
+            
+            let linkMenuItems: [UIAction] = [
+                UIAction(title: "Открыть", image: UIImage(systemName: "safari"), handler: { _ in
+                    UIApplication.shared.open(URL(string: url)!)
+                }),
+                UIAction(title: "Скопировать ссылку", image: UIImage(systemName: "doc.on.doc"), handler: { _ in
+                    UIPasteboard.general.string = url
+                }),
+            ]
+            
+            let linkMenu = UIMenu(children: linkMenuItems)
+            
+            return linkMenu
+            
+        })
+    }
+    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
