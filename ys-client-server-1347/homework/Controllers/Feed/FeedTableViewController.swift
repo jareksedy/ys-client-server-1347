@@ -23,24 +23,18 @@ class FeedTableViewController: UITableViewController {
         tableView.sectionFooterHeight = 50
         tableView.separatorStyle = .singleLine
         
-        FeedAPI(Session.instance).get{ [weak self] feed in
-            guard let self = self else { return }
-            self.feedItems = feed!.response.items
-            self.feedProfiles = feed!.response.profiles
-            self.feedGroups = feed!.response.groups
-            self.tableView.reloadData()
-        }
+        refresh(sender: self)
     }
     
     // MARK: - Context menus.
     
     override func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
-        
+
         if tableView.cellForRow(at: indexPath)?.reuseIdentifier != "feedItemLinkCell" { return nil }
         guard let url = feedItems[indexPath.section].attachments?[0].link?.url else { return nil }
-        
+
         return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { action in
-            
+
             let linkMenuItems: [UIAction] = [
                 UIAction(title: "Открыть", image: UIImage(systemName: "safari"), handler: { _ in
                     UIApplication.shared.open(URL(string: url)!)
@@ -49,11 +43,11 @@ class FeedTableViewController: UITableViewController {
                     UIPasteboard.general.string = url
                 }),
             ]
-            
+
             let linkMenu = UIMenu(children: linkMenuItems)
-            
+
             return linkMenu
-            
+
         })
     }
     
