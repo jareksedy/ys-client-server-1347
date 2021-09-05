@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-protocol CustomCellUpdater: AnyObject {
+protocol CellUpdater: AnyObject {
     func updateTableView()
 }
 
@@ -20,8 +20,7 @@ class FriendsTableViewCell: UITableViewCell {
     @IBOutlet weak var friendOnlineStatus: UILabel!
     
     var parentVC: UIViewController!
-    
-    weak var delegate: CustomCellUpdater?
+    weak var delegate: CellUpdater?
 
     func update() {
         delegate?.updateTableView()

@@ -7,7 +7,11 @@
 
 import UIKit
 
-class FriendsTableViewController: UITableViewController, CustomCellUpdater {
+class FriendsTableViewController: UITableViewController, CellUpdater {
+    
+    func updateTableView() {
+        refresh(sender: self)
+    }
     
     var friendItems: [FriendItem] = []
 
@@ -18,10 +22,6 @@ class FriendsTableViewController: UITableViewController, CustomCellUpdater {
         tableView.separatorStyle = .none
         
         refresh(sender: self)
-    }
-    
-    func updateTableView() {
-        tableView.reloadData()
     }
 
     // MARK: - Table view data source
