@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import Alamofire
-import ImageViewer_swift
 
 class FeedItemPhotoTableViewCell: UITableViewCell {
     
@@ -17,27 +15,13 @@ class FeedItemPhotoTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    override func prepareForReuse() {
+        feedItemPhoto.image = nil
     }
     
-    func configure(url: String? = nil, systemImageName: String? = nil) {
+    func configure(url: String? = nil) {
         
-        feedItemPhoto.image = UIImage(named: "placeholder")
-        
-        if let systemImageName = systemImageName {
-            feedItemPhoto.image = UIImage(named: systemImageName)
-        } else {
-            AF.request(url!, method: .get).responseImage { response in
-                
-                guard let image = response.value else { return }
-                
-                self.feedItemPhoto.image = image
-                
-                self.feedItemPhoto.setupImageViewer(options: [.closeIcon(UIImage(systemName: "arrow.backward")!),
-                                                             .theme(self.traitCollection.userInterfaceStyle == .light ? .light : .dark)])
-            }
-        }
+        guard let url = url else { return }
+        feedItemPhoto.asyncLoadImageUsingCache(withUrl: url, withImageViewer: true)
     }
-    
 }

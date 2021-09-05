@@ -62,7 +62,7 @@ class UserInfoViewController: UIViewController {
                 return
             }
             
-            AF.request(imageUrl, method: .get).responseImage{ response in
+            AF.request(imageUrl, method: .get).responseImage { response in
                 
                 guard let image = response.value else { return }
                 seal.fulfill(image)

@@ -22,8 +22,8 @@ class FriendsTableViewCell: UITableViewCell {
         friendMenuButton.showsMenuAsPrimaryAction = true
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    override func prepareForReuse() {
+        friendImage.image = nil
     }
     
     func configure(_ friendItem: FriendItem) {
@@ -52,13 +52,7 @@ class FriendsTableViewCell: UITableViewCell {
         }
         
         if let friendPhoto = friendItem.photo100 {
-            AF.request(friendPhoto, method: .get).responseImage { response in
-                guard let image = response.value else { return }
-                self.friendImage.image = image
-            }
+            friendImage.asyncLoadImageUsingCache(withUrl: friendPhoto)
         }
-        
-        
     }
-
 }

@@ -20,8 +20,8 @@ class FeedItemLinkCell: UITableViewCell {
         super.awakeFromNib()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    override func prepareForReuse() {
+        linkPhoto.image = nil
     }
     
     func configure(link: Link) {
@@ -43,12 +43,6 @@ class FeedItemLinkCell: UITableViewCell {
         }
         
         guard let linkPhotoUrl = link.photo?.photo604 else { return }
-        
-        linkPhoto.image = UIImage(named: "placeholder")
-        
-        AF.request(linkPhotoUrl, method: .get).responseImage { response in
-            guard let image = response.value else { return }
-            self.linkPhoto.image = image
-        }
+        linkPhoto.asyncLoadImageUsingCache(withUrl: linkPhotoUrl)
     }
 }
