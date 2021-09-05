@@ -15,14 +15,9 @@ class FriendsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
-        
         tableView.separatorStyle = .none
         
-        FriendAPI(Session.instance).get{ [weak self] friends in
-            guard let self = self else { return }
-            self.friendItems = friends!.response.items
-            self.tableView.reloadData()
-        }
+        refresh(sender: self)
     }
 
     // MARK: - Table view data source

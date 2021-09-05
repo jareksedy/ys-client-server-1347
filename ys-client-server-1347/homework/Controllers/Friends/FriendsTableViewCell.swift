@@ -15,10 +15,26 @@ class FriendsTableViewCell: UITableViewCell {
     @IBOutlet weak var friendMenuButton: UIButton!
     @IBOutlet weak var friendOnlineStatus: UILabel!
     
+    func makeFriendMenu() -> UIMenu {
+        return UIMenu(children: makeFriendMenuChildren())
+    }
+    
+    func makeFriendMenuChildren() -> [UIAction] {
+        
+        var actions = [UIAction]()
+        
+        actions.append(UIAction(title: "Удалить нахрен из друзей",
+                                image: UIImage(systemName: "trash"),
+                                identifier: nil,
+                                attributes: .destructive,
+                                handler: {action in }))
+        return actions
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        friendMenuButton.menu = friendsMenu
+        friendMenuButton.menu = makeFriendMenu()
         friendMenuButton.showsMenuAsPrimaryAction = true
     }
 
