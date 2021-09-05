@@ -20,3 +20,4 @@ let activeVkHashTagColor = UIColor(red: 138.0/255, green: 138.0/255, blue: 142.0
 let activeVkHashTagColorSelected = UIColor(red: 138.0/255, green: 138.0/255, blue: 142.0/255, alpha: 0.5)
 
 let imageCache = NSCache<NSString, UIImage>()
+let dateTimeCache = NSCache<NSNumber, NSString>()
