@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FriendsTableViewController: UITableViewController {
+class FriendsTableViewController: UITableViewController, CustomCellUpdater {
     
     var friendItems: [FriendItem] = []
 
@@ -18,6 +18,10 @@ class FriendsTableViewController: UITableViewController {
         tableView.separatorStyle = .none
         
         refresh(sender: self)
+    }
+    
+    func updateTableView() {
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -31,6 +35,8 @@ class FriendsTableViewController: UITableViewController {
         else { return UITableViewCell() }
         
         cell.configure(friendItems[indexPath.row])
+        cell.parentVC = self
+        cell.delegate = self
         return cell
     }
     

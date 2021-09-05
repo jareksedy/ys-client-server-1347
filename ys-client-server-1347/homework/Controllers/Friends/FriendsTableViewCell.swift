@@ -8,41 +8,50 @@
 import UIKit
 import Alamofire
 
-class FriendsTableViewCell: UITableViewCell {
+protocol CustomCellUpdater: AnyObject {
+    func updateTableView()
+}
 
+class FriendsTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var friendImage: RoundedImageView!
     @IBOutlet weak var friendName: UILabel!
     @IBOutlet weak var friendMenuButton: UIButton!
     @IBOutlet weak var friendOnlineStatus: UILabel!
     
-    func makeFriendMenu() -> UIMenu {
-        return UIMenu(children: makeFriendMenuChildren())
+    var parentVC: UIViewController!
+    
+    weak var delegate: CustomCellUpdater?
+
+    func update() {
+        delegate?.updateTableView()
     }
     
-    func makeFriendMenuChildren() -> [UIAction] {
+    func makeFriendMenu(_ friendItem: FriendItem) -> UIMenu {
         
         var actions = [UIAction]()
         
-        actions.append(UIAction(title: "Удалить нахрен из друзей",
+        actions.append(UIAction(title: "Удалить из друзей",
                                 image: UIImage(systemName: "trash"),
-                                identifier: nil,
                                 attributes: .destructive,
-                                handler: {action in }))
-        return actions
+                                handler: {_ in self.removeFromFriends(friendItem) }))
+        
+        return UIMenu(children: actions)
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        friendMenuButton.menu = makeFriendMenu()
         friendMenuButton.showsMenuAsPrimaryAction = true
     }
-
+    
     override func prepareForReuse() {
         friendImage.image = nil
     }
     
     func configure(_ friendItem: FriendItem) {
+        
+        friendMenuButton.menu = makeFriendMenu(friendItem)
         
         friendName.text = "\(friendItem.firstName) \(friendItem.lastName)"
         friendImage.image = UIImage(named: "placeholder")
@@ -70,5 +79,42 @@ class FriendsTableViewCell: UITableViewCell {
         if let friendPhoto = friendItem.photo100 {
             friendImage.asyncLoadImageUsingCache(withUrl: friendPhoto)
         }
+    }
+    
+    private func removeFromFriends(_ friendItem: FriendItem) {
+        
+        let alert = UIAlertController(title: "Удалить из друзей?", message: "\(friendItem.firstName) \(friendItem.lastName) будет удален из списка ваших друзей. Вы уверены?", preferredStyle: .alert)
+        
+        let successAlert = UIAlertController(title: "Удалить из друзей",
+                                             message: "\(friendItem.firstName) \(friendItem.lastName) успешно удален из списка ваших друзей!",
+                                             preferredStyle: .alert)
+        
+        successAlert.addAction(UIAlertAction(title: "Отлично!", style: .default, handler: nil))
+        
+        let errorAlert = UIAlertController(title: "Ошибка удаления",
+                                             message: "Не удалось удалить \(friendItem.firstName) \(friendItem.lastName) из списка ваших друзей! Попробуйте позже.",
+                                             preferredStyle: .alert)
+        
+        errorAlert.addAction(UIAlertAction(title: "Хорошо!", style: .default, handler: nil))
+        
+        
+        alert.addAction(UIAlertAction(title: "Да", style: .default, handler: {_ in
+            
+            FriendAPI(Session.instance).removeFromFriends(friendItem.id){ [weak self] friendDelete in
+
+                guard self != nil else { return }
+
+                if friendDelete?.response.success == 1 {
+                    self?.parentVC.present(successAlert, animated: true)
+                    self?.update()
+                } else {
+                    self?.parentVC.present(errorAlert, animated: true)
+                }
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Нет", style: .cancel, handler: nil))
+        
+        parentVC.present(alert, animated: true)
+        
     }
 }
