@@ -21,7 +21,7 @@ class PhotoAPI {
             "client_id": session.cliendId,
             "user_id": session.userId,
             "access_token": session.token,
-            "count": 100,
+            "count": 200,
             "v": session.version,
         ]
         

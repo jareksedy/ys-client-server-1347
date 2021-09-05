@@ -12,15 +12,34 @@ class FriendsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var friendImage: RoundedImageView!
     @IBOutlet weak var friendName: UILabel!
+    @IBOutlet weak var friendMenuButton: UIButton!
     @IBOutlet weak var friendOnlineStatus: UILabel!
     
+    func makeFriendMenu() -> UIMenu {
+        return UIMenu(children: makeFriendMenuChildren())
+    }
+    
+    func makeFriendMenuChildren() -> [UIAction] {
+        
+        var actions = [UIAction]()
+        
+        actions.append(UIAction(title: "Удалить нахрен из друзей",
+                                image: UIImage(systemName: "trash"),
+                                identifier: nil,
+                                attributes: .destructive,
+                                handler: {action in }))
+        return actions
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        friendMenuButton.menu = makeFriendMenu()
+        friendMenuButton.showsMenuAsPrimaryAction = true
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    override func prepareForReuse() {
+        friendImage.image = nil
     }
     
     func configure(_ friendItem: FriendItem) {
@@ -49,13 +68,7 @@ class FriendsTableViewCell: UITableViewCell {
         }
         
         if let friendPhoto = friendItem.photo100 {
-            AF.request(friendPhoto, method: .get).responseImage { response in
-                guard let image = response.value else { return }
-                self.friendImage.image = image
-            }
+            friendImage.asyncLoadImageUsingCache(withUrl: friendPhoto)
         }
-        
-        
     }
-
 }

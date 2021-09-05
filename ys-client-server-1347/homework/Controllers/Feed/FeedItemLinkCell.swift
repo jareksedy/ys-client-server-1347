@@ -8,18 +8,20 @@
 import Foundation
 import UIKit
 import ActiveLabel
+import Alamofire
 
 class FeedItemLinkCell: UITableViewCell {
     
     @IBOutlet weak var linkTitle: UILabel!
+    @IBOutlet weak var linkPhoto: UIImageView!
     @IBOutlet weak var linkURL: ActiveLabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    override func prepareForReuse() {
+        linkPhoto.image = nil
     }
     
     func configure(link: Link) {
@@ -39,5 +41,8 @@ class FeedItemLinkCell: UITableViewCell {
                 UIApplication.shared.open(url)
             }
         }
+        
+        guard let linkPhotoUrl = link.photo?.photo604 else { return }
+        linkPhoto.asyncLoadImageUsingCache(withUrl: linkPhotoUrl)
     }
 }

@@ -18,9 +18,9 @@ class GroupTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+
+    override func prepareForReuse() {
+        groupImage.image = nil
     }
     
     func configure(_ groupItem: GroupItem) {
@@ -34,9 +34,6 @@ class GroupTableViewCell: UITableViewCell {
         
         groupMemebersCount.text =  "\(groupItem.membersCount.formatted) подписчиков"
         
-        AF.request(groupItem.imageURL, method: .get).responseImage { response in
-            guard let image = response.value else { return }
-            self.groupImage.image = image
-        }
+        groupImage.asyncLoadImageUsingCache(withUrl: groupItem.imageURL)
     }
 }

@@ -6,11 +6,17 @@
 //
 
 import Foundation
+import UIKit
+import Alamofire
+import AlamofireImage
+import ImageViewer_swift
 
 // MARK: - Форматирование даты/времени а-ля ВК.
 
 extension Double {
     func getRelativeDateStringFromUTC() -> String {
+        
+        if let cached = dateTimeCache.object(forKey: self as NSNumber) { return cached as String }
         
         let date = Date(timeIntervalSince1970: self)
         let dateFormatter = DateFormatter()
@@ -19,6 +25,8 @@ extension Double {
         dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .short
         dateFormatter.doesRelativeDateFormatting = true
+        
+        dateTimeCache.setObject(dateFormatter.string(from: date) as NSString, forKey: self as NSNumber)
         
         return dateFormatter.string(from: date)
     }
@@ -96,5 +104,46 @@ extension StringProtocol {
             stop = true
         }
         return line
+    }
+}
+
+// MARK: - Кэширование изображений.
+
+extension UIImageView {
+    func asyncLoadImageUsingCache(withUrl urlString: String, withImageViewer: Bool = false, indicator: UIActivityIndicatorView? = nil) {
+        
+        self.image = nil
+        
+        if let cached = imageCache.object(forKey: urlString as NSString) {
+            self.image = cached
+            
+            if withImageViewer {
+                self.setupImageViewer(options: [.closeIcon(UIImage(systemName: "arrow.backward")!),
+                                                .theme(self.traitCollection.userInterfaceStyle == .light ? .light : .dark)])
+            }
+            
+            if indicator != nil {
+                indicator!.stopAnimating()
+            }
+            
+            return
+        }
+        
+        AF.request(urlString, method: .get).responseImage { response in
+            
+            guard let image = response.value else { return }
+            
+            imageCache.setObject(image, forKey: urlString as NSString)
+            self.image = image
+            
+            if withImageViewer {
+                self.setupImageViewer(options: [.closeIcon(UIImage(systemName: "arrow.backward")!),
+                                                .theme(self.traitCollection.userInterfaceStyle == .light ? .light : .dark)])
+            }
+            
+            if indicator != nil {
+                indicator!.stopAnimating()
+            }
+        }
     }
 }
