@@ -16,7 +16,9 @@ class FeedAPI {
     
     var params: Parameters
     
-    init(_ session: Session) {
+    init() {
+        
+        let session = Session.instance
         
         self.params = [
             "client_id": session.cliendId,
