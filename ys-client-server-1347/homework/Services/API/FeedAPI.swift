@@ -31,9 +31,13 @@ class FeedAPI {
         
     }
     
-    func get(_ completion: @escaping (Feed?) -> ()) {
+    func get(startTime: TimeInterval? = nil, _ completion: @escaping (Feed?) -> ()) {
         
         let url = baseUrl + method
+        
+        if startTime != nil {
+            self.params["start_time"] = startTime
+        }
         
         AF.request(url, method: .get, parameters: params).responseData { response in
             

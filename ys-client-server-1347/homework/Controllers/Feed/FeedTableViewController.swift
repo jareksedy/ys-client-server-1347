@@ -224,14 +224,29 @@ class FeedTableViewController: UITableViewController {
     
     @objc func refresh(sender:AnyObject)
     {
-        api.get{ [weak self] feed in
-            guard let self = self else { return }
-            self.feedItems = feed!.response.items
-            self.feedProfiles = feed!.response.profiles
-            self.feedGroups = feed!.response.groups
+        self.refreshControl?.beginRefreshing()
+        
+        let mostRecentFeedItemDate = self.feedItems.first?.date ?? Date().timeIntervalSince1970
+        
+        api.get(startTime: mostRecentFeedItemDate + 1){ [weak self] feed in
             
-            self.tableView.reloadData()
+            guard let self = self else { return }
+            
             self.refreshControl?.endRefreshing()
+            
+            guard let items = feed?.response.items else { return }
+            guard let profiles = feed?.response.profiles else { return }
+            guard let groups = feed?.response.groups else { return }
+            guard items.count > 0 else { return }
+            
+            print(items.count)
+            
+            self.feedItems = items + self.feedItems
+            self.feedProfiles = profiles + self.feedProfiles
+            self.feedGroups = groups + self.feedGroups
+            
+            let indexSet = IndexSet(integersIn: 0..<items.count)
+            self.tableView.insertSections(indexSet, with: .bottom)
         }
     }
     
