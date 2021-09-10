@@ -15,8 +15,13 @@ class FeedTableViewController: UITableViewController {
     var feedProfiles: [Profile] = []
     var feedGroups: [Group] = []
     
+    var nextFrom = ""
+    var isLoading = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.prefetchDataSource = self
         
         self.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
         
@@ -30,6 +35,7 @@ class FeedTableViewController: UITableViewController {
             self.feedItems = feed!.response.items
             self.feedProfiles = feed!.response.profiles
             self.feedGroups = feed!.response.groups
+            self.nextFrom = feed?.response.nextFrom ?? ""
             
             self.tableView.reloadData()
         }
@@ -246,8 +252,42 @@ class FeedTableViewController: UITableViewController {
             self.feedGroups = groups + self.feedGroups
             
             let indexSet = IndexSet(integersIn: 0..<items.count)
-            self.tableView.insertSections(indexSet, with: .top)
+            self.tableView.insertSections(indexSet, with: .fade)
         }
     }
     
+}
+
+extension FeedTableViewController: UITableViewDataSourcePrefetching {
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        
+        guard let maxSection = indexPaths.map({ $0.section }).max() else { return }
+        
+        if maxSection > feedItems.count - 3, !isLoading {
+            
+            isLoading = true
+            
+            api.get(startFrom: nextFrom) { [weak self] feed in
+                
+                guard let self = self else { return }
+                
+                guard let newItems = feed?.response.items else { return }
+                guard let newProfiles = feed?.response.profiles else { return }
+                guard let newGroups = feed?.response.groups else { return }
+                
+                let indexSet = IndexSet(integersIn: self.feedItems.count ..< self.feedItems.count + newItems.count)
+                
+                self.feedItems.append(contentsOf: newItems)
+                self.feedProfiles.append(contentsOf: newProfiles)
+                self.feedGroups.append(contentsOf: newGroups)
+                
+                self.nextFrom = feed?.response.nextFrom ?? ""
+                
+                self.tableView.insertSections(indexSet, with: .automatic)
+                
+                self.isLoading = false
+            }
+        }
+    }
 }

@@ -26,17 +26,21 @@ class FeedAPI {
             "access_token": session.token,
             "v": session.version,
             "filters": "post",
-            //"count": "1",
+            "count": "2",
         ]
         
     }
     
-    func get(startTime: TimeInterval? = nil, _ completion: @escaping (Feed?) -> ()) {
+    func get(startTime: TimeInterval? = nil, startFrom: String? = nil, _ completion: @escaping (Feed?) -> ()) {
         
         let url = baseUrl + method
         
         if startTime != nil {
             self.params["start_time"] = startTime
+        }
+        
+        if startFrom != nil {
+            self.params["start_from"] = startFrom
         }
         
         AF.request(url, method: .get, parameters: params).responseData { response in
@@ -50,6 +54,7 @@ class FeedAPI {
             let vkItemsJSONArr = json["response"]["items"].arrayValue
             let vkProfilesJSONArr = json["response"]["profiles"].arrayValue
             let vkGroupsJSONArr = json["response"]["groups"].arrayValue
+            let nextFrom = json["response"]["next_from"].stringValue
             
             var vkItemsArray: [Item] = []
             var vkProfilesArray: [Profile] = []
@@ -101,7 +106,8 @@ class FeedAPI {
             dispatchGroup.notify(queue: DispatchQueue.main) {
                 let response = FeedResponse(items: vkItemsArray,
                                             profiles: vkProfilesArray,
-                                            groups: vkGroupsArray)
+                                            groups: vkGroupsArray,
+                                            nextFrom: nextFrom)
                 let feed = Feed(response: response)
                 
                 completion(feed)
