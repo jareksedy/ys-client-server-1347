@@ -26,7 +26,7 @@ class FeedAPI {
             "access_token": session.token,
             "v": session.version,
             "filters": "post",
-            "count": "2",
+            "count": "10",
         ]
         
     }

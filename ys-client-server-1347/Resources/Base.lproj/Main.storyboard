@@ -506,17 +506,14 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="feedItemPhotoCell" id="nh4-8Y-JhR" customClass="FeedItemPhotoTableViewCell" customModule="ys_client_server_1347" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="220.5" width="414" height="414.5"/>
+                                <rect key="frame" x="0.0" y="220.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nh4-8Y-JhR" id="bNC-6U-JBW">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="414.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TB2-NV-DMV">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="TB2-NV-DMV" secondAttribute="height" id="GYa-cb-eCo"/>
-                                            </constraints>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -531,7 +528,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedItemLinkCell" id="RXJ-es-yG8" customClass="FeedItemLinkCell" customModule="ys_client_server_1347" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="635" width="414" height="234.5"/>
+                                <rect key="frame" x="0.0" y="264" width="414" height="234.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RXJ-es-yG8" id="oVJ-Np-fLk">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="234.5"/>

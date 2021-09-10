@@ -104,6 +104,36 @@ class FeedTableViewController: UITableViewController {
         }
     }
     
+    // MARK: - Row height.
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        func currentPhotoHeight(_ item: Item) -> CGFloat {
+            guard let height = item.attachments?[0].photo?.actualPhoto?.height else { return UITableView.automaticDimension }
+            guard let width = item.attachments?[0].photo?.actualPhoto?.width else { return UITableView.automaticDimension }
+            
+            let tableWidth = tableView.bounds.width
+            
+            let aspectRatio = CGFloat(height) / CGFloat(width)
+            let cellHeight = tableWidth * aspectRatio
+            return cellHeight
+        }
+        
+        let currentFeedItem = feedItems[indexPath.section]
+        
+        switch indexPath.row {
+            
+        case 1:
+            return currentFeedItem.hasText ? UITableView.automaticDimension : currentPhotoHeight(currentFeedItem)
+            
+        case 2:
+            return currentFeedItem.hasLink ? UITableView.automaticDimension : currentPhotoHeight(currentFeedItem)
+            
+        default:
+            return UITableView.automaticDimension
+        }
+    }
+    
     // MARK: - Open link on cell tap.
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

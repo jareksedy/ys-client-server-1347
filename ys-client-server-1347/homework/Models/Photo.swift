@@ -77,4 +77,5 @@ enum TypeEnum: String, Codable {
     case d = "d"
     case e = "e"
     case l = "l"
+    case temp = "temp"
 }
