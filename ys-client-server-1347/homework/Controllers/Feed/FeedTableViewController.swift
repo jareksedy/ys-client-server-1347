@@ -72,7 +72,7 @@ class FeedTableViewController: UITableViewController {
         var count = 1
         
         if currentFeedItem.hasText { count += 1 }
-        if currentFeedItem.hasPhoto604 { count += 1 }
+        if currentFeedItem.hasPhoto { count += 1 }
         if currentFeedItem.hasLink { count += 1}
         
         return count
@@ -208,9 +208,9 @@ class FeedTableViewController: UITableViewController {
         
         let currentFeedItem = feedItems[indexPath.section]
         
-        if currentFeedItem.hasPhoto604 {
+        if currentFeedItem.hasPhoto {
             
-            cell.configure(url: currentFeedItem.attachments![0].photo!.photo604!)
+            cell.configure(url: currentFeedItem.attachments![0].photo!.actualPhoto!.url)
             return cell
             
         } else {
@@ -239,14 +239,14 @@ class FeedTableViewController: UITableViewController {
             guard let groups = feed?.response.groups else { return }
             guard items.count > 0 else { return }
             
-            print(items.count)
+            //print(items.count)
             
             self.feedItems = items + self.feedItems
             self.feedProfiles = profiles + self.feedProfiles
             self.feedGroups = groups + self.feedGroups
             
             let indexSet = IndexSet(integersIn: 0..<items.count)
-            self.tableView.insertSections(indexSet, with: .bottom)
+            self.tableView.insertSections(indexSet, with: .top)
         }
     }
     

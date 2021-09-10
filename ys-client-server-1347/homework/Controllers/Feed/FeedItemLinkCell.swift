@@ -42,7 +42,7 @@ class FeedItemLinkCell: UITableViewCell {
             }
         }
         
-        guard let linkPhotoUrl = link.photo?.photo604 else { return }
+        guard let linkPhotoUrl = link.photo?.actualPhoto?.url else { return }
         linkPhoto.asyncLoadImageUsingCache(withUrl: linkPhotoUrl)
     }
 }

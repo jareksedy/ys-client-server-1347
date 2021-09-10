@@ -81,8 +81,8 @@ struct Item: Codable {
         return self.text != nil && self.text != ""
     }
     
-    var hasPhoto604: Bool {
-        return self.attachments?[0].photo?.photo604 != nil
+    var hasPhoto: Bool {
+        return self.attachments?[0].photo?.actualPhoto != nil
     }
     
     var hasLink: Bool {
@@ -112,7 +112,7 @@ struct Item: Codable {
 // MARK: - Attachment
 struct Attachment: Codable {
     let type: String
-    let photo: Photo?
+    let photo: PhotoItem?
     let link: Link?
 }
 
@@ -120,7 +120,7 @@ struct Attachment: Codable {
 struct Link: Codable {
     let url: String
     let title: String?
-    let photo: Photo?
+    let photo: PhotoItem?
 }
 
 // MARK: - Photo

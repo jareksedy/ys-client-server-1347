@@ -23,27 +23,58 @@ struct PhotoResponse: Codable {
 struct PhotoItem: Codable {
     let albumID, date, id, ownerID: Int?
     let hasTags: Bool?
-    let height: Int?
-    let photo1280, photo130, photo2560, photo604: String?
-    let photo75, photo807: String?
-    let postID: Int?
+    let sizes: [Size]?
     let text: String?
-    let width: Int?
+    let lat, long: Double?
+    let postID: Int?
+    
+    var actualPhoto: Size? {
+        
+        guard let sizes = self.sizes else { return nil }
+        
+        if let photo = sizes.first(where: {$0.type == .x}) { return photo }
+        if let photo = sizes.first(where: {$0.type == .z}) { return photo }
+        if let photo = sizes.first(where: {$0.type == .y}) { return photo }
+        if let photo = sizes.first(where: {$0.type == .m}) { return photo }
+        if let photo = sizes.first(where: {$0.type == .s}) { return photo }
+        
+        return nil
+    }
 
     enum CodingKeys: String, CodingKey {
         case albumID = "album_id"
         case date, id
         case ownerID = "owner_id"
         case hasTags = "has_tags"
-        case height
-        case photo1280 = "photo_1280"
-        case photo130 = "photo_130"
-        case photo2560 = "photo_2560"
-        case photo604 = "photo_604"
-        case photo75 = "photo_75"
-        case photo807 = "photo_807"
+        case sizes, text, lat, long
         case postID = "post_id"
-        case text, width
     }
 }
 
+// MARK: - Size
+struct Size: Codable {
+    let height: Int
+    let url: String
+    let type: TypeEnum
+    let width: Int
+}
+
+enum TypeEnum: String, Codable {
+    case m = "m"
+    case o = "o"
+    case p = "p"
+    case q = "q"
+    case r = "r"
+    case s = "s"
+    case w = "w"
+    case x = "x"
+    case y = "y"
+    case z = "z"
+    case k = "k"
+    case a = "a"
+    case b = "b"
+    case c = "c"
+    case d = "d"
+    case e = "e"
+    case l = "l"
+}

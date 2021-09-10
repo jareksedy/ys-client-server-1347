@@ -21,5 +21,5 @@ class Session {
     // 7938282 (reserve)
     
     let cliendId = "7937012"
-    let version = "5.68"
+    let version = "5.131"
 }

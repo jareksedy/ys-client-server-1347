@@ -20,7 +20,7 @@ class FriendAPI {
             "client_id": session.cliendId,
             "user_id": session.userId,
             "access_token": session.token,
-            "v": "5.80",
+            "v": session.version,
         ]
         
     }

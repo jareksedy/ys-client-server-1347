@@ -32,7 +32,7 @@ class PhotoCollectionViewController: UICollectionViewController {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCollectionViewCell
        
-        cell.photoView.asyncLoadImageUsingCache(withUrl: photoItems[indexPath.row].photo604!,
+        cell.photoView.asyncLoadImageUsingCache(withUrl: photoItems[indexPath.row].actualPhoto!.url,
                                                 withImageViewer: true,
                                                 indicator: cell.photoIndicator)
         
