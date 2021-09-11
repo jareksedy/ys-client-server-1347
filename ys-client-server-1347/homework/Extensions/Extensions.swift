@@ -147,3 +147,26 @@ extension UIImageView {
         }
     }
 }
+
+// MARK: - Get parent view controller.
+
+extension UIView {
+    var parentViewController: UIViewController? {
+        var parentResponder: UIResponder? = self
+        while parentResponder != nil {
+            parentResponder = parentResponder!.next
+            if parentResponder is UIViewController {
+                return parentResponder as? UIViewController
+            }
+        }
+        return nil
+    }
+}
+
+// MARK: - Get label height.
+
+extension UILabel {
+    func getSize(constrainedWidth: CGFloat) -> CGSize {
+        return systemLayoutSizeFitting(CGSize(width: constrainedWidth, height: UIView.layoutFittingCompressedSize.height), withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel)
+    }
+}

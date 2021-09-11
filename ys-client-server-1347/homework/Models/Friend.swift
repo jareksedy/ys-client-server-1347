@@ -45,3 +45,23 @@ struct LastSeen: Codable {
     let platform: Int?
     let time: TimeInterval
 }
+
+struct FriendDelete: Codable {
+    let response: FriendDeleteResponse
+}
+
+struct FriendDeleteResponse: Codable {
+    let success: Int
+    let friendDeleted: Int?
+    let outRequestDeleted: Int?
+    let inRequestDeleted: Int?
+    let suggestionDeleted: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case success
+        case friendDeleted = "friend_deleted"
+        case outRequestDeleted = "out_request_deleted"
+        case inRequestDeleted = "in_request_deleted"
+        case suggestionDeleted = "suggestion_deleted"
+    }
+}

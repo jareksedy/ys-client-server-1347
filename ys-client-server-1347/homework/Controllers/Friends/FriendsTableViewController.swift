@@ -7,7 +7,11 @@
 
 import UIKit
 
-class FriendsTableViewController: UITableViewController {
+class FriendsTableViewController: UITableViewController, CellUpdater {
+    
+    func updateTableView() {
+        refresh(sender: self)
+    }
     
     var friendItems: [FriendItem] = []
 
@@ -31,6 +35,8 @@ class FriendsTableViewController: UITableViewController {
         else { return UITableViewCell() }
         
         cell.configure(friendItems[indexPath.row])
+        cell.parentVC = self
+        cell.delegate = self
         return cell
     }
     

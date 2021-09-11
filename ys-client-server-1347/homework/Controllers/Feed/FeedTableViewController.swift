@@ -9,31 +9,49 @@ import UIKit
 
 class FeedTableViewController: UITableViewController {
     
+    let api = FeedAPI()
+    
     var feedItems: [Item] = []
     var feedProfiles: [Profile] = []
     var feedGroups: [Group] = []
     
+    var nextFrom = ""
+    var isLoading = false
+    
+    var expandedIndexSet: IndexSet = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
+        tableView.prefetchDataSource = self
+        
+        self.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
         
         tableView.register(FeedItemFooter.self, forHeaderFooterViewReuseIdentifier: "sectionFooter")
         tableView.sectionFooterHeight = 50
         tableView.separatorStyle = .singleLine
         
-        refresh(sender: self)
+        api.get{ [weak self] feed in
+            guard let self = self else { return }
+            
+            self.feedItems = feed!.response.items
+            self.feedProfiles = feed!.response.profiles
+            self.feedGroups = feed!.response.groups
+            self.nextFrom = feed?.response.nextFrom ?? ""
+            
+            self.tableView.reloadData()
+        }
     }
     
     // MARK: - Context menus.
     
     override func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
-
+        
         if tableView.cellForRow(at: indexPath)?.reuseIdentifier != "feedItemLinkCell" { return nil }
         guard let url = feedItems[indexPath.section].attachments?[0].link?.url else { return nil }
-
+        
         return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { action in
-
+            
             let linkMenuItems: [UIAction] = [
                 UIAction(title: "Открыть", image: UIImage(systemName: "safari"), handler: { _ in
                     UIApplication.shared.open(URL(string: url)!)
@@ -42,11 +60,11 @@ class FeedTableViewController: UITableViewController {
                     UIPasteboard.general.string = url
                 }),
             ]
-
+            
             let linkMenu = UIMenu(children: linkMenuItems)
-
+            
             return linkMenu
-
+            
         })
     }
     
@@ -62,8 +80,8 @@ class FeedTableViewController: UITableViewController {
         var count = 1
         
         if currentFeedItem.hasText { count += 1 }
-        if currentFeedItem.hasPhoto604 { count += 1 }
-        if currentFeedItem.hasLink { count += 1}
+        if currentFeedItem.hasPhoto { count += 1 }
+        if currentFeedItem.hasLink { count += 1 }
         
         return count
     }
@@ -85,6 +103,36 @@ class FeedTableViewController: UITableViewController {
             
         default:
             return UITableViewCell()
+        }
+    }
+    
+    // MARK: - Row height.
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        func currentPhotoHeight(_ item: Item) -> CGFloat {
+            guard let height = item.attachments?[0].photo?.photoAvailable?.height else { return UITableView.automaticDimension }
+            guard let width = item.attachments?[0].photo?.photoAvailable?.width else { return UITableView.automaticDimension }
+            
+            let tableWidth = tableView.bounds.width
+            
+            let aspectRatio = CGFloat(height) / CGFloat(width)
+            let cellHeight = tableWidth * aspectRatio
+            return cellHeight
+        }
+        
+        let currentFeedItem = feedItems[indexPath.section]
+        
+        switch indexPath.row {
+            
+        case 1:
+            return currentFeedItem.hasText ? UITableView.automaticDimension : currentPhotoHeight(currentFeedItem)
+            
+        case 2:
+            return currentFeedItem.hasLink ? UITableView.automaticDimension : currentPhotoHeight(currentFeedItem)
+            
+        default:
+            return UITableView.automaticDimension
         }
     }
     
@@ -166,7 +214,13 @@ class FeedTableViewController: UITableViewController {
         
         if currentFeedItem.hasText {
             
-            cell.configure(text: currentFeedItem.text)
+            cell.configure(text: currentFeedItem.text,
+                           expanded: expandedIndexSet.contains(indexPath.section),
+                           readMoreHandler: {
+                self.tableView.beginUpdates()
+                self.tableView.endUpdates()
+                self.expandedIndexSet.insert(indexPath.section)
+            })
             return cell
             
         } else { return UITableViewCell() }
@@ -198,9 +252,9 @@ class FeedTableViewController: UITableViewController {
         
         let currentFeedItem = feedItems[indexPath.section]
         
-        if currentFeedItem.hasPhoto604 {
+        if currentFeedItem.hasPhoto {
             
-            cell.configure(url: currentFeedItem.attachments![0].photo!.photo604!)
+            cell.configure(url: currentFeedItem.attachments![0].photo!.photoAvailable!.url)
             return cell
             
         } else {
@@ -212,17 +266,67 @@ class FeedTableViewController: UITableViewController {
     
     // MARK: - Refresh table.
     
-    @objc func refresh(sender:AnyObject)
-    {
-        FeedAPI(Session.instance).get{ [weak self] feed in
-            guard let self = self else { return }
-            self.feedItems = feed!.response.items
-            self.feedProfiles = feed!.response.profiles
-            self.feedGroups = feed!.response.groups
+    @objc func refresh(sender:AnyObject) {
+        self.refreshControl?.beginRefreshing()
+        
+        let mostRecentFeedItemDate = self.feedItems.first?.date ?? Date().timeIntervalSince1970
+        //print("refreshing from: \(mostRecentFeedItemDate.getDateStringFromUTC())")
+        
+        api.get(startTime: mostRecentFeedItemDate + 1){ [weak self] feed in
             
-            self.tableView.reloadData()
+            guard let self = self else { return }
+            
             self.refreshControl?.endRefreshing()
+            
+            guard let items = feed?.response.items else { return }
+            guard let profiles = feed?.response.profiles else { return }
+            guard let groups = feed?.response.groups else { return }
+            guard items.count > 0 else { return }
+            
+            //print(items.count)
+            
+            self.feedItems = items + self.feedItems
+            self.feedProfiles = profiles + self.feedProfiles
+            self.feedGroups = groups + self.feedGroups
+            
+            let indexSet = IndexSet(integersIn: 0..<items.count)
+            self.tableView.insertSections(indexSet, with: .fade)
         }
     }
     
+}
+
+extension FeedTableViewController: UITableViewDataSourcePrefetching {
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        
+        guard let maxSection = indexPaths.map({ $0.section }).max() else { return }
+        
+        
+        if maxSection > feedItems.count - 5, !isLoading {
+            
+            isLoading = true
+            
+            api.get(startFrom: nextFrom) { [weak self] feed in
+                
+                guard let self = self else { return }
+                
+                guard let newItems = feed?.response.items else { return }
+                guard let newProfiles = feed?.response.profiles else { return }
+                guard let newGroups = feed?.response.groups else { return }
+                
+                let indexSet = IndexSet(integersIn: self.feedItems.count..<self.feedItems.count + newItems.count)
+                
+                self.feedItems.append(contentsOf: newItems)
+                self.feedProfiles.append(contentsOf: newProfiles)
+                self.feedGroups.append(contentsOf: newGroups)
+                
+                self.nextFrom = feed?.response.nextFrom ?? ""
+                
+                self.tableView.insertSections(indexSet, with: .automatic)
+                
+                self.isLoading = false
+            }
+        }
+    }
 }
