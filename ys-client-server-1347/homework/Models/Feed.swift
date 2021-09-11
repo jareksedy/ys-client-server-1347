@@ -75,6 +75,8 @@ struct Item: Codable {
     let postID: Int?
     let type: String
     
+    var textHeight: Double?
+    
     // MARK: - Computed properties.
     
     var hasText: Bool {

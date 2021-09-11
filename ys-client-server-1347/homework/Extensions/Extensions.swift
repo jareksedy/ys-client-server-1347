@@ -162,3 +162,11 @@ extension UIView {
         return nil
     }
 }
+
+// MARK: - Get label height.
+
+extension UILabel {
+    func getSize(constrainedWidth: CGFloat) -> CGSize {
+        return systemLayoutSizeFitting(CGSize(width: constrainedWidth, height: UIView.layoutFittingCompressedSize.height), withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel)
+    }
+}
