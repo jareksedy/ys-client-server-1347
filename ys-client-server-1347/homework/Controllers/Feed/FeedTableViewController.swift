@@ -18,6 +18,8 @@ class FeedTableViewController: UITableViewController {
     var nextFrom = ""
     var isLoading = false
     
+    var expandedIndexSet: IndexSet = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -212,9 +214,12 @@ class FeedTableViewController: UITableViewController {
         
         if currentFeedItem.hasText {
             
-            cell.configure(text: currentFeedItem.text, readMoreHandler: {
+            cell.configure(text: currentFeedItem.text,
+                           expanded: expandedIndexSet.contains(indexPath.section),
+                           readMoreHandler: {
                 self.tableView.beginUpdates()
                 self.tableView.endUpdates()
+                self.expandedIndexSet.insert(indexPath.section)
             })
             return cell
             

@@ -20,29 +20,29 @@ class FeedItemTextTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configure(text: String?, readMoreHandler: @escaping () -> ()) {
+    func configure(text: String?, expanded: Bool, readMoreHandler: @escaping () -> ()) {
         
         guard let text = text else { return }
 
         feedItemText.customize { label in
             
-            if text.byWords.count > maxWordsCount {
+            if text.byWords.count > maxWordsCount && !expanded {
                 
                 label.text = String(describing: text.firstLine!)
-                label.text! += "\n" + readMore
+                label.text! += "\n\n" + readMore
                 
             } else {
                 label.text = text
             }
             
             let vkHashTag = ActiveType.custom(pattern: #"#\S+"#)
-            let readMoreType = ActiveType.custom(pattern: "\\s\(readMore)\\b")
+            let readMoreType = ActiveType.custom(pattern: readMore)
             
             label.urlMaximumLength = 22
             label.enabledTypes = [.url, vkHashTag, readMoreType]
             
-            label.customColor[vkHashTag] = activeVkHashTagColor
-            label.customSelectedColor[vkHashTag] = activeVkHashTagColorSelected
+            label.customColor[vkHashTag] = activeHashTagColor
+            label.customSelectedColor[vkHashTag] = activeHashTagColorSelected
             
             label.customColor[readMoreType] = activeURLColor
             label.customSelectedColor[readMoreType] = activeURLColorSelected

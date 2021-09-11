@@ -8,7 +8,7 @@
 import UIKit
 
 let maxWordsCount = 60
-let readMore = "ExpandThisText"
+let readMore = "Показать полностью..."
 
 let activeURLColor = UIColor(red: 41.0/255, green: 151.0/255, blue: 255.0/255, alpha: 1)
 let activeURLColorSelected = UIColor(red: 41.0/255, green: 151.0/255, blue: 255.0/255, alpha: 0.5)
