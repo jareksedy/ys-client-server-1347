@@ -11,7 +11,7 @@ import ActiveLabel
 class FeedItemTextTableViewCell: UITableViewCell {
     
     @IBOutlet weak var feedItemText: ActiveLabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -20,7 +20,7 @@ class FeedItemTextTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configure(text: String?) {
+    func configure(text: String?, readMoreHandler: @escaping () -> ()) {
         
         guard let text = text else { return }
 
@@ -56,6 +56,7 @@ class FeedItemTextTableViewCell: UITableViewCell {
             
             label.handleCustomTap(for: readMoreType) { _ in
                 label.text = text
+                readMoreHandler()
             }
         }
     }

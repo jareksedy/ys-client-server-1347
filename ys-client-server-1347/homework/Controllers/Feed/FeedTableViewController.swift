@@ -212,7 +212,10 @@ class FeedTableViewController: UITableViewController {
         
         if currentFeedItem.hasText {
             
-            cell.configure(text: currentFeedItem.text)
+            cell.configure(text: currentFeedItem.text, readMoreHandler: {
+                self.tableView.beginUpdates()
+                self.tableView.endUpdates()
+            })
             return cell
             
         } else { return UITableViewCell() }
