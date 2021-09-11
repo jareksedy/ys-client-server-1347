@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA02727226EC604700E4D8C7 /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA02727126EC604700E4D8C7 /* Sizes.swift */; };
 		CA23398426B4FC4000A23F01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA23398326B4FC4000A23F01 /* GoogleService-Info.plist */; };
 		CA3F5F1E26CAAFCF00C28A1B /* FeedItemPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3F5F1D26CAAFCF00C28A1B /* FeedItemPhotoTableViewCell.swift */; };
 		CA3F5F2226CACCCB00C28A1B /* FeedItemFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3F5F2126CACCCB00C28A1B /* FeedItemFooter.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA02727126EC604700E4D8C7 /* Sizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizes.swift; sourceTree = "<group>"; };
 		CA23398326B4FC4000A23F01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CA3F5F1D26CAAFCF00C28A1B /* FeedItemPhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemPhotoTableViewCell.swift; sourceTree = "<group>"; };
 		CA3F5F2126CACCCB00C28A1B /* FeedItemFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemFooter.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				CAE3402826DBE582006C73ED /* Likes.swift */,
+				CA02727126EC604700E4D8C7 /* Sizes.swift */,
 				CAE3402626DBCCA8006C73ED /* Global.swift */,
 				CACCC314269D87060024C5BF /* User.swift */,
 				CA4F72A026D92FD300398611 /* Friend.swift */,
@@ -412,6 +415,7 @@
 				CAC13DE4269DED8A00C79A7D /* GroupTableViewCellNoDesc.swift in Sources */,
 				CAE3402726DBCCA8006C73ED /* Global.swift in Sources */,
 				CACCC315269D87060024C5BF /* User.swift in Sources */,
+				CA02727226EC604700E4D8C7 /* Sizes.swift in Sources */,
 				CAC13DE9269E00EC00C79A7D /* PhotoAPI.swift in Sources */,
 				CA480ED826D210FB00DE5EE7 /* GroupAPIOperation.swift in Sources */,
 				CA3F5F2226CACCCB00C28A1B /* FeedItemFooter.swift in Sources */,

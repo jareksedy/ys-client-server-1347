@@ -26,7 +26,7 @@ class FeedAPI {
             "access_token": session.token,
             "v": session.version,
             "filters": "post",
-            "count": "10",
+            "count": "50",
         ]
         
     }
@@ -44,6 +44,8 @@ class FeedAPI {
         }
         
         AF.request(url, method: .get, parameters: params).responseData { response in
+            
+            //print(response.request!)
             
             guard let data = response.data else { return }
             

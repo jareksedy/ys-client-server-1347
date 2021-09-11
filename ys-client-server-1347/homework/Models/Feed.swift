@@ -82,7 +82,7 @@ struct Item: Codable {
     }
     
     var hasPhoto: Bool {
-        return self.attachments?[0].photo?.actualPhoto != nil
+        return self.attachments?[0].photo?.photoAvailable != nil
     }
     
     var hasLink: Bool {

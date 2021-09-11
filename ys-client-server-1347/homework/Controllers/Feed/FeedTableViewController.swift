@@ -23,7 +23,7 @@ class FeedTableViewController: UITableViewController {
         
         tableView.prefetchDataSource = self
         
-        self.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
         
         tableView.register(FeedItemFooter.self, forHeaderFooterViewReuseIdentifier: "sectionFooter")
         tableView.sectionFooterHeight = 50
@@ -109,8 +109,8 @@ class FeedTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         func currentPhotoHeight(_ item: Item) -> CGFloat {
-            guard let height = item.attachments?[0].photo?.actualPhoto?.height else { return UITableView.automaticDimension }
-            guard let width = item.attachments?[0].photo?.actualPhoto?.width else { return UITableView.automaticDimension }
+            guard let height = item.attachments?[0].photo?.photoAvailable?.height else { return UITableView.automaticDimension }
+            guard let width = item.attachments?[0].photo?.photoAvailable?.width else { return UITableView.automaticDimension }
             
             let tableWidth = tableView.bounds.width
             
@@ -246,7 +246,7 @@ class FeedTableViewController: UITableViewController {
         
         if currentFeedItem.hasPhoto {
             
-            cell.configure(url: currentFeedItem.attachments![0].photo!.actualPhoto!.url)
+            cell.configure(url: currentFeedItem.attachments![0].photo!.photoAvailable!.url)
             return cell
             
         } else {
@@ -263,6 +263,7 @@ class FeedTableViewController: UITableViewController {
         self.refreshControl?.beginRefreshing()
         
         let mostRecentFeedItemDate = self.feedItems.first?.date ?? Date().timeIntervalSince1970
+        //print("refreshing from: \(mostRecentFeedItemDate.getDateStringFromUTC())")
         
         api.get(startTime: mostRecentFeedItemDate + 1){ [weak self] feed in
             
@@ -294,7 +295,8 @@ extension FeedTableViewController: UITableViewDataSourcePrefetching {
         
         guard let maxSection = indexPaths.map({ $0.section }).max() else { return }
         
-        if maxSection > feedItems.count - 3, !isLoading {
+        
+        if maxSection > feedItems.count - 5, !isLoading {
             
             isLoading = true
             
@@ -306,7 +308,7 @@ extension FeedTableViewController: UITableViewDataSourcePrefetching {
                 guard let newProfiles = feed?.response.profiles else { return }
                 guard let newGroups = feed?.response.groups else { return }
                 
-                let indexSet = IndexSet(integersIn: self.feedItems.count ..< self.feedItems.count + newItems.count)
+                let indexSet = IndexSet(integersIn: self.feedItems.count..<self.feedItems.count + newItems.count)
                 
                 self.feedItems.append(contentsOf: newItems)
                 self.feedProfiles.append(contentsOf: newProfiles)
