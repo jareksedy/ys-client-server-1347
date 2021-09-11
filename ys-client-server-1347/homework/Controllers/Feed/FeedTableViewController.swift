@@ -79,7 +79,7 @@ class FeedTableViewController: UITableViewController {
         
         if currentFeedItem.hasText { count += 1 }
         if currentFeedItem.hasPhoto { count += 1 }
-        if currentFeedItem.hasLink { count += 1}
+        if currentFeedItem.hasLink { count += 1 }
         
         return count
     }
@@ -258,8 +258,7 @@ class FeedTableViewController: UITableViewController {
     
     // MARK: - Refresh table.
     
-    @objc func refresh(sender:AnyObject)
-    {
+    @objc func refresh(sender:AnyObject) {
         self.refreshControl?.beginRefreshing()
         
         let mostRecentFeedItemDate = self.feedItems.first?.date ?? Date().timeIntervalSince1970

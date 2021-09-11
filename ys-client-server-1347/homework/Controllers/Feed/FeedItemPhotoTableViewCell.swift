@@ -22,6 +22,6 @@ class FeedItemPhotoTableViewCell: UITableViewCell {
     func configure(url: String? = nil) {
         
         guard let url = url else { return }
-        feedItemPhoto.asyncLoadImageUsingCache(withUrl: url, withImageViewer: true)
+        feedItemPhoto.asyncLoadImageUsingCache(withUrl: url, withImageViewer: false)
     }
 }
