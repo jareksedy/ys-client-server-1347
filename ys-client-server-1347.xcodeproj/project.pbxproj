@@ -22,13 +22,14 @@
 		CA5717BF26D6ADF8009D5288 /* GalleryFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5717BE26D6ADF8009D5288 /* GalleryFlowLayout.swift */; };
 		CA58A53E26C9622100078409 /* FeedItemInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA58A53D26C9622100078409 /* FeedItemInfoTableViewCell.swift */; };
 		CA595B2E26DFD137004B6105 /* Menus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA595B2D26DFD137004B6105 /* Menus.swift */; };
-		CA5A808926D9F5EC00FFBB5D /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = CA5A808826D9F5EC00FFBB5D /* PromiseKit */; };
 		CA63F71026DD310C00071855 /* FeedItemLinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA63F70F26DD310C00071855 /* FeedItemLinkCell.swift */; };
 		CA6A8FDC2695F76C00009ABC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6A8FDB2695F76C00009ABC /* AppDelegate.swift */; };
 		CA6A8FDE2695F76C00009ABC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6A8FDD2695F76C00009ABC /* SceneDelegate.swift */; };
 		CA6A8FE32695F76C00009ABC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA6A8FE12695F76C00009ABC /* Main.storyboard */; };
 		CA6A8FE52695F77100009ABC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA6A8FE42695F77100009ABC /* Assets.xcassets */; };
 		CA6A8FE82695F77100009ABC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA6A8FE62695F77100009ABC /* LaunchScreen.storyboard */; };
+		CA6E8F65270029040032DB35 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E8F64270029040032DB35 /* UserViewModel.swift */; };
+		CA6E8F6727002CF40032DB35 /* UserViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E8F6627002CF40032DB35 /* UserViewModelFactory.swift */; };
 		CA74FCED26C988F900B1D16E /* FeedItemTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA74FCEC26C988F900B1D16E /* FeedItemTextTableViewCell.swift */; };
 		CA9A960926D01AAA000A8DDC /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = CA9A960826D01AAA000A8DDC /* SwiftyJSON */; };
 		CABEB6C726DB80C70061CDDA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABEB6C626DB80C70061CDDA /* Extensions.swift */; };
@@ -82,6 +83,8 @@
 		CA6A8FE42695F77100009ABC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA6A8FE72695F77100009ABC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA6A8FE92695F77100009ABC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA6E8F64270029040032DB35 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		CA6E8F6627002CF40032DB35 /* UserViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModelFactory.swift; sourceTree = "<group>"; };
 		CA74FCEC26C988F900B1D16E /* FeedItemTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemTextTableViewCell.swift; sourceTree = "<group>"; };
 		CABEB6C626DB80C70061CDDA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CAC13DE3269DED8A00C79A7D /* GroupTableViewCellNoDesc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCellNoDesc.swift; sourceTree = "<group>"; };
@@ -111,7 +114,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA5A808926D9F5EC00FFBB5D /* PromiseKit in Frameworks */,
 				CAE3403126DC1BEE006C73ED /* ActiveLabel in Frameworks */,
 				CA9A960926D01AAA000A8DDC /* SwiftyJSON in Frameworks */,
 				CACCC30F269D7ED10024C5BF /* Alamofire in Frameworks */,
@@ -129,6 +131,8 @@
 				CAE3402C26DBFEBC006C73ED /* Config */,
 				CABEB6C826DB80D30061CDDA /* Extensions */,
 				CACCC313269D84C20024C5BF /* Models */,
+				CA6E8F6827002D070032DB35 /* Factories */,
+				CA6E8F63270027C90032DB35 /* ViewModels */,
 				CAABB45A26995D8F004944AE /* Services */,
 				CA2738F8269D46C700921FA9 /* Controllers */,
 			);
@@ -218,7 +222,23 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		CA8E2B6026AB0F700063E38D /* API */ = {
+		CA6E8F63270027C90032DB35 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CA6E8F64270029040032DB35 /* UserViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CA6E8F6827002D070032DB35 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				CA6E8F6627002CF40032DB35 /* UserViewModelFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		CAABB45A26995D8F004944AE /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				CACCC316269D88010024C5BF /* UserAPI.swift */,
@@ -228,14 +248,6 @@
 				CA480ED726D210FB00DE5EE7 /* GroupAPIOperation.swift */,
 				CA437F2426BE859800406575 /* FeedAPI.swift */,
 				CAC13DE8269E00EC00C79A7D /* PhotoAPI.swift */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
-		CAABB45A26995D8F004944AE /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				CA8E2B6026AB0F700063E38D /* API */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -331,7 +343,6 @@
 				CACCC31B269DAABA0024C5BF /* AlamofireImage */,
 				CA9A960826D01AAA000A8DDC /* SwiftyJSON */,
 				CAE01FB926D6A18600C33A48 /* ImageViewer_swift */,
-				CA5A808826D9F5EC00FFBB5D /* PromiseKit */,
 				CAE3403026DC1BEE006C73ED /* ActiveLabel */,
 			);
 			productName = "ys-client-server-1347";
@@ -366,7 +377,6 @@
 				CACCC31A269DAABA0024C5BF /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 				CA9A960726D01AAA000A8DDC /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				CAE01FB826D6A18600C33A48 /* XCRemoteSwiftPackageReference "ImageViewer.swift" */,
-				CA5A808726D9F5EC00FFBB5D /* XCRemoteSwiftPackageReference "PromiseKit" */,
 				CAE3402F26DC1BED006C73ED /* XCRemoteSwiftPackageReference "ActiveLabel.swift" */,
 			);
 			productRefGroup = CA6A8FD92695F76C00009ABC /* Products */;
@@ -409,6 +419,7 @@
 				CACCC322269DC3E10024C5BF /* GroupTableViewCell.swift in Sources */,
 				CA4F72A326D92FFC00398611 /* FriendAPI.swift in Sources */,
 				CA74FCED26C988F900B1D16E /* FeedItemTextTableViewCell.swift in Sources */,
+				CA6E8F6727002CF40032DB35 /* UserViewModelFactory.swift in Sources */,
 				CAE3402326DB9B80006C73ED /* LikeButton.swift in Sources */,
 				CAC13DF0269E0B9B00C79A7D /* PhotoCollectionViewCell.swift in Sources */,
 				CAD3ABE0269892090020BF1F /* FirstViewController.swift in Sources */,
@@ -430,6 +441,7 @@
 				CACCC319269D8FFF0024C5BF /* UserInfoViewController.swift in Sources */,
 				CAE3402B26DBFEB5006C73ED /* Config.swift in Sources */,
 				CA3F5F1E26CAAFCF00C28A1B /* FeedItemPhotoTableViewCell.swift in Sources */,
+				CA6E8F65270029040032DB35 /* UserViewModel.swift in Sources */,
 				CA6A8FDE2695F76C00009ABC /* SceneDelegate.swift in Sources */,
 				CA63F71026DD310C00071855 /* FeedItemLinkCell.swift in Sources */,
 				CA5717BF26D6ADF8009D5288 /* GalleryFlowLayout.swift in Sources */,
@@ -639,14 +651,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CA5A808726D9F5EC00FFBB5D /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mxcl/PromiseKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.15.3;
-			};
-		};
 		CA9A960726D01AAA000A8DDC /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
@@ -690,11 +694,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CA5A808826D9F5EC00FFBB5D /* PromiseKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CA5A808726D9F5EC00FFBB5D /* XCRemoteSwiftPackageReference "PromiseKit" */;
-			productName = PromiseKit;
-		};
 		CA9A960826D01AAA000A8DDC /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CA9A960726D01AAA000A8DDC /* XCRemoteSwiftPackageReference "SwiftyJSON" */;

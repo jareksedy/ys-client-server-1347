@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v7c-5U-ARj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v7c-5U-ARj">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -115,7 +116,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="120" id="VcP-mx-YFs" customClass="FriendsTableViewCell" customModule="ys_client_server_1347" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="120"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VcP-mx-YFs" id="gdi-EF-vbO">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
@@ -209,44 +210,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="U90-G6-fcq">
-                                <rect key="frame" x="194.5" y="334.5" width="25" height="24"/>
-                                <color key="tintColor" systemColor="secondaryLabelColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="quO-oM-lSY"/>
-                                    <constraint firstAttribute="width" secondItem="U90-G6-fcq" secondAttribute="height" id="swa-N1-Vt6"/>
-                                </constraints>
-                            </imageView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City, Country." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fwl-HN-pTW">
-                                <rect key="frame" x="163.5" y="369" width="87" height="17"/>
+                                <rect key="frame" x="163.5" y="329" width="87" height="17"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="4yh-s6-gfv">
-                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
-                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9Qs-nT-8gy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ncR-WQ-rbJ" firstAttribute="top" secondItem="gVw-F0-wHR" secondAttribute="bottom" constant="20" id="Chz-BK-53f"/>
                             <constraint firstItem="ncR-WQ-rbJ" firstAttribute="centerX" secondItem="dZn-Ql-vJi" secondAttribute="centerX" id="Gdx-ys-Is5"/>
-                            <constraint firstItem="4yh-s6-gfv" firstAttribute="centerX" secondItem="dZn-Ql-vJi" secondAttribute="centerX" id="dPO-UJ-P42"/>
-                            <constraint firstItem="U90-G6-fcq" firstAttribute="top" secondItem="ncR-WQ-rbJ" secondAttribute="bottom" constant="20" id="hlw-8H-BCU"/>
-                            <constraint firstItem="Fwl-HN-pTW" firstAttribute="top" secondItem="U90-G6-fcq" secondAttribute="bottom" constant="10" id="nLU-Kz-Opx"/>
+                            <constraint firstItem="Fwl-HN-pTW" firstAttribute="top" secondItem="ncR-WQ-rbJ" secondAttribute="bottom" constant="15" id="dCa-fo-eGq"/>
                             <constraint firstItem="gVw-F0-wHR" firstAttribute="centerX" secondItem="dZn-Ql-vJi" secondAttribute="centerX" id="ngQ-ob-qhq"/>
                             <constraint firstItem="Fwl-HN-pTW" firstAttribute="centerX" secondItem="dZn-Ql-vJi" secondAttribute="centerX" id="p5P-w2-5vh"/>
-                            <constraint firstItem="4yh-s6-gfv" firstAttribute="centerY" secondItem="dZn-Ql-vJi" secondAttribute="centerY" id="w3f-1K-btt"/>
                             <constraint firstItem="gVw-F0-wHR" firstAttribute="top" secondItem="9Qs-nT-8gy" secondAttribute="top" constant="20" id="wmj-81-vtL"/>
-                            <constraint firstItem="U90-G6-fcq" firstAttribute="centerX" secondItem="dZn-Ql-vJi" secondAttribute="centerX" id="yOb-SD-Lxv"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Я" image="person.circle" catalog="system" selectedImage="person.circle.fill" id="mfU-oB-Je0"/>
                     <navigationItem key="navigationItem" id="4Nr-4w-Shx"/>
                     <connections>
-                        <outlet property="loadingIndicator" destination="4yh-s6-gfv" id="GNF-3M-Cbq"/>
-                        <outlet property="pinIcon" destination="U90-G6-fcq" id="1Ox-Yh-G1G"/>
                         <outlet property="userImage" destination="gVw-F0-wHR" id="cJy-Tq-CkC"/>
                         <outlet property="userLocation" destination="Fwl-HN-pTW" id="c5d-We-22r"/>
                         <outlet property="userName" destination="ncR-WQ-rbJ" id="shf-GN-iFd"/>
@@ -294,7 +278,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupCell" rowHeight="120" id="4Vt-7R-bnX" customClass="GroupTableViewCell" customModule="ys_client_server_1347" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="120"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Vt-7R-bnX" id="CtZ-dg-xZ0">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
@@ -359,7 +343,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupCellNoDesc" rowHeight="120" id="gzO-mK-b8s" customClass="GroupTableViewCellNoDesc" customModule="ys_client_server_1347" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="144.5" width="414" height="120"/>
+                                <rect key="frame" x="0.0" y="164.5" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gzO-mK-b8s" id="iNe-J9-bL2">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
@@ -604,8 +588,7 @@
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="figure.wave.circle" catalog="system" width="128" height="121"/>
         <image name="figure.wave.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="mappin.circle" catalog="system" width="128" height="121"/>
-        <image name="newspaper" catalog="system" width="128" height="108"/>
+        <image name="newspaper" catalog="system" width="128" height="111"/>
         <image name="newspaper.fill" catalog="system" width="128" height="111"/>
         <image name="person.2.circle" catalog="system" width="128" height="121"/>
         <image name="person.2.circle.fill" catalog="system" width="128" height="121"/>

@@ -20,13 +20,13 @@ class UserAPI {
     
     var params: Parameters
     
-    init(_ session: Session) {
+    init() {
         
         self.params = [
-            "client_id": session.cliendId,
-            "user_id": session.userId,
-            "access_token": session.token,
-            "v": session.version,
+            "client_id": Session.instance.cliendId,
+            "user_id": Session.instance.userId,
+            "access_token": Session.instance.token,
+            "v": Session.instance.version,
             "fields": "has_photo, photo_200, city, country",
         ]
         
