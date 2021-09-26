@@ -11,6 +11,7 @@
 		CA23398426B4FC4000A23F01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA23398326B4FC4000A23F01 /* GoogleService-Info.plist */; };
 		CA3B1C242700AC1200888A53 /* FriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3B1C232700AC1200888A53 /* FriendViewModel.swift */; };
 		CA3B1C262700ACF200888A53 /* FriendViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3B1C252700ACF200888A53 /* FriendViewModelFactory.swift */; };
+		CA3B1C282700E99900888A53 /* UserAPIAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3B1C272700E99900888A53 /* UserAPIAdapter.swift */; };
 		CA3F5F1E26CAAFCF00C28A1B /* FeedItemPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3F5F1D26CAAFCF00C28A1B /* FeedItemPhotoTableViewCell.swift */; };
 		CA3F5F2226CACCCB00C28A1B /* FeedItemFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3F5F2126CACCCB00C28A1B /* FeedItemFooter.swift */; };
 		CA437F2026BE84F300406575 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA437F1F26BE84F300406575 /* Feed.swift */; };
@@ -66,6 +67,7 @@
 		CA23398326B4FC4000A23F01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CA3B1C232700AC1200888A53 /* FriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewModel.swift; sourceTree = "<group>"; };
 		CA3B1C252700ACF200888A53 /* FriendViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewModelFactory.swift; sourceTree = "<group>"; };
+		CA3B1C272700E99900888A53 /* UserAPIAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIAdapter.swift; sourceTree = "<group>"; };
 		CA3F5F1D26CAAFCF00C28A1B /* FeedItemPhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemPhotoTableViewCell.swift; sourceTree = "<group>"; };
 		CA3F5F2126CACCCB00C28A1B /* FeedItemFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemFooter.swift; sourceTree = "<group>"; };
 		CA437F1F26BE84F300406575 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				CAE3402C26DBFEBC006C73ED /* Config */,
 				CABEB6C826DB80D30061CDDA /* Extensions */,
 				CACCC313269D84C20024C5BF /* Models */,
+				CA3B1C292700E9A200888A53 /* Adapters */,
 				CA6E8F6827002D070032DB35 /* Factories */,
 				CA6E8F63270027C90032DB35 /* ViewModels */,
 				CAABB45A26995D8F004944AE /* Services */,
@@ -155,6 +158,14 @@
 				CAD3ABDF269892090020BF1F /* FirstViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CA3B1C292700E9A200888A53 /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				CA3B1C272700E99900888A53 /* UserAPIAdapter.swift */,
+			);
+			path = Adapters;
 			sourceTree = "<group>";
 		};
 		CA437F2326BE853C00406575 /* Feed */ = {
@@ -422,6 +433,7 @@
 				CA437F2226BE853700406575 /* FeedTableViewController.swift in Sources */,
 				CA58A53E26C9622100078409 /* FeedItemInfoTableViewCell.swift in Sources */,
 				CACCC320269DC2FB0024C5BF /* GroupTableViewController.swift in Sources */,
+				CA3B1C282700E99900888A53 /* UserAPIAdapter.swift in Sources */,
 				CACCC311269D82510024C5BF /* RoundedImageView.swift in Sources */,
 				CAD3ABE4269892E20020BF1F /* Session.swift in Sources */,
 				CACCC322269DC3E10024C5BF /* GroupTableViewCell.swift in Sources */,

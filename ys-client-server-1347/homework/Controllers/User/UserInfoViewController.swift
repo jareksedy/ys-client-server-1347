@@ -13,7 +13,7 @@ class UserInfoViewController: UIViewController {
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userLocation: UILabel!
     
-    private let api = UserAPI()
+    private let apiAdapter = UserAPIAdapter()
     
     private let viewModelFactory = UserViewModelFactory()
     private var viewModel: UserViewModel?
@@ -21,17 +21,11 @@ class UserInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let user = api.get() {
-            viewModel = viewModelFactory.constructViewModels(from: user)
-            display()
+        apiAdapter.get { [weak self] user in
+            guard let self=self, let user = user else { return }
+            self.viewModel = self.viewModelFactory.constructViewModels(from: user)
+            self.display()
         }
-
-        
-//        api.get { [weak self] user in
-//            guard let self = self, let user = user else { return }
-//            self.viewModel = self.viewModelFactory.constructViewModels(from: user)
-//            self.display()
-//        }
     }
     
     // MARK: - Private methods.
