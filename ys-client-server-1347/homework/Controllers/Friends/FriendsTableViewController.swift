@@ -7,16 +7,12 @@
 
 import UIKit
 
-class FriendsTableViewController: UITableViewController, CellUpdater {
+class FriendsTableViewController: UITableViewController {
     
     private let api = FriendAPI()
     private let viewModelFactory = FriendViewModelFactory()
     private var viewModels: [FriendViewModel] = []
     var friendItems: [FriendItem] = []
-    
-    func updateTableView() {
-        refresh(sender: self)
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,5 +48,12 @@ class FriendsTableViewController: UITableViewController, CellUpdater {
             self.tableView.reloadData()
             self.refreshControl?.endRefreshing()
         }
+    }
+}
+
+extension FriendsTableViewController: CellUpdater {
+    
+    func updateTableView() {
+        refresh(sender: self)
     }
 }
