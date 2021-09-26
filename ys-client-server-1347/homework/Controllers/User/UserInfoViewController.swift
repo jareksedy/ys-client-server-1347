@@ -24,13 +24,14 @@ class UserInfoViewController: UIViewController {
         api.get { [weak self] user in
             guard let self = self, let user = user else { return }
             self.viewModel = self.viewModelFactory.constructViewModels(from: user)
-            display(viewModel: self.viewModel!)
+            self.display()
         }
     }
     
     // MARK: - Private methods.
     
-    private func display(viewModel: UserViewModel) {
+    private func display() {
+        guard let viewModel = viewModel else { return }
         userName.text = viewModel.fullName
         userLocation.text = viewModel.location
         userImage.asyncLoadImageUsingCache(withUrl: viewModel.userImageUrl)
