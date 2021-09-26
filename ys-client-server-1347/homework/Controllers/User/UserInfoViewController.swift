@@ -21,11 +21,17 @@ class UserInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        api.get { [weak self] user in
-            guard let self = self, let user = user else { return }
-            self.viewModel = self.viewModelFactory.constructViewModels(from: user)
-            self.display()
+        if let user = api.get() {
+            viewModel = viewModelFactory.constructViewModels(from: user)
+            display()
         }
+
+        
+//        api.get { [weak self] user in
+//            guard let self = self, let user = user else { return }
+//            self.viewModel = self.viewModelFactory.constructViewModels(from: user)
+//            self.display()
+//        }
     }
     
     // MARK: - Private methods.
