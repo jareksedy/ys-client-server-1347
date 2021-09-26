@@ -9,15 +9,17 @@ import UIKit
 
 class FriendsTableViewController: UITableViewController, CellUpdater {
     
+    private let api = FriendAPI()
+    private let viewModelFactory = FriendViewModelFactory()
+    private var viewModels: [FriendViewModel] = []
+    var friendItems: [FriendItem] = []
+    
     func updateTableView() {
         refresh(sender: self)
     }
-    
-    var friendItems: [FriendItem] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
         tableView.separatorStyle = .none
         
@@ -34,18 +36,19 @@ class FriendsTableViewController: UITableViewController, CellUpdater {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell") as? FriendsTableViewCell
         else { return UITableViewCell() }
         
-        cell.configure(friendItems[indexPath.row])
+        cell.configure(with: viewModels[indexPath.row])
         cell.parentVC = self
         cell.delegate = self
         return cell
     }
     
     // MARK: - Refresh table.
-    @objc func refresh(sender:AnyObject)
-    {
-        FriendAPI(Session.instance).get{ [weak self] friends in
+    @objc func refresh(sender:AnyObject) {
+        
+        api.get { [weak self] friends in
             guard let self = self else { return }
             self.friendItems = friends!.response.items
+            self.viewModels = self.viewModelFactory.constructViewModels(from: self.friendItems)
             self.tableView.reloadData()
             self.refreshControl?.endRefreshing()
         }

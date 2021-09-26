@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 struct UserViewModel {
     let fullName: String
