@@ -57,7 +57,8 @@ class FriendsTableViewCell: UITableViewCell {
     
     private func removeFromFriends(_ viewModel: FriendViewModel) {
         
-        let api = FriendAPI()
+        let friendAPI = FriendAPI()
+        let api = FriendAPIProxy(friendAPI: friendAPI)
         
         let alert = UIAlertController(title: "Удалить из друзей?", message: "\(viewModel.fullName) будет удален из списка ваших друзей. Вы уверены?", preferredStyle: .alert)
         

@@ -8,11 +8,43 @@
 import Foundation
 import Alamofire
 
-class FriendAPI {
+protocol FriendAPIInterface {
+    var request: String? { get }
+    func get(_ completion: @escaping (Friends?) -> ())
+    func removeFromFriends(_ id: Int, _ completion: @escaping (FriendDelete?) -> ())
+}
+
+class FriendAPIProxy: FriendAPIInterface {
+    var request: String?
+    let friendAPI: FriendAPIInterface
+    
+    init(friendAPI: FriendAPIInterface) {
+        self.friendAPI = friendAPI
+    }
+    
+    func get(_ completion: @escaping (Friends?) -> ()) {
+        friendAPI.get { [weak self] friends in
+            guard self != nil else { return }
+            print("PROXY LOG REQUEST: \(self?.friendAPI.request ?? "UNKNOWN")")
+            completion(friends)
+        }
+    }
+    
+    func removeFromFriends(_ id: Int, _ completion: @escaping (FriendDelete?) -> ()) {
+        friendAPI.removeFromFriends(id) { friendDelete in
+            print("PROXY LOG REQUEST: \(self.friendAPI.request ?? "UNKNOWN")")
+            completion(friendDelete)
+        }
+    }
+    
+    
+}
+
+class FriendAPI: FriendAPIInterface {
     
     let baseUrl = "https://api.vk.com/method"
-    
     var params: Parameters
+    var request: String?
     
     init() {
         
@@ -22,7 +54,6 @@ class FriendAPI {
             "access_token": Session.instance.token,
             "v": Session.instance.version,
         ]
-        
     }
     
     func get(_ completion: @escaping (Friends?) -> ()) {
@@ -34,6 +65,7 @@ class FriendAPI {
         params["fields"] = "photo_100,online,sex,last_seen"
         
         AF.request(url, method: .get, parameters: params).responseData{ response in
+            self.request = response.request?.description
             
             guard let data = response.data else { return }
 
@@ -55,7 +87,8 @@ class FriendAPI {
         
         params["user_id"] = "\(id)"
         
-        AF.request(url, method: .get, parameters: params).responseData{ response in
+        AF.request(url, method: .get, parameters: params).responseData { response in
+            self.request = response.request?.description
             
             guard let data = response.data else { return }
             

@@ -9,7 +9,9 @@ import UIKit
 
 class FriendsTableViewController: UITableViewController {
     
-    private let api = FriendAPI()
+    private lazy var friendAPI = FriendAPI()
+    private lazy var api = FriendAPIProxy(friendAPI: friendAPI)
+    
     private let viewModelFactory = FriendViewModelFactory()
     private var viewModels: [FriendViewModel] = []
     var friendItems: [FriendItem] = []
